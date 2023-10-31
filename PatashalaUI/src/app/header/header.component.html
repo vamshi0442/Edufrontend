@@ -2,15 +2,15 @@
 <div class="topnav">
     <nav class="navbar navbar-light topnavbg">
         <div class="container">
-            <ul class="nav">
+            <ul class="nav" *ngFor="let branch of  BranchAddress">
                 <li class="list-inline-item me-4">
-                    <p class="text-white mb-0"><i class="bi-phone fs-5 "></i> 987-098-098-09</p>
+                    <p class="text-white mb-0"><i class="bi-phone fs-5 "></i>{{branch.primaryPhonenumber}}</p>
                 </li>
                 <li class="list-inline-item me-4">
-                    <p class="text-white mb-0"><i class="bi-envelope fs-5 "></i> info@patashala.com</p>
+                    <p class="text-white mb-0"><i class="bi-envelope fs-5 "></i> {{branch.primaryEmail}}</p>
                 </li>
                 <li class="list-inline-item">
-                    <p class="text-white mb-0"><i class="bi-pin-map fs-5 "></i> Sun city, USA</p>                            
+                    <p class="text-white mb-0"><i class="bi-pin-map fs-5 "></i> {{branch.addessLine2}}, {{branch.city}}</p>                            
                 </li>
             </ul>
             <ul class="nav">
@@ -48,8 +48,7 @@
                             {{submenuItems.menu}}
                             <ul class="dropdown">
                                 <ul *ngFor="let subsubmenuItems of childmenuItems">
-                                    <a class="dropdown-item" href="{{subsubmenuItems.menuUrl}}" *ngIf = "submenuItems.menu_Id == subsubmenuItems.submenu_id"
-                                    > 
+                                    <a class="dropdown-item" href="{{subsubmenuItems.menuUrl}}" *ngIf = "submenuItems.menu_Id == subsubmenuItems.submenu_id"> 
                                         {{subsubmenuItems.menu}} 
                                     </a>
                                 </ul>

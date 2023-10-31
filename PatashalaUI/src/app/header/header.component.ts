@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-header',
@@ -9,12 +10,20 @@ export class HeaderComponent {
 listMenuResponse:any = [];
 dynamicmenuItems:any =[];
 childmenuItems:any =[];
-
+BranchAddress:any = [];
+constructor(private httpClient: HttpClient) {
+}
 
 ngOnInit(){
-  this.getdynamicMenu();
-  this.dynamicmenuItems = this.listMenuResponse;
-  this.childmenuItems = this.listMenuResponse;
+  this.httpClient.get<any>("assets/data.json").subscribe((data)=>{
+    this.listMenuResponse = data.dynamicmenu;
+    this.dynamicmenuItems = this.listMenuResponse;
+    this.childmenuItems = this.listMenuResponse;
+    this.BranchAddress = data.branches;
+  });
+ // this.getdynamicMenu();
+  // this.dynamicmenuItems = this.listMenuResponse;
+  // this.childmenuItems = this.listMenuResponse;
 
 }
 
@@ -716,7 +725,7 @@ getdynamicMenu(){
     "menu_Id": 28,
     "submenu_id": 25,
     "menu": "CMA(US)",
-     "menuUrl": "/cmaus",
+     "menuUrl": "/cma",
     "isActive": true,
     "listMenuResponse": [
       {
