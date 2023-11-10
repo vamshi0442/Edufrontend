@@ -3,39 +3,6 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-sm-6">
-                <h2>About Patashala</h2>
-                <!-- <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled</p> -->
-                <!-- <p>{{aboutPatashala}}</p> -->
-                <ul class="list-inline mb-2">
-                    <li><a [routerLink]="['/about_us']" class="text-decoration-none"><i class="bi bi-chevron-double-right"></i> About Patashala</a></li>
-                    <li><a [routerLink]="['/our_team']" class="text-decoration-none"><i class="bi bi-chevron-double-right"></i> Out Team</a></li>
-                    <li><a href="#!" class="text-decoration-none"><i class="bi bi-chevron-double-right"></i> Patashal Though Process</a></li>
-                </ul>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <h2>Courses</h2>
-                <p class="mb-0">CPC-Commerce Professional Courses </p>
-                <p class="mb-0">Domestic Courses </p>
-                <ul class="list-inline mb-2">
-                    <li><a [routerLink]="['/ca']" class="text-decoration-none"><i class="bi bi-chevron-double-right"></i> CA</a></li>
-                    <li><a [routerLink]="['/cma']" class="text-decoration-none"><i class="bi bi-chevron-double-right"></i> CMA</a></li>
-                </ul>
-                <p class="mb-0">International Courses</p>
-                <ul class="list-inline mb-2">
-                    <li><a [routerLink]="['/acca']" class="text-decoration-none"><i class="bi bi-chevron-double-right"></i> ACCA</a></li>
-                    <li><a [routerLink]="['/cima']" class="text-decoration-none"><i class="bi bi-chevron-double-right"></i> CIMA</a></li>
-                    <li><a [routerLink]="['/cma']" class="text-decoration-none"><i class="bi bi-chevron-double-right"></i> CMA(US)</a></li>
-                </ul>                
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <h2>Students</h2>
-                <ul class="list-inline mb-2">
-                    <li><a href="#!" class="text-decoration-none"><i class="bi bi-chevron-double-right"></i> Live Classes</a></li>
-                    <li><a href="#!" class="text-decoration-none"><i class="bi bi-chevron-double-right"></i> Recordings</a></li>
-                    <li><a href="#!" class="text-decoration-none"><i class="bi bi-chevron-double-right"></i> Selected Videos</a></li>
-                </ul>
-            </div>
-            <div class="col-lg-3 col-sm-6">
                 <h2>Get in touch</h2>
                 <ul class="list-inline mb-2">
                     <li><i class="bi bi-pin-map"></i><a href="javascript:void(0)"> 94 Road Malaka, UK</a></li>
@@ -58,6 +25,85 @@
                 </ul>
                 <img src="assets/img/whatsapp_img.png" alt="whatsapp" class="my-5">
             </div>
+            <!-- code for loading dynamic footer starts here-->
+            <div class="col-lg-3 col-sm-6" *ngFor="let menuItem of listMenuResponse">
+                <div *ngIf = "menuItem.submenu_id==0 && menuItem.menu_Id != 5 && menuItem.menu_Id != 4 ">
+                    <h2> {{menuItem.menu}}</h2>
+                    <div *ngFor="let submenuItems of dynamicmenuItems">
+                    
+                    <div *ngIf="submenuItems.submenu_id == menuItem.menu_Id">
+                        <a class="dropdown-item" href="{{submenuItems.menuUrl}}" >
+                            {{submenuItems.menu}}
+                        </a>
+                        <div *ngFor="let subsubmenuItems of dynamicmenuItems">
+                            <a class="dropdown-item" href="{{subsubmenuItems.menuUrl}}" *ngIf = "submenuItems.menu_Id == subsubmenuItems.submenu_id"> 
+                                {{subsubmenuItems.menu}} 
+                            </a>
+                        </div>
+                    </div>  
+                    </div> 
+                </div>
+            </div>
+            <!-- code for loading dynamic menu ends here-->
+            <!-- <div class="col-lg-3 col-sm-6">
+                <h2>About Patashala</h2>
+                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled</p>
+                <p>{{aboutPatashala}}</p>
+                <ul class="list-inline mb-2">
+                    <li><a [routerLink]="['/about_us']" class="text-decoration-none"><i class="bi bi-chevron-double-right"></i> About Patashala</a></li>
+                    <li><a [routerLink]="['/our_team']" class="text-decoration-none"><i class="bi bi-chevron-double-right"></i> Out Team</a></li>
+                    <li><a href="#!" class="text-decoration-none"><i class="bi bi-chevron-double-right"></i> Patashal Though Process</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <h2>Courses</h2>
+                <p class="mb-0">CPC-Commerce Professional Courses </p>
+                <p class="mb-0">Domestic Courses </p>
+                <p class="mb-0">International Courses</p>
+                <ul class="list-inline mb-2">
+                    <li><a [routerLink]="['/acca']" class="text-decoration-none"><i class="bi bi-chevron-double-right"></i> ACCA</a></li>
+                    <li><a [routerLink]="['/cima']" class="text-decoration-none"><i class="bi bi-chevron-double-right"></i> CIMA</a></li>
+                    <li><a [routerLink]="['/cma']" class="text-decoration-none"><i class="bi bi-chevron-double-right"></i> CMA</a></li>
+                </ul>
+                <p class="mb-0">CFC Competetive Exams Coaching</p>
+                <ul class="list-inline mb-2">
+                    <li><a href="#!" class="text-decoration-none"><i class="bi bi-chevron-double-right"></i> CLAT</a></li>
+                    <li><a href="#!" class="text-decoration-none"><i class="bi bi-chevron-double-right"></i> IMPAT</a></li>
+                    <li><a href="#!" class="text-decoration-none"><i class="bi bi-chevron-double-right"></i> CET</a></li>
+                    <li><a href="#!" class="text-decoration-none"><i class="bi bi-chevron-double-right"></i> CAT</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <h2>Students</h2>
+                <ul class="list-inline mb-2">
+                    <li><a href="#!" class="text-decoration-none"><i class="bi bi-chevron-double-right"></i> Live Classes</a></li>
+                    <li><a href="#!" class="text-decoration-none"><i class="bi bi-chevron-double-right"></i> Recordings</a></li>
+                    <li><a href="#!" class="text-decoration-none"><i class="bi bi-chevron-double-right"></i> Selected Videos</a></li>
+                </ul>
+            </div> -->
+            <!-- <div class="col-lg-3 col-sm-6">
+                <h2>Get in touch</h2>
+                <ul class="list-inline mb-2">
+                    <li><i class="bi bi-pin-map"></i><a href="javascript:void(0)"> 94 Road Malaka, UK</a></li>
+                    <li><i class="bi bi-phone"></i><a href="javascript:void(0)">  +91-7687287658</a></li>
+                    <li><i class="bi bi-envelope"></i><a href="javascript:void(0)">  info@patashala.com</a></li>
+                </ul>
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item me-4">
+                        <a href="#!"><i class="bi-facebook fs-3"></i></a>
+                    </li>
+                    <li class="list-inline-item me-4">
+                        <a href="#!"><i class="bi-twitter fs-3"></i></a>
+                    </li>
+                    <li class="list-inline-item me-4">
+                        <a href="#!"><i class="bi-youtube fs-3"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#!"><i class="bi-whatsapp fs-3"></i></a>
+                    </li>
+                </ul>
+                <img src="assets/img/whatsapp_img.png" alt="whatsapp" class="my-5">
+            </div> -->
         </div>
         <div class="copyright text-center my-4">
             <img src="assets/img/iso_icon.png" alt="" width="300px">

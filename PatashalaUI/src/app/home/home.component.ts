@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
   listMenuResponse:any = [];
   courselist:any =[];
   tempList:any=[];
+  studentTestimonials:any=[];
   constructor(private httpClient: HttpClient) {
   }
   customOptions: OwlOptions = {
@@ -43,9 +44,10 @@ export class HomeComponent implements OnInit {
       this.listMenuResponse = data;
       this.courselist =[];
       this.tempList =[];
+      this.studentTestimonials=[];
           this.listMenuResponse.dynamicmenu.forEach((element: { listMenuResponse: any; menu:any; menuUrl:any; responses: any; menu_Id :any; submenu_id:any }) => {
             if(element.submenu_id == 10 || element.submenu_id == 25){
-              debugger;
+              
               element.listMenuResponse.forEach((x: { responses: any; menu_Id :any })=>
               {
                 if(x.menu_Id == element.menu_Id){
@@ -59,6 +61,7 @@ export class HomeComponent implements OnInit {
               
             }
           });
+          this.studentTestimonials = data.branches;
         }
     );
   }

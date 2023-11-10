@@ -62,7 +62,7 @@
                            <div class="card-body">
                                <h2 class="card-title mb-4"> {{menuItem.menu}}</h2>
                                <!-- <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p> -->
-                              <p class="card-text"> {{menuItem.response  | slice:0:200 }}</p>
+                              <p class="card-text"> {{menuItem.response}}</p>
                                <a href="{{menuItem.menuUrl}}" class="btn btn-link text-decoration-none text-end mt-3 d-block">View More <i class="bi bi-arrow-right"></i> </a>
                            </div>
                        </div>
@@ -138,7 +138,24 @@
         <h2 class="mb-5 heading_color">Student's Testimonials</h2>
         <div class="row">
             <div class="col-md-12">
-                <div id="testimonial-slider" class="owl-carousel">
+                <!-- <div id="testimonial-slider" class="owl-carousel"> -->
+                 <div *ngFor="let test of studentTestimonials">
+                    <div id="testimonial-slider" class="owl-carousell">
+                        <div class="testimonial">
+                            <span class="icon fa fa-quote-left"></span>
+                            <p class="description">
+                                {{test.testimonialresponses}}
+                            </p>
+                            <div class="testimonial-content">
+                                <div class="pic"><img src="assets/img/testimonials-1.jpg" alt=""></div>
+                                <h3 class="title">{{test.createdBy}}</h3>
+                                <span class="post">{{test.testimonialId}}</span>
+                            </div>
+                        </div>
+                    </div>
+                 </div>   
+                <!-- <div id="testimonial-slider" class="owl-carousell">
+
                     <div class="testimonial">
                         <span class="icon fa fa-quote-left"></span>
                         <p class="description">
@@ -183,7 +200,7 @@
                             <span class="post">Web Designer</span>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

@@ -11,7 +11,6 @@ import { AccaComponent } from './acca/acca.component';
 import { CimaComponent } from './cima/cima.component';
 import { CpaComponent } from './cpa/cpa.component';
 import { OurTeamComponent } from './our-team/our-team.component';
-import { CmausComponent } from './cmaus/cmaus.component';
 
 const routes: Routes = [
   {path:'home', component:HomeComponent},
@@ -20,7 +19,6 @@ const routes: Routes = [
   {path:'recordedvideos', component:RecordedVideosComponent},
   {path:'newsandevents', component:NewsAndEventsComponent},
   {path:'cma', component:CmaComponent},
-  {path:'cmaus', component:CmausComponent},
   {path:'ca', component:CaComponent},
   {path:'acca', component:AccaComponent},
   {path:'cima', component:CimaComponent},
@@ -30,7 +28,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+ // imports: [RouterModule.forRoot(routes)],
+  imports : [RouterModule.forRoot(routes, { useHash: true })], 
   exports: [RouterModule]
 })
 export class AppRoutingModule {

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -10,16 +11,17 @@ export class HeaderComponent {
 listMenuResponse:any = [];
 dynamicmenuItems:any =[];
 childmenuItems:any =[];
-BranchAddress:any = [];
-constructor(private httpClient: HttpClient) {
+constructor(private httpClient: HttpClient,
+  private router: Router) {
 }
 
 ngOnInit(){
-  this.httpClient.get<any>("assets/data.json").subscribe((data)=>{
+  // this.httpClient.get<any>("assets/menudata.json").subscribe((data)=>{
+  //  this.listMenuResponse = data.dynamicmenu[0]['listMenuSubMenu'];
+   this.httpClient.get<any>("assets/data.json").subscribe((data)=>{
     this.listMenuResponse = data.dynamicmenu;
     this.dynamicmenuItems = this.listMenuResponse;
     this.childmenuItems = this.listMenuResponse;
-    this.BranchAddress = data.branches;
   });
  // this.getdynamicMenu();
   // this.dynamicmenuItems = this.listMenuResponse;
@@ -744,11 +746,12 @@ getdynamicMenu(){
 ];
 }
 
-clickMethod(event:any){
+redirect(event:any){
   
-//  alert(JSON.stringify(event));
-  event['listMenuResponse'].forEach((element: { responses: any; }) => {
-  console.log(element.responses);
- });
-}
+  this.router.navigate(
+  //  ['/ourteam'],
+    [event.menuUrl],
+    { queryParams: { menuId: event.menu_Id } }
+  );
+  }
 }
