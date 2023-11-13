@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-header',
@@ -12,20 +13,17 @@ listMenuResponse:any = [];
 dynamicmenuItems:any =[];
 childmenuItems:any =[];
 constructor(private httpClient: HttpClient,
+  private apiService: ApiService,
   private router: Router) {
 }
 
 ngOnInit(){
-  // this.httpClient.get<any>("assets/menudata.json").subscribe((data)=>{
-  //  this.listMenuResponse = data.dynamicmenu[0]['listMenuSubMenu'];
-   this.httpClient.get<any>("assets/data.json").subscribe((data)=>{
-    this.listMenuResponse = data.dynamicmenu;
+   //this.httpClient.get<any>("assets/data.json").subscribe((data)=>{
+    this.apiService.getData().subscribe((data:any)=>{
+    this.listMenuResponse = data.listMenuSubMenu;
     this.dynamicmenuItems = this.listMenuResponse;
     this.childmenuItems = this.listMenuResponse;
   });
- // this.getdynamicMenu();
-  // this.dynamicmenuItems = this.listMenuResponse;
-  // this.childmenuItems = this.listMenuResponse;
 
 }
 
@@ -747,11 +745,23 @@ getdynamicMenu(){
 }
 
 redirect(event:any){
-  
-  this.router.navigate(
-  //  ['/ourteam'],
-    [event.menuUrl],
-    { queryParams: { menuId: event.menu_Id } }
-  );
+  debugger;
+  this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+    this.router.navigate( [event.menuUrl],
+        { queryParams: { menuId: event.menu_Id } });
+});
+  // this.router.navigate(
+  // //  ['/ourteam'],
+  //   [event.menuUrl],
+  //   { queryParams: { menuId: event.menu_Id } }
+  // );
   }
+
+redirectSubmenu(event:any){
+  debugger;
+  this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+    this.router.navigate( [event.menuUrl],
+        { queryParams: { menuId: event.menu_Id } });
+});
+}
 }

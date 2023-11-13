@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ApiService } from '../api.service';
+import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -12,23 +15,29 @@ export class FooterComponent {
   listMenuResponse:any = [];
   dynamicmenuItems:any =[];
   childmenuItems:any =[];
-  constructor(private httpClient: HttpClient) {
+  constructor(private httpClient: HttpClient,
+  private apiService: ApiService,
+  private router: Router
+  ) {
   }
 
-  // ngOnInit(){
-  //   this.aboutPatashala = "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.\r\nAccounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.";
-  // }
   ngOnInit(){
-    this.httpClient.get<any>("assets/data.json").subscribe((data)=>{
-      this.listMenuResponse = data.dynamicmenu;
+   // this.httpClient.get<any>("assets/data.json").subscribe((data)=>{
+   //   this.listMenuResponse = data.dynamicmenu;
+   this.apiService.getData().subscribe((data:any)=>{
+     this.listMenuResponse = data.listMenuSubMenu
       this.dynamicmenuItems = this.listMenuResponse;
       this.childmenuItems = this.listMenuResponse;
     });
-   // this.getdynamicMenu();
-    // this.dynamicmenuItems = this.listMenuResponse;
-    // this.childmenuItems = this.listMenuResponse;
-  
   }
+
+  redirect(event:any){
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+      this.router.navigate( [event.menuUrl],
+          { queryParams: { menuId: event.menu_Id } });
+     });
+  }
+
   clickMethod(event:any){
   
     //  alert(JSON.stringify(event));

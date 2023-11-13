@@ -32,7 +32,7 @@
                     <div *ngFor="let submenuItems of dynamicmenuItems">
                     
                     <div *ngIf="submenuItems.submenu_id == menuItem.menu_Id">
-                        <a class="dropdown-item" href="{{submenuItems.menuUrl}}" >
+                        <a class="dropdown-item"  (click) = "redirect(submenuItems)" >
                             {{submenuItems.menu}}
                         </a>
                         <div *ngFor="let subsubmenuItems of dynamicmenuItems">

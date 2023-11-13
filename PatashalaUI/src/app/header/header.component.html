@@ -49,11 +49,14 @@
                             <a class="dropdown-item"  (click) = "redirect(submenuItems)" *ngIf = "menuItem.menu_Id == submenuItems.submenu_id"> 
 
                            <!-- <a class="dropdown-item"  (click)="clickMethod(submenuItems)" href="{{submenuItems.menuUrl}}" *ngIf = "menuItem.menu_Id == submenuItems.submenu_id">  -->
-                            {{submenuItems.menu}}{{submenuItems.menu_Id}}{{submenuItems.submenu_id}}
+                            {{submenuItems.menu}}
+                            <!-- {{submenuItems.menu_Id}}{{submenuItems.submenu_id}} -->
                             <ul class="dropdown">
                                 <ul *ngFor="let subsubmenuItems of childmenuItems">
-                                    <a class="dropdown-item" href="{{subsubmenuItems.menuUrl}}" *ngIf = "submenuItems.menu_Id == subsubmenuItems.submenu_id"> 
-                                        {{subsubmenuItems.menu}} {{subsubmenuItems.menu_Id}} {{subsubmenuItems.submenu_id}}
+                                    <!-- <a class="dropdown-item" href="{{subsubmenuItems.menuUrl}}" *ngIf = "submenuItems.menu_Id == subsubmenuItems.submenu_id">  -->
+                                        <a class="dropdown-item" (click) = "redirectSubmenu(subsubmenuItems)" *ngIf = "submenuItems.menu_Id == subsubmenuItems.submenu_id"> 
+                                        <!-- {{subsubmenuItems.menu}} {{subsubmenuItems.menu_Id}} {{subsubmenuItems.submenu_id}} -->
+                                        {{subsubmenuItems.menu}}
                                     </a>
                                 </ul>
                             </ul>
