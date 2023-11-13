@@ -12,6 +12,9 @@ export class HeaderComponent {
 listMenuResponse:any = [];
 dynamicmenuItems:any =[];
 childmenuItems:any =[];
+email:any;
+phone:any;
+address:any;
 constructor(private httpClient: HttpClient,
   private apiService: ApiService,
   private router: Router) {
@@ -20,6 +23,10 @@ constructor(private httpClient: HttpClient,
 ngOnInit(){
    //this.httpClient.get<any>("assets/data.json").subscribe((data)=>{
     this.apiService.getData().subscribe((data:any)=>{
+      debugger;
+      this.email = data.branches[0].primaryEmail;
+      this.phone = data.branches[0].primaryPhonenumber;
+      this.address = data.branches[0].city + ' , ' + data.branches[0].country;
     this.listMenuResponse = data.listMenuSubMenu;
     this.dynamicmenuItems = this.listMenuResponse;
     this.childmenuItems = this.listMenuResponse;
