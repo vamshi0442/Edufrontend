@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-header',
@@ -10,20 +12,25 @@ export class HeaderComponent {
 listMenuResponse:any = [];
 dynamicmenuItems:any =[];
 childmenuItems:any =[];
-BranchAddress:any = [];
-constructor(private httpClient: HttpClient) {
+email:any;
+phone:any;
+address:any;
+constructor(private httpClient: HttpClient,
+  private apiService: ApiService,
+  private router: Router) {
 }
 
 ngOnInit(){
-  this.httpClient.get<any>("assets/data.json").subscribe((data)=>{
-    this.listMenuResponse = data.dynamicmenu;
+   //this.httpClient.get<any>("assets/data.json").subscribe((data)=>{
+    this.apiService.getData().subscribe((data:any)=>{
+      debugger;
+      this.email = data.branches[0].primaryEmail;
+      this.phone = data.branches[0].primaryPhonenumber;
+      this.address = data.branches[0].city + ' , ' + data.branches[0].country;
+    this.listMenuResponse = data.listMenuSubMenu;
     this.dynamicmenuItems = this.listMenuResponse;
     this.childmenuItems = this.listMenuResponse;
-    this.BranchAddress = data.branches;
   });
- // this.getdynamicMenu();
-  // this.dynamicmenuItems = this.listMenuResponse;
-  // this.childmenuItems = this.listMenuResponse;
 
 }
 
@@ -744,11 +751,24 @@ getdynamicMenu(){
 ];
 }
 
-clickMethod(event:any){
-  
-//  alert(JSON.stringify(event));
-  event['listMenuResponse'].forEach((element: { responses: any; }) => {
-  console.log(element.responses);
- });
+redirect(event:any){
+  debugger;
+  this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+    this.router.navigate( [event.menuUrl],
+        { queryParams: { menuId: event.menu_Id } });
+});
+  // this.router.navigate(
+  // //  ['/ourteam'],
+  //   [event.menuUrl],
+  //   { queryParams: { menuId: event.menu_Id } }
+  // );
+  }
+
+redirectSubmenu(event:any){
+  debugger;
+  this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+    this.router.navigate( [event.menuUrl],
+        { queryParams: { menuId: event.menu_Id } });
+});
 }
 }

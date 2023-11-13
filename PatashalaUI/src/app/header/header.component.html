@@ -2,15 +2,15 @@
 <div class="topnav">
     <nav class="navbar navbar-light topnavbg">
         <div class="container">
-            <ul class="nav" *ngFor="let branch of  BranchAddress">
+            <ul class="nav">
                 <li class="list-inline-item me-4">
-                    <p class="text-white mb-0"><i class="bi-phone fs-5 "></i>{{branch.primaryPhonenumber}}</p>
+                    <p class="text-white mb-0"><i class="bi-phone fs-5 "></i> {{phone}}</p>
                 </li>
                 <li class="list-inline-item me-4">
-                    <p class="text-white mb-0"><i class="bi-envelope fs-5 "></i> {{branch.primaryEmail}}</p>
+                    <p class="text-white mb-0"><i class="bi-envelope fs-5 "></i> {{email}}</p>
                 </li>
                 <li class="list-inline-item">
-                    <p class="text-white mb-0"><i class="bi-pin-map fs-5 "></i> {{branch.addessLine2}}, {{branch.city}}</p>                            
+                    <p class="text-white mb-0"><i class="bi-pin-map fs-5 "></i> {{address}}</p>                            
                 </li>
             </ul>
             <ul class="nav">
@@ -39,17 +39,24 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="dynamicmuenuItems">
+      
         <ul class="navbar-nav">
             <li class="nav-item dropdown" *ngFor="let menuItem of listMenuResponse">
+            
                 <a class="nav-link text-dark dropdown-toggle" href="#" data-bs-toggle="dropdown" *ngIf = "menuItem.submenu_id==0" > {{menuItem.menu}}</a>
-                  <ul class="dropdown-menu">
+                <ul class="dropdown-menu">
                         <ul *ngFor="let submenuItems of dynamicmenuItems">
-                           <a class="dropdown-item"  (click)="clickMethod(submenuItems)" href="{{submenuItems.menuUrl}}" *ngIf = "menuItem.menu_Id == submenuItems.submenu_id"> 
+                            <a class="dropdown-item"  (click) = "redirect(submenuItems)" *ngIf = "menuItem.menu_Id == submenuItems.submenu_id"> 
+
+                           <!-- <a class="dropdown-item"  (click)="clickMethod(submenuItems)" href="{{submenuItems.menuUrl}}" *ngIf = "menuItem.menu_Id == submenuItems.submenu_id">  -->
                             {{submenuItems.menu}}
+                            <!-- {{submenuItems.menu_Id}}{{submenuItems.submenu_id}} -->
                             <ul class="dropdown">
                                 <ul *ngFor="let subsubmenuItems of childmenuItems">
-                                    <a class="dropdown-item" href="{{subsubmenuItems.menuUrl}}" *ngIf = "submenuItems.menu_Id == subsubmenuItems.submenu_id"> 
-                                        {{subsubmenuItems.menu}} 
+                                    <!-- <a class="dropdown-item" href="{{subsubmenuItems.menuUrl}}" *ngIf = "submenuItems.menu_Id == subsubmenuItems.submenu_id">  -->
+                                        <a class="dropdown-item" (click) = "redirectSubmenu(subsubmenuItems)" *ngIf = "submenuItems.menu_Id == subsubmenuItems.submenu_id"> 
+                                        <!-- {{subsubmenuItems.menu}} {{subsubmenuItems.menu_Id}} {{subsubmenuItems.submenu_id}} -->
+                                        {{subsubmenuItems.menu}}
                                     </a>
                                 </ul>
                             </ul>
@@ -58,6 +65,7 @@
                   </ul>
             </li>
         </ul>
+
       </div>
       <!-- <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
         <ul class="navbar-nav">

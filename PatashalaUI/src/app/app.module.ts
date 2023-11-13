@@ -20,8 +20,6 @@ import { CaComponent } from './ca/ca.component';
 import { AccaComponent } from './acca/acca.component';
 import { CimaComponent } from './cima/cima.component';
 import { CpaComponent } from './cpa/cpa.component';
-import { CpcComponent } from './cpc/cpc.component';
-import { CmausComponent } from './cmaus/cmaus.component';
 
 @NgModule({
   declarations: [
@@ -38,9 +36,7 @@ import { CmausComponent } from './cmaus/cmaus.component';
     CaComponent,
     AccaComponent,
     CimaComponent,
-    CpaComponent,
-    CpcComponent,
-    CmausComponent
+    CpaComponent
   ],
   imports: [
     BrowserModule

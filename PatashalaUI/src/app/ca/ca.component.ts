@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ApiService } from '../api.service';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-ca',
   templateUrl: './ca.component.html',
@@ -8,25 +10,30 @@ import { HttpClient } from '@angular/common/http';
 export class CaComponent {
   listMenuResponse:any = [];
   caresponses:any =[];
-  casubheading:any=[];
-  constructor(private httpClient: HttpClient) {
+  menuId: any;
+  constructor(private httpClient: HttpClient,
+    private route: ActivatedRoute,
+    private apiService: ApiService,
+    ) {
   }
 
   ngOnInit(){
-    this.httpClient.get<any>("assets/data.json").subscribe((data)=>{
+    this.route.queryParams.subscribe(params=>{
       
-      this.listMenuResponse = data;
+      this.menuId= params['menuId'];
+    });
 
-      // this.cparesponses =  JSON.stringify(this.listMenuResponse.dynamicmenu);
-      
-          this.listMenuResponse.dynamicmenu.forEach((element: { listMenuResponse: any; }) => {
-            element.listMenuResponse.forEach((x: { responses: any; menu_Id :any;responses_Subheading:any })=>
+    // this.httpClient.get<any>("assets/data.json").subscribe((data)=>{
+      this.apiService.getData().subscribe((data:any)=>{
+      debugger;
+      this.listMenuResponse = data.listMenuSubMenu;
+          this.listMenuResponse.forEach((element: { listMenuResponse: any; }) => {
+            element.listMenuResponse.forEach((x: { responses: any; menu_Id :any })=>
               {
                 // menu_Id:9 submenu_id:2
-                if(x.menu_Id == 23){
+                if(x.menu_Id == this.menuId){
                   
-                  this.caresponses =  x.responses;
-                  this.casubheading= x.responses_Subheading;
+                  this.caresponses.push({menu:x.responses});
                 }
                 
               })

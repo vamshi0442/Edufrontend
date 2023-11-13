@@ -71,38 +71,111 @@
             </div>
         </div>
         <h1 class="text-center">Our Branches</h1>
+        <!-- {{branchTestimonials}} -->
         <p class="text-center w-75 m-auto">Looking for additional support or have questions about Patashala? <br>Our team is here help.</p>
-        <div class="row my-3">
-        
+        <div class="row my-3" *ngFor="let branch of branchTestimonials">
             <div class="col-lg-4">
-                <div class="branch d-flex align-items-stretch flex-wrap p-4">
+                <div class="branch d-flex align-items-stretch flex-wrap p-4 pb-0">
                     <ul class="list-inline w-100">
-                        <li class="list-inline-item"><h4 class="mb-1">India</h4></li>
+                        <li class="list-inline-item"><h4 class="mb-1">{{branch.country}}</h4></li>
                         <li class="list-inline-item float-end"><img src="assets/img/ind.png" width="50" /></li>
+
                     </ul>
                     <div class="address">
-                        <h5 class="mb-3">M-11, Anna Nagar East, Anna Nagar East, Chennai</h5>
-                        <h5 class="mb-5">00442626012</h5>
+                        <h5 class="mb-3">{{branch.housenumber}}, 
+                            {{branch.addessLine1}} {{branch.addessLine2}}, 
+                            {{branch.city}} {{branch.district}} {{branch.state}} {{branch.zipcode}} </h5>
+                        <h5 class="mb-5">{{branch.primaryPhonenumber}}</h5>
                         <a href="#" class="text-decoration-none fw-bold">Explore</a> 
                     </div> 
                 </div>
             </div>
-            <div class="col-lg-4">
-                <div class="branch d-flex align-items-stretch flex-wrap p-4">
-                    <ul class="list-inline w-100">
-                        <li class="list-inline-item"><h4 class="mb-1">India</h4></li>
-                        <li class="list-inline-item float-end"><img src="assets/img/ind.png" width="50" /></li>
-                    </ul>
-                    <div class="address">
-                        <h5 class="mb-3">M-11, Anna Nagar East, Anna Nagar East, Chennai</h5>
-                        <h5 class="mb-5">00442626012</h5>
-                        <a href="#" class="text-decoration-none fw-bold">Explore</a> 
-                    </div> 
-                </div>
-            </div>
+
         </div>
-        <div class="mt-4"></div>
-    
+        <!-- <div class="row my-3">
+            <div class="col-lg-4">
+                <div class="branch d-flex align-items-stretch flex-wrap p-4 pb-0">
+                    <ul class="list-inline w-100">
+                        <li class="list-inline-item"><h4 class="mb-1">United States</h4></li>
+                        <li class="list-inline-item float-end"><img src="assets/img/usa.png" width="50" /></li>
+                    </ul>
+                    <div class="address">
+                        <h5 class="mb-3">4985 Alexander Drive,Collection, Texas</h5>
+                        <h5 class="mb-5">940-391-7463</h5>
+                        <a href="#" class="text-decoration-none fw-bold">Explore</a> 
+                    </div> 
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="branch d-flex align-items-stretch flex-wrap p-4">
+                    <ul class="list-inline w-100">
+                        <li class="list-inline-item"><h4 class="mb-1">India</h4></li>
+                        <li class="list-inline-item float-end"><img src="assets/img/ind.png" width="50" /></li>
+                    </ul>
+                    <div class="address">
+                        <h5 class="mb-3">M-11, Anna Nagar East, Anna Nagar East, Chennai</h5>
+                        <h5 class="mb-5">00442626012</h5>
+                        <a href="#" class="text-decoration-none fw-bold">Explore</a> 
+                    </div> 
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="branch d-flex align-items-stretch flex-wrap p-4">
+                    <ul class="list-inline w-100">
+                        <li class="list-inline-item"><h4 class="mb-1">United States</h4></li>
+                        <li class="list-inline-item float-end"><img src="assets/img/usa.png" width="50" /></li>
+                    </ul>
+                    <div class="address">
+                        <h5 class="mb-3">4985 Alexander Drive,Collection, Texas</h5>
+                        <h5 class="mb-5">940-391-7463</h5>
+                        <a href="#" class="text-decoration-none fw-bold">Explore</a> 
+                    </div> 
+                </div>
+            </div>
+        </div> -->
+        <!-- <div class="mt-4"></div>
+        <div class="row my-3">
+            <div class="col-lg-4">
+                <div class="branch d-flex align-items-stretch flex-wrap p-4 pb-0">
+                    <ul class="list-inline w-100">
+                        <li class="list-inline-item"><h4 class="mb-1">United States</h4></li>
+                        <li class="list-inline-item float-end"><img src="assets/img/usa.png" width="50" /></li>
+                    </ul>
+                    <div class="address">
+                        <h5 class="mb-3">4985 Alexander Drive,Collection, Texas</h5>
+                        <h5 class="mb-5">940-391-7463</h5>
+                        <a href="#" class="text-decoration-none fw-bold">Explore</a> 
+                    </div> 
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="branch d-flex align-items-stretch flex-wrap p-4">
+                    <ul class="list-inline w-100">
+                        <li class="list-inline-item"><h4 class="mb-1">India</h4></li>
+                        <li class="list-inline-item float-end"><img src="assets/img/ind.png" width="50" /></li>
+                    </ul>
+                    <div class="address">
+                        <h5 class="mb-3">M-11, Anna Nagar East, Anna Nagar East, Chennai</h5>
+                        <h5 class="mb-5">00442626012</h5>
+                        <a href="#" class="text-decoration-none fw-bold">Explore</a> 
+                    </div> 
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="branch d-flex align-items-stretch flex-wrap p-4">
+                    <ul class="list-inline w-100">
+                        <li class="list-inline-item"><h4 class="mb-1">United States</h4></li>
+                        <li class="list-inline-item float-end"><img src="assets/img/usa.png" width="50" /></li>
+                    </ul>
+                    <div class="address">
+                        <h5 class="mb-3">4985 Alexander Drive,Collection, Texas</h5>
+                        <h5 class="mb-5">940-391-7463</h5>
+                        <a href="#" class="text-decoration-none fw-bold">Explore</a> 
+                    </div> 
+                </div>
+            </div>
+        </div> -->
+
         <div class="row quick">
             <div class="col-md-10">
                 <h1>Discover the power of Patashala</h1>
