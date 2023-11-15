@@ -18,8 +18,7 @@ export class ApiService {
 
   public getData(){
     const headers= new HttpHeaders().set('content-type', 'application/json')
-    return this.httpClient.get<any>(`${this.baseurl}PatashalaResponses`,this.httpOptions);
+   // return this.httpClient.get<any>(`${this.baseurl}PatashalaResponses`,this.httpOptions);
+   return this.httpClient.get<any>("assets/response_1699881964735.json");
 }
-
-
 }

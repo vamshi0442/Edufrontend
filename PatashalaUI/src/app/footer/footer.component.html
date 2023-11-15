@@ -25,25 +25,46 @@
                 </ul>
                 <img src="assets/img/whatsapp_img.png" alt="whatsapp" class="my-5">
             </div>
-            <!-- code for loading dynamic footer starts here-->
-            <div class="col-lg-3 col-sm-6" *ngFor="let menuItem of listMenuResponse">
-                <div *ngIf = "menuItem.submenu_id==0 && menuItem.menu_Id != 5 && menuItem.menu_Id != 4 ">
-                    <h2> {{menuItem.menu}}</h2>
-                    <div *ngFor="let submenuItems of dynamicmenuItems">
-                    
-                    <div *ngIf="submenuItems.submenu_id == menuItem.menu_Id">
-                        <a class="dropdown-item"  (click) = "redirect(submenuItems)" >
-                            {{submenuItems.menu}}
-                        </a>
-                        <div *ngFor="let subsubmenuItems of dynamicmenuItems">
-                            <a class="dropdown-item" href="{{subsubmenuItems.menuUrl}}" *ngIf = "submenuItems.menu_Id == subsubmenuItems.submenu_id"> 
-                                {{subsubmenuItems.menu}} 
-                            </a>
-                        </div>
-                    </div>  
-                    </div> 
-                </div>
+            <div class="col-lg-3 col-sm-6 ">
+                <h2>About Patashala</h2>
+                <ul class="list-inline mb-2">
+                    <li><a [routerLink]="['/aboutus']" class="text-decoration-none"><i class="bi bi-chevron-double-right"></i> About Patashala </a></li>
+                    <li><a [routerLink]="['/ourteam']" class="text-decoration-none"><i class="bi bi-chevron-double-right"></i> Our Team </a></li>
+                   
+                </ul>
             </div>
+            <div class="col-lg-3 col-sm-6">
+                <h2>Courses</h2>
+                <ul class="list-inline mb-2">
+                    <li><a [routerLink]="['/cpa']" class="text-decoration-none"><i class="bi bi-chevron-double-right"></i> Commerce Professional Courses </a></li>
+                   
+                </ul>
+                <p class="mb-0">Domestic Courses </p>
+                <ul class="list-inline mb-2">
+                    <li><a [routerLink]="['/cs']" class="text-decoration-none"><i class="bi bi-chevron-double-right"></i> CS</a></li>
+                    <li><a [routerLink]="['/ca']" class="text-decoration-none"><i class="bi bi-chevron-double-right"></i> CA</a></li>
+                    <li><a [routerLink]="['/cma']" class="text-decoration-none"><i class="bi bi-chevron-double-right"></i> CMA</a></li>
+                </ul>
+                <p class="mb-0">International Courses</p>
+                <ul class="list-inline mb-2">
+                    
+                    <li><a [routerLink]="['/acca']" class="text-decoration-none"><i class="bi bi-chevron-double-right"></i> ACCA</a></li>
+                    <li><a [routerLink]="['/cima']" class="text-decoration-none"><i class="bi bi-chevron-double-right"></i> CIMA</a></li>
+                    <li><a [routerLink]="['/cima_us']" class="text-decoration-none"><i class="bi bi-chevron-double-right"></i> CMA(US)</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <h2>Students</h2>
+                <ul class="list-inline mb-2">
+                    
+                    <li><a [routerLink]="['/study_hub_videos']" class="text-decoration-none"><i class="bi bi-chevron-double-right"></i> Study Hub- Videos</a></li>
+                    <li><a [routerLink]="['/online_live_classes']" class="text-decoration-none"><i class="bi bi-chevron-double-right"></i> Online-Live Classes</a></li>
+                    <li><a [routerLink]="['/recordedvideos']" class="text-decoration-none"><i class="bi bi-chevron-double-right"></i> Resource-Live Classes Recordings</a></li>
+                </ul>
+            </div>
+            <!-- code for loading dynamic footer starts here-->
+            
+            
             <!-- code for loading dynamic menu ends here-->
             <!-- <div class="col-lg-3 col-sm-6">
                 <h2>About Patashala</h2>
