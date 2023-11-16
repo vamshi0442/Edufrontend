@@ -44,15 +44,15 @@ export class HomeComponent implements OnInit {
     nav: true
   }
   ngOnInit(): void {
-    debugger;
-    this.httpClient.get<any>("assets/response_1699881964735.json").subscribe((data)=>{
-      //this.apiService.getData().subscribe((data:any)=>{
+    
+      // this.httpClient.get<any>("assets/response_1699881964735.json").subscribe((data)=>{
+      this.apiService.getData().subscribe((data:any)=>{
       this.listMenuResponse = data.listMenuSubMenu;
       this.courselist =[];
       this.tempList =[];
       this.studentTestimonials=[];
       this.aboutPatashala =[];
-      debugger;
+      
       this.studentTestimonials = data.branches;
           this.listMenuResponse.forEach((element: { listMenuResponse: any; menu:any; menuUrl:any; responses: any; menu_Id :any; submenu_id:any }) => {
             if(element.submenu_id == 10 || element.submenu_id == 25){
@@ -69,7 +69,7 @@ export class HomeComponent implements OnInit {
               
             }
             if(element.menu_Id==6){
-              debugger;
+              
               element.listMenuResponse.forEach((x:{responses: any;})=>{
                 let tt = String(x.responses)
                 this.aboutPatashala.push(tt.substring(0,120));

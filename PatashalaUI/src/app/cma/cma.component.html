@@ -20,8 +20,8 @@
         <div class="row">
             <div class="col-md-12">
                 <h2 class="page-sub-title">CMA</h2>
-                <p >
-                    {{cmaresponses}}</p>
+                <p *ngFor="let result of cmaresponses" style="text-align: justify">
+                    {{result.menu}}</p>
             </div>
         </div>
     </div>

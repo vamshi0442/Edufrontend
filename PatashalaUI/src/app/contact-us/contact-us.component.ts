@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ApiService } from '../api.service';
 
 
 @Component({
@@ -10,7 +11,8 @@ import { HttpClient } from '@angular/common/http';
 export class ContactUsComponent {
   listMenuResponse:any = [];
   branchTestimonials:any=[];
-  constructor(private httpClient: HttpClient) {
+  constructor(private httpClient: HttpClient,
+    private apiService: ApiService) {
   }
   // "branchAddress_Id": 1,
   // "branchAddressName": "Patashala Corporate Office",
@@ -32,7 +34,9 @@ export class ContactUsComponent {
   // "supportSecondaryEmail": null
 
   ngOnInit(): void {
-    this.httpClient.get<any>("assets/data.json").subscribe((data)=>{
+   // this.httpClient.get<any>("assets/data.json").subscribe((data)=>{
+      this.apiService.getData().subscribe((data:any)=>{
+
       this.listMenuResponse = data;
       
       this.branchTestimonials=[];

@@ -25,13 +25,15 @@ export class CaComponent {
 
     // this.httpClient.get<any>("assets/data.json").subscribe((data)=>{
       this.apiService.getData().subscribe((data:any)=>{
-      debugger;
+      
       this.listMenuResponse = data.listMenuSubMenu;
           this.listMenuResponse.forEach((element: { listMenuResponse: any; }) => {
             element.listMenuResponse.forEach((x: { responses: any; menu_Id :any })=>
               {
                 // menu_Id:9 submenu_id:2
-                if(x.menu_Id == this.menuId){
+               // if(x.menu_Id == this.menuId){
+                if(x.menu_Id == 23){
+
                   
                   this.caresponses.push({menu:x.responses});
                 }

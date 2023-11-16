@@ -19,7 +19,7 @@ ngOnInit(){
 }
 
 getdynamicMenu(){
-debugger;
+
   this.listMenuResponse = [
 
   {

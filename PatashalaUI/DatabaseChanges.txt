@@ -1,0 +1,20 @@
+Select * from MenuSubmenu
+
+Select * from MenuResponses where Menu_Id=24
+
+update MenuSubmenu set MenuUrl='aboutus' where Menu_Id=6
+update MenuSubmenu set MenuUrl='ourteam' where Menu_Id=7
+update MenuSubmenu set MenuUrl='' where Menu_Id=10
+update MenuSubmenu set MenuUrl='ca' where Menu_Id=23
+update MenuSubmenu set MenuUrl='cma' where Menu_Id=24
+update MenuSubmenu set MenuUrl='' where Menu_Id=25
+update MenuSubmenu set MenuUrl='acca' where Menu_Id=26
+update MenuSubmenu set MenuUrl='cima' where Menu_Id=27
+update MenuSubmenu set MenuUrl='cima_us' where Menu_Id=28
+update MenuSubmenu set MenuUrl='study_hub_videos' where Menu_Id=11
+update MenuSubmenu set MenuUrl='online_live_classes' where Menu_Id=12
+update MenuSubmenu set MenuUrl='recordedvideos' where Menu_Id=13
+update MenuSubmenu set MenuUrl='newsandevents' where Menu_Id=14
+update MenuSubmenu set MenuUrl='' where Menu_Id=15
+update MenuSubmenu set MenuUrl='' where Menu_Id=16
+update MenuSubmenu set MenuUrl='' where Menu_Id=17

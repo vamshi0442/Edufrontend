@@ -1,14 +1,15 @@
+
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ApiService } from '../api.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-acca',
-  templateUrl: './acca.component.html',
-  styleUrls: ['./acca.component.css']
+  selector: 'app-cima-us',
+  templateUrl: './cima-us.component.html',
+  styleUrls: ['./cima-us.component.css']
 })
-export class AccaComponent {
+export class CimaUsComponent {
   listMenuResponse:any = [];
   caresponses:any =[];
   menuId: any;
@@ -49,6 +50,7 @@ export class AccaComponent {
    
   }
 }
+
 
 
 
