@@ -33,6 +33,12 @@
           },
           "configurations": {
             "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.production.ts"
+                }
+              ],
               "budgets": [
                 {
                   "type": "initial",
@@ -63,7 +69,7 @@
           "configurations": {
             "production": {
               "browserTarget": "patashala:build:production",
-               "host": "patashalaui.azurewebsites.net",
+               "host": "patashala.azurewebsites.net",
                "port": 443
 
             },
