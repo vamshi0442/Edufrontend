@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-cmaus',
@@ -10,11 +11,13 @@ export class CmausComponent {
   listMenuResponse:any = [];
   cmausresponses:any =[];
   cmaussubheading:any=[];
-  constructor(private httpClient: HttpClient) {
+  constructor(private httpClient: HttpClient,
+    private apiService: ApiService) {
   }
 
   ngOnInit(){
-    this.httpClient.get<any>("assets/data.json").subscribe((data)=>{
+   // this.httpClient.get<any>("assets/data.json").subscribe((data)=>{
+      this.apiService.getData().subscribe((data:any)=>{
       
       this.listMenuResponse = data;
 

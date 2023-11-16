@@ -1,5 +1,30 @@
 
-<p *ngFor="let response of cparesponses">
-    {{response.menu}}
-</p>
+
+<section class="aboutus py-5">
+    <div class="container position-relative">
+        <div class="row justify-content-end">
+            <div class="col-xl-12 text-center">
+                <div class="text-white ms-auto">
+                    <!-- Page heading-->
+                    <h1 class="mb-2">CPC-Commerce Professioanal</h1>
+                  
+                    <a href="javascript:void(0)" class="text-decoration-none textprimary">Courses <i class="bi bi-chevron-right"></i></a> <span class="textprimary">CPC-Commerce Professioanal</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+            <br>
+                <p *ngFor="let response of cparesponses" style="text-align: justify">
+                    {{response.menu}}
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
 

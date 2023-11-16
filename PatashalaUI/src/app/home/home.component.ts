@@ -20,12 +20,13 @@ export class HomeComponent implements OnInit {
   }
   customOptions: OwlOptions = {
     loop: true,
+    autoplay: true,
     mouseDrag: false,
     touchDrag: false,
     pullDrag: false,
     dots: false,
     navSpeed: 700,
-    navText: ['', ''],
+    navText: ["<i class='bi bi-chevron-left'></i>", "<i class='bi bi-chevron-right'></i>"],
     responsive: {
       0: {
         items: 1
@@ -43,15 +44,15 @@ export class HomeComponent implements OnInit {
     nav: true
   }
   ngOnInit(): void {
-    debugger;
-    //this.httpClient.get<any>("assets/data.json").subscribe((data)=>{
+    
+      // this.httpClient.get<any>("assets/response_1699881964735.json").subscribe((data)=>{
       this.apiService.getData().subscribe((data:any)=>{
       this.listMenuResponse = data.listMenuSubMenu;
       this.courselist =[];
       this.tempList =[];
       this.studentTestimonials=[];
       this.aboutPatashala =[];
-      debugger;
+      
       this.studentTestimonials = data.branches;
           this.listMenuResponse.forEach((element: { listMenuResponse: any; menu:any; menuUrl:any; responses: any; menu_Id :any; submenu_id:any }) => {
             if(element.submenu_id == 10 || element.submenu_id == 25){
@@ -60,7 +61,7 @@ export class HomeComponent implements OnInit {
               {
                 if(x.menu_Id == element.menu_Id){
                   this.tempList.push({menu:element.menu, menuUrl:element.menuUrl, menu_Id: element.menu_Id, response: x.responses});
-                 this.courselist =  this.tempList;
+                  this.courselist =  this.tempList;
                   // this.courselist = JSON.stringify(this.tempList);
                 }
                 
@@ -68,8 +69,10 @@ export class HomeComponent implements OnInit {
               
             }
             if(element.menu_Id==6){
+              
               element.listMenuResponse.forEach((x:{responses: any;})=>{
-                this.aboutPatashala.push(x.responses);
+                let tt = String(x.responses)
+                this.aboutPatashala.push(tt.substring(0,120));
               })
             }
           });

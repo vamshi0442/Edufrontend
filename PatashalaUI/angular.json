@@ -62,7 +62,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "patashala:build:production"
+              "browserTarget": "patashala:build:production",
+               "host": "patashalaui.azurewebsites.net",
+               "port": 443
+
             },
             "development": {
               "browserTarget": "patashala:build:development"

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { CarouselModule } from 'ngx-owl-carousel-o';
@@ -20,6 +21,10 @@ import { CaComponent } from './ca/ca.component';
 import { AccaComponent } from './acca/acca.component';
 import { CimaComponent } from './cima/cima.component';
 import { CpaComponent } from './cpa/cpa.component';
+import { CsComponent } from './cs/cs.component';
+import { CimaUsComponent } from './cima-us/cima-us.component';
+import { StudyHubVideosComponent } from './study-hub-videos/study-hub-videos.component';
+import { OnlineLiveClassesComponent } from './online-live-classes/online-live-classes.component';
 
 @NgModule({
   declarations: [
@@ -36,10 +41,15 @@ import { CpaComponent } from './cpa/cpa.component';
     CaComponent,
     AccaComponent,
     CimaComponent,
-    CpaComponent
+    CpaComponent,
+    CsComponent,
+    CimaUsComponent,
+    StudyHubVideosComponent,
+    OnlineLiveClassesComponent
   ],
   imports: [
     BrowserModule
+  , BrowserAnimationsModule
   , AppRoutingModule
   , CarouselModule
   , HttpClientModule

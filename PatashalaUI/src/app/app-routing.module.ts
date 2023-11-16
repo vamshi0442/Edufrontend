@@ -11,6 +11,10 @@ import { AccaComponent } from './acca/acca.component';
 import { CimaComponent } from './cima/cima.component';
 import { CpaComponent } from './cpa/cpa.component';
 import { OurTeamComponent } from './our-team/our-team.component';
+import { CsComponent } from './cs/cs.component';
+import { CimaUsComponent } from './cima-us/cima-us.component';
+import { OnlineLiveClassesComponent } from './online-live-classes/online-live-classes.component';
+import { StudyHubVideosComponent } from './study-hub-videos/study-hub-videos.component';
 
 const routes: Routes = [
   {path:'home', component:HomeComponent},
@@ -20,10 +24,14 @@ const routes: Routes = [
   {path:'newsandevents', component:NewsAndEventsComponent},
   {path:'cma', component:CmaComponent},
   {path:'ca', component:CaComponent},
+  {path:'cs', component:CsComponent},
   {path:'acca', component:AccaComponent},
   {path:'cima', component:CimaComponent},
   {path:'cpa', component:CpaComponent},
   {path:'ourteam', component:OurTeamComponent},
+  {path:'cima_us', component:CimaUsComponent},
+  {path:'online_live_classes', component:OnlineLiveClassesComponent},
+  {path:'study_hub_videos', component:StudyHubVideosComponent},
   {path:'', component:HomeComponent}
 ];
 
