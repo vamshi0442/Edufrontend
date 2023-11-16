@@ -6,8 +6,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class ApiService {
  // Base url
- testbaseurl = 'https://localhost:7269/api/';
- // prodbaseurl = 'https://patashalapi.azurewebsites.net/api/'; 
+ //testbaseurl = 'https://localhost:7269/api/';
+  prodbaseurl = 'https://patashalapi.azurewebsites.net/api/'; 
  constructor(private httpClient: HttpClient) {}
  // Http Headers
  httpOptions = {
@@ -19,7 +19,7 @@ export class ApiService {
 
   public getData(){
     const headers= new HttpHeaders().set('content-type', 'application/json')
-    return this.httpClient.get<any>(`${this.testbaseurl}PatashalaResponses`,this.httpOptions);
+    return this.httpClient.get<any>(`${this.prodbaseurl}GetData`,this.httpOptions);
    // return this.httpClient.get<any>("assets/response_1699881964735.json");
    // return this.httpClient.get<any>(`${this.prodbaseurl}GetData`,this.httpOptions);
 
