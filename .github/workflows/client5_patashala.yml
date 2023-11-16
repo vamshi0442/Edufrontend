@@ -19,7 +19,8 @@ jobs:
       - name: Set up Node.js version
         uses: actions/setup-node@v3
         with:
-          node-version: '18.17.1'
+          node-version: '20.x'
+
       - name: npm install, build, and test
         run: |
           npm install
@@ -58,4 +59,4 @@ jobs:
           app-name: 'Patashala'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_712397B269E642ECA447211AAA2B03F6 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_929ACD637DF1406A9E3067BF85F37299 }}
