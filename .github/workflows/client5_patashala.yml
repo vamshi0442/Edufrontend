@@ -50,10 +50,7 @@ jobs:
           name: node-app
           
       - name: Unzip artifact for deployment
-        uses: jvandemo/unzip-action@v2
-        with:
-          zipfile: ./release.zip
-          dest: ./wwwroot/
+        run: unzip release.zip -d ./wwwroot/
       
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
