@@ -48,9 +48,12 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: node-app
-
-       - name: Extract Artifact
-        run: unzip ./release.zip -d ./wwwroot
+          
+      - name: Unzip artifact for deployment
+        uses: vamshi0442/unzip-action@v2
+        with:
+          zipfile: ./release/release.zip
+          dest: ./wwwroot/
       
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
