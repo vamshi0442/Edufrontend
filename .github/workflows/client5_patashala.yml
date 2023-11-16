@@ -50,7 +50,7 @@ jobs:
           name: node-app
           
       - name: Unzip artifact for deployment
-        run: unzip release.zip -d ./wwwroot/ && mv ./wwwroot/path/to/subfolder/dist/* ./wwwroot/ && rm -rf ./wwwroot/path/to/subfolder/dist
+        run: unzip release.zip -d ./wwwroot/ && mv ./wwwroot/home/runner/work/Edufrontend/Edufrontend/PatashalaUI/* ./wwwroot/ && rm -rf ./wwwroot/home/runner/work/Edufrontend/Edufrontend/PatashalaUI/
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
