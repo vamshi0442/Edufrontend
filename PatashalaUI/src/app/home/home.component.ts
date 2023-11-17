@@ -72,7 +72,7 @@ export class HomeComponent implements OnInit {
               
               element.listMenuResponse.forEach((x:{responses: any;})=>{
                 let tt = String(x.responses)
-                this.aboutPatashala.push(tt.substring(0,120));
+                this.aboutPatashala.push(tt.substring(0,620));
               })
             }
           });
