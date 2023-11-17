@@ -14,6 +14,7 @@ export class CimaComponent {
   listMenuResponse:any = [];
   caresponses:any =[];
   menuId: any;
+  responses_Subheading:any =[];
   constructor(private httpClient: HttpClient,
     private route: ActivatedRoute,
     private apiService: ApiService,
@@ -31,14 +32,13 @@ export class CimaComponent {
       
       this.listMenuResponse = data.listMenuSubMenu;
           this.listMenuResponse.forEach((element: { listMenuResponse: any; }) => {
-            element.listMenuResponse.forEach((x: { responses: any; menu_Id :any })=>
+            element.listMenuResponse.forEach((x: { responses: any; menu_Id :any;responses_Subheading:any })=>
               {
-                // menu_Id:9 submenu_id:2
-               // if(x.menu_Id == this.menuId){
-                if(x.menu_Id == 26){
+                if(x.menu_Id == 27){
 
                   
                   this.caresponses.push({menu:x.responses});
+                  this.responses_Subheading= x.responses_Subheading;
                 }
                 
               })

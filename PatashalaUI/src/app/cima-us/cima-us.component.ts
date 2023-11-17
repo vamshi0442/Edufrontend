@@ -34,7 +34,7 @@ export class CimaUsComponent {
               {
                 // menu_Id:9 submenu_id:2
                // if(x.menu_Id == this.menuId){
-                if(x.menu_Id == 26){
+                if(x.menu_Id == 28){
 
                   
                   this.caresponses.push({menu:x.responses});

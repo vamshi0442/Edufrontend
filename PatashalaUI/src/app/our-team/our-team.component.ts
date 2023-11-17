@@ -40,7 +40,7 @@ export class OurTeamComponent {
 
             if(response.length != 0){
                this.ourteamresponses  = response;
-               console.log(JSON.stringify(this.menuId + response))
+               console.log(JSON.stringify(this.ourteamresponses ))
             }
             else{
               // console.log(JSON.stringify(this.menuId + response))

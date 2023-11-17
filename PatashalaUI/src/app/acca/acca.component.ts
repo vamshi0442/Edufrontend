@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class AccaComponent {
   listMenuResponse:any = [];
   caresponses:any =[];
+  responses_Subheading:any=[];
   menuId: any;
   constructor(private httpClient: HttpClient,
     private route: ActivatedRoute,
@@ -29,7 +30,7 @@ export class AccaComponent {
       
       this.listMenuResponse = data.listMenuSubMenu;
           this.listMenuResponse.forEach((element: { listMenuResponse: any; }) => {
-            element.listMenuResponse.forEach((x: { responses: any; menu_Id :any })=>
+            element.listMenuResponse.forEach((x: { responses: any; menu_Id :any;responses_Subheading:any })=>
               {
                 // menu_Id:9 submenu_id:2
                // if(x.menu_Id == this.menuId){
@@ -37,6 +38,7 @@ export class AccaComponent {
 
                   
                   this.caresponses.push({menu:x.responses});
+                  this.responses_Subheading = x.responses_Subheading;
                 }
                 
               })

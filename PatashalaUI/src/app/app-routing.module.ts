@@ -9,6 +9,7 @@ import { CmaComponent  } from './cma/cma.component';
 import { CaComponent  } from './ca/ca.component';
 import { AccaComponent } from './acca/acca.component'; 
 import { CimaComponent } from './cima/cima.component';
+import { CmausComponent } from './cmaus/cmaus.component';
 import { CpaComponent } from './cpa/cpa.component';
 import { OurTeamComponent } from './our-team/our-team.component';
 import { CsComponent } from './cs/cs.component';
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path:'recordedvideos', component:RecordedVideosComponent},
   {path:'newsandevents', component:NewsAndEventsComponent},
   {path:'cma', component:CmaComponent},
+  {path:'cmaus', component:CmausComponent},
   {path:'ca', component:CaComponent},
   {path:'cs', component:CsComponent},
   {path:'acca', component:AccaComponent},
