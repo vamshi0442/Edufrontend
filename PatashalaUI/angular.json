@@ -69,7 +69,7 @@
           "configurations": {
             "production": {
               "browserTarget": "patashala:build:production",
-               "host": "mypatashala.azurewebsites.net",
+               "host": "patshala.azurewebsites.net",
                "port": 443
 
             },
