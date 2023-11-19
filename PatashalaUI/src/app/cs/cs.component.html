@@ -18,9 +18,10 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <br>
-                <p style="text-align: justify">
-                    {{csresponses}}</p>
+                <ul *ngFor="let res of csresponses">
+                   <h2 class="page-sub-title">{{res.Content_Subheading}}</h2> 
+                    <p style="text-align: justify">{{res.menu}}</p>
+                </ul>
             </div>
         </div>
     </div>

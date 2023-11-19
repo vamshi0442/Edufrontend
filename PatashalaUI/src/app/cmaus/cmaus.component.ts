@@ -30,15 +30,16 @@ export class CmausComponent {
         
         this.listMenuResponse = data.listMenuSubMenu;
             this.listMenuResponse.forEach((element: { listMenuResponse: any; }) => {
-              element.listMenuResponse.forEach((x: { responses: any; menu_Id :any;responses_Subheading:any })=>
+              element.listMenuResponse.forEach((x: { responses: any; menu_Id :any;responses_Subheading:any;content_Subheading:any })=>
                 {
                   // menu_Id:9 submenu_id:2
                  // if(x.menu_Id == this.menuId){
                   if(x.menu_Id == 28){
   
                     
-                    this.cmausresponses.push({menu:x.responses});
-                    this.cmaussubheading = x.responses_Subheading;
+                    this.cmausresponses.push({menu:x.responses,Content_Subheading:x.content_Subheading});
+                   if (x.responses_Subheading!=null)
+                       this.cmaussubheading = x.responses_Subheading;
                   }
                   
                 })

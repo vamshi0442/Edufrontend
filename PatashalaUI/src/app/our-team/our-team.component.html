@@ -7,9 +7,9 @@
             <div class="col-xl-12 text-center">
                 <div class="text-white ms-auto">
                     <!-- Page heading-->
-                    <h1 class="mb-2">Our Team</h1>
+                    <h1 class="mb-2">{{subheading}}</h1>
                   
-                    <a href="index.html" class="text-decoration-none textprimary">Home <i class="bi bi-chevron-right"></i></a> <span class="textprimary">Our Team</span>
+                    <a href="index.html" class="text-decoration-none textprimary">Home <i class="bi bi-chevron-right"></i></a> <span class="textprimary">{{subheading}}</span>
                 </div>
             </div>
         </div>
@@ -20,7 +20,7 @@
         <div class="row">
             <div class="col-md-12">
                 <ul *ngFor="let res of ourteamresponses">
-        <h2 class="page-sub-title">{{res.menu_Id}}</h2> 
+                   <h2 class="page-sub-title">{{res.Content_Subheading}}</h2> 
                     <p style="text-align: justify">{{res.menu}}</p>
                 </ul>
             </div>

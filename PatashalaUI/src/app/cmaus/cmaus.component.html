@@ -18,11 +18,13 @@
 <section class="container-fluid">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
-                <br>
-                <p *ngFor="let result of cmausresponses" style="text-align: justify">
-                    {{result.menu}}</p>
+            <div class="col-md-12" *ngFor="let result of cmausresponses">
+              
+                <h2 class="page-sub-title">{{result.Content_Subheading}}</h2>
+                <p style="text-align: justify">{{result.menu}}</p>
+          
             </div>
+            
         </div>
     </div>
 </section>

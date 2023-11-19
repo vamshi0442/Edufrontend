@@ -30,14 +30,13 @@ export class CsComponent {
         
         this.listMenuResponse = data.listMenuSubMenu;
           this.listMenuResponse.forEach((element: { listMenuResponse: any; }) => {
-            element.listMenuResponse.forEach((x: { responses: any; menu_Id :any;responses_Subheading:any })=>
+            element.listMenuResponse.forEach((x: { responses: any; menu_Id :any;responses_Subheading:any;content_Subheading:any })=>
               {
-                // menu_Id:9 submenu_id:2
-               // if(x.menu_Id == this.menuId){
-                if(x.menu_Id == 30){
-                  
-                  this.csresponses=x.responses;
-                  this.responses_Subheading = x.responses_Subheading;
+                
+                if(x.menu_Id == 30){                               
+                  this.csresponses.push({menu:x.responses,Content_Subheading:x.content_Subheading});
+                  if (x.responses_Subheading!=null)
+                  this.responses_Subheading = x.responses_Subheading;        
                 }
                 
               })

@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
   aboutPatashala:any =[];
   courselist:any =[];
   tempList:any=[];
+  subheading:any=[];
   studentTestimonials:any=[];
   constructor(private httpClient: HttpClient,
     private apiService: ApiService) {
@@ -54,7 +55,7 @@ export class HomeComponent implements OnInit {
       this.aboutPatashala =[];
       
       this.studentTestimonials = data.branches;
-          this.listMenuResponse.forEach((element: { listMenuResponse: any; menu:any; menuUrl:any; responses: any; menu_Id :any; submenu_id:any }) => {
+          this.listMenuResponse.forEach((element: { listMenuResponse: any; menu:any; menuUrl:any; responses: any; menu_Id :any; submenu_id:any ;content_Subheading:any }) => {
             if(element.submenu_id == 10 || element.submenu_id == 25){
               
               element.listMenuResponse.forEach((x: { responses: any; menu_Id :any })=>
@@ -63,6 +64,7 @@ export class HomeComponent implements OnInit {
                   this.tempList.push({menu:element.menu, menuUrl:element.menuUrl, menu_Id: element.menu_Id, response: x.responses});
                   this.courselist =  this.tempList;
                   // this.courselist = JSON.stringify(this.tempList);
+                 // this.subheading =x.
                 }
                 
               })
@@ -70,9 +72,10 @@ export class HomeComponent implements OnInit {
             }
             if(element.menu_Id==6){
               
-              element.listMenuResponse.forEach((x:{responses: any;})=>{
+              element.listMenuResponse.forEach((x:{responses: any;responses_Subheading:any;})=>{
                 let tt = String(x.responses)
                 this.aboutPatashala.push(tt.substring(0,620));
+                this.subheading = x.responses_Subheading;
               })
             }
           });

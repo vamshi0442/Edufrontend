@@ -26,6 +26,7 @@ import { CsComponent } from './cs/cs.component';
 import { CimaUsComponent } from './cima-us/cima-us.component';
 import { StudyHubVideosComponent } from './study-hub-videos/study-hub-videos.component';
 import { OnlineLiveClassesComponent } from './online-live-classes/online-live-classes.component';
+import { VisionMissionComponent } from './vision-mission/vision-mission.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { OnlineLiveClassesComponent } from './online-live-classes/online-live-cl
     CsComponent,
     CimaUsComponent,
     StudyHubVideosComponent,
-    OnlineLiveClassesComponent
+    OnlineLiveClassesComponent,
+    VisionMissionComponent
   ],
   imports: [
     BrowserModule

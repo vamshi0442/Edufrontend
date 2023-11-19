@@ -30,12 +30,12 @@ export class OurTeamComponent {
       
       this.listMenuResponse = data.listMenuSubMenu;
           this.listMenuResponse.forEach((element: { listMenuResponse: any; }) => {
-            element.listMenuResponse.forEach((x: { responses: any; menu_Id :any;responses_Subheading:any })=>
+            element.listMenuResponse.forEach((x: { responses: any; menu_Id :any;responses_Subheading:any;content_Subheading:any })=>
               {
-                // menu_Id:9 submenu_id:2
-               // if(x.menu_Id == this.menuId){
                 if(x.menu_Id == 7){                  
-                  this.ourteamresponses.push({menu:x.responses,menus:x.menu_Id});
+                  this.ourteamresponses.push({menu:x.responses,Content_Subheading:x.content_Subheading});
+                  if (x.responses_Subheading!=null)
+                       this.subheading = x.responses_Subheading;
                 }
                 
               })
