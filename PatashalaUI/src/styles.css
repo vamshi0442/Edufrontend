@@ -600,3 +600,6 @@ footer.footerBg {
 .owl-theme .card-body {
   padding: 8px;
 }
+.contenttextjustify{
+  text-align: justify;
+  letter-spacing: 0.05em;}

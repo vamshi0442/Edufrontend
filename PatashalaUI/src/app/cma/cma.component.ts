@@ -13,6 +13,7 @@
     listMenuResponse:any = [];
     cmaresponses:any =[];
     menuId: any;
+    Subheading:any = [];
     constructor(private httpClient: HttpClient,
       private route: ActivatedRoute,
       private apiService: ApiService,
@@ -30,14 +31,14 @@
         
         this.listMenuResponse = data.listMenuSubMenu;
             this.listMenuResponse.forEach((element: { listMenuResponse: any; }) => {
-              element.listMenuResponse.forEach((x: { responses: any; menu_Id :any })=>
+              element.listMenuResponse.forEach((x: { responses: any; menu_Id :any ;responses_Subheading:any})=>
                 {
                   // menu_Id:9 submenu_id:2
                  // if(x.menu_Id == this.menuId){
-                  if(x.menu_Id == 24){
-  
-                    
+                  if(x.menu_Id == 24){                    
                     this.cmaresponses.push({menu:x.responses});
+                    if (x.responses_Subheading!=null)
+                    this.Subheading= x.responses_Subheading;
                   }
                   
                 })

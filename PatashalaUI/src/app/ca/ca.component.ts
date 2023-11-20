@@ -37,7 +37,8 @@ export class CaComponent {
 
                   
                   this.caresponses.push({menu:x.responses});
-                  this.responses_Subheading= x.responses_Subheading;
+                  if (x.responses_Subheading!=null)
+                      this.responses_Subheading= x.responses_Subheading;
                 }
                 
               })
