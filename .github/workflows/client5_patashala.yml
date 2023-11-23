@@ -28,7 +28,7 @@ jobs:
           npm run build --prod --if-present
 
       - name: Zip artifact for deployment
-        run: zip -r release.zip /home/runner/work/Edufrontend/Edufrontend/PatashalaUI/dist
+        run:  zip -jr release.zip /home/runner/work/Edufrontend/Edufrontend/PatashalaUI/dist
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
@@ -50,7 +50,7 @@ jobs:
           name: node-app
           
       - name: Unzip artifact for deployment
-        run: unzip release.zip -d ./wwwroot/ && mv ./wwwroot/home/runner/work/Edufrontend/Edufrontend/PatashalaUI/dist/* ./wwwroot/ && rm -rf ./wwwroot/home/runner/work/Edufrontend/Edufrontend/PatashalaUI/dist/
+        run: unzip release.zip -d wwwroot
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
