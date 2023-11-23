@@ -1,3 +1,4 @@
+              
 *,
 *::before,
 *::after {
@@ -77,7 +78,7 @@ img{
 .masthead, .aboutus {
   position: relative;
   background-color: #343a40;
-  background: url("assets/img/banner1.jpg") no-repeat center center;
+  background: url("assets/img/banner1.jpg") no-repeat top center;
   background-size: cover;
   padding-top: 6rem;
   padding-bottom: 6rem;
@@ -189,6 +190,12 @@ img{
   width: 260px;
   height: 260px;
   padding: 40px 20px;
+}
+.circle_body a {
+  text-decoration: none;
+}
+.circle_body p {
+  color: #212529;
 }
 .circleOne{
   border-color: #f63902;
@@ -603,3 +610,8 @@ footer.footerBg {
 .contenttextjustify{
   text-align: justify;
   letter-spacing: 0.05em;}
+.content-list, .content-list li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
