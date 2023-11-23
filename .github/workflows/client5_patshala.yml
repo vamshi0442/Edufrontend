@@ -29,7 +29,8 @@ jobs:
           npm run build --prod --output-path=dist/
 
       - name: Zip artifact for deployment
-        run:  zip -j release.zip /home/runner/work/Edufrontend/Edufrontend/PatashalaUI/dist
+        run: zip release.zip /home/runner/work/Edufrontend/Edufrontend/PatashalaUI/dist/*
+
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
