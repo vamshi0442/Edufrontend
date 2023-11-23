@@ -51,7 +51,7 @@ jobs:
           name: node-app
           
       - name: Unzip artifact for deployment
-        run: unzip /home/runner/work/Edufrontend/Edufrontend/PatashalaUI/release -d wwwroot
+        run: unzip release.zip -d wwwroot
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
