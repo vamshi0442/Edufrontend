@@ -29,7 +29,8 @@ jobs:
           npm run build --prod --output-path=dist/
 
       - name: Zip artifact for deployment
-        run: zip release.zip /home/runner/work/Edufrontend/Edufrontend/PatashalaUI/dist/*          
+        run: zip release.zip /home/runner/work/Edufrontend/Edufrontend/PatashalaUI/dist/*
+             
 
 
       - name: Upload artifact for deployment job
@@ -53,7 +54,7 @@ jobs:
           
       - name: Unzip artifact for deployment
         run: unzip release.zip -d wwwroot
-         
+
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
@@ -62,4 +63,3 @@ jobs:
           slot-name: 'Production'
           package: .
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_081CA64291EE4E57910BA8FDEE69FF91 }}
-       - name: Job success   
