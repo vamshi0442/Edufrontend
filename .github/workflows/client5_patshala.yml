@@ -29,7 +29,7 @@ jobs:
           npm run build --prod --output-path=dist/
 
       - name: Zip artifact for deployment
-        run: zip release.zip /home/runner/work/Edufrontend/Edufrontend/PatashalaUI/dist/*
+        run: zip release.zip /home/runner/work/Edufrontend/Edufrontend/PatashalaUI/dist/*          
 
 
       - name: Upload artifact for deployment job
@@ -53,6 +53,9 @@ jobs:
           
       - name: Unzip artifact for deployment
         run: unzip release.zip -d wwwroot
+      - name: Copy child folders to parent folder
+        run: |
+          xcopy /s /e "/home/runner/work/Edufrontend/Edufrontend/PatashalaUI/dist/" wwwroot
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
