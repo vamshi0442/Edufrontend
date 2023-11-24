@@ -1,6 +1,8 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 .node_modules
+.package
+.package-lock
 
 # Node
 npm-debug.log
