@@ -11,42 +11,44 @@ import { ApiService } from '../api.service';
 export class ContactUsComponent {
   listMenuResponse:any = [];
   branchTestimonials:any=[];
+  SingleMapUrl : any = [];
   constructor(private httpClient: HttpClient,
     private apiService: ApiService) {
   }
-  // "branchAddress_Id": 1,
-  // "branchAddressName": "Patashala Corporate Office",
-  // "housenumber": "H No: 7-1-414/44/A",
-  // "buidingNumber": null,
-  // "buidingName": null,
-  // "addessLine1": "Srinivas Nagar (East)",
-  // "addessLine2": "SR Nagar",
-  // "city": "Hyderabad",
-  // "district": "RangaReddy",
-  // "state": "Telangana",
-  // "country": "India",
-  // "zipcode": "500038",
-  // "primaryPhonenumber": "99 66 05 06 07",
-  // "secondaryPhonenumber": null,
-  // "primaryEmail": "sales@patshala.co.in",
-  // "secondaryEmail": null,
-  // "supportPrimaryEmail": null,
-  // "supportSecondaryEmail": null
-
+  
   ngOnInit(): void {
-   // this.httpClient.get<any>("assets/data.json").subscribe((data)=>{
       this.apiService.getData().subscribe((data:any)=>{
 
-      this.listMenuResponse = data;
-      
-      this.branchTestimonials=[];
-      // this.listMenuResponse.dynamicmenu.forEach((element: { branches: any}){
+      this.listMenuResponse = data;   
+      //this.listMenuResponse.forEach((element: { listMenuResponse: any; }) => {
+      //   element.listMenuResponse.forEach((x: { responses: any; menu_Id :any;responses_Subheading:any;content_Subheading:any })=>
+      //       {
 
-      // }
+      //       })
+      // });
       this.branchTestimonials = data.branches;
-      console.log(JSON.stringify(this.branchTestimonials))
+     // console.log(JSON.stringify(this.branchTestimonials))
     }
     );
   }
     
 }
+// this.listMenuResponse = data.listMenuSubMenu;
+// this.listMenuResponse.forEach((element: { listMenuResponse: any; }) => {
+//   element.listMenuResponse.forEach((x: { responses: any; menu_Id :any;responses_Subheading:any;content_Subheading:any })=>
+//     {
+//       if(x.menu_Id == 7){                  
+//         this.ourteamresponses.push({menu:x.responses,Content_Subheading:x.content_Subheading});
+//         if (x.responses_Subheading!=null)
+//              this.subheading = x.responses_Subheading;
+//       }
+      
+//     })
+// });
+// }
+
+// );
+
+
+// }
+// }

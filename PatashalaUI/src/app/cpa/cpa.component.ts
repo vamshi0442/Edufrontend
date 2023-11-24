@@ -13,6 +13,7 @@ export class CpaComponent {
   cparesponses:any = [];
   listMenuResponse:any = [];
   menuId: any =[];
+  responses_Subheading : any =[];
   constructor(private httpClient: HttpClient,
     private route: ActivatedRoute,
 
@@ -31,15 +32,16 @@ export class CpaComponent {
         
         this.listMenuResponse = data.listMenuSubMenu;
           this.listMenuResponse.forEach((element: { listMenuResponse: any; }) => {
-            element.listMenuResponse.forEach((x: { responses: any; menu_Id :any })=>
+            element.listMenuResponse.forEach((x: { responses: any; menu_Id :any;responses_Subheading:any })=>
               {
                 // menu_Id:9 submenu_id:2
                // if(x.menu_Id == this.menuId){
                 if(x.menu_Id == 9){
                   
-                  this.cparesponses.push({menu:x.responses, MenuId: x.menu_Id});
+                  this.cparesponses.push({menu:x.responses, MenuId: x.menu_Id,responses_Subheading:x.responses_Subheading});
+                  
                 }
-                console.log(this.cparesponses)
+              
               })
           });
 

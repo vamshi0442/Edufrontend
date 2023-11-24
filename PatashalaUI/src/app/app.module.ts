@@ -17,6 +17,7 @@ import { NewsAndEventsComponent } from './news-and-events/news-and-events.compon
 import { RecordedVideosComponent } from './recorded-videos/recorded-videos.component';
 import { OurTeamComponent } from './our-team/our-team.component';
 import { CmaComponent } from './cma/cma.component';
+import { CmausComponent } from './cmaus/cmaus.component';
 import { CaComponent } from './ca/ca.component';
 import { AccaComponent } from './acca/acca.component';
 import { CimaComponent } from './cima/cima.component';
@@ -25,6 +26,7 @@ import { CsComponent } from './cs/cs.component';
 import { CimaUsComponent } from './cima-us/cima-us.component';
 import { StudyHubVideosComponent } from './study-hub-videos/study-hub-videos.component';
 import { OnlineLiveClassesComponent } from './online-live-classes/online-live-classes.component';
+import { VisionMissionComponent } from './vision-mission/vision-mission.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,7 @@ import { OnlineLiveClassesComponent } from './online-live-classes/online-live-cl
     RecordedVideosComponent,
     OurTeamComponent,
     CmaComponent,
+    CmausComponent,
     CaComponent,
     AccaComponent,
     CimaComponent,
@@ -45,7 +48,8 @@ import { OnlineLiveClassesComponent } from './online-live-classes/online-live-cl
     CsComponent,
     CimaUsComponent,
     StudyHubVideosComponent,
-    OnlineLiveClassesComponent
+    OnlineLiveClassesComponent,
+    VisionMissionComponent
   ],
   imports: [
     BrowserModule

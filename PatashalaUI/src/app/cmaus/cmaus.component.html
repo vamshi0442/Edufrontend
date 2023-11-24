@@ -1,4 +1,34 @@
-<p><h2>{{cmaussubheading}}</h2><p>
 
-</p><p>{{cmausresponses}}</p>
+
+
+<section class="aboutus">
+    <div class="container position-relative">
+        <div class="row justify-content-end">
+            <div class="col-xl-12 text-center">
+                <div class="text-white ms-auto">
+                    <!-- Page heading-->
+                    <h1 class="mb-2">{{cmaussubheading}}</h1>
+                  
+                    <a href="javascript:void(0)" class="text-decoration-none textprimary">Courses <i class="bi bi-chevron-right"></i></a> <a href="javascript:void(0)" class="text-decoration-none textprimary">Domestic Courses <i class="bi bi-chevron-right"></i></a> <span class="textprimary">CMA</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="container-fluid">
+    <br>
+    <div class="container">
+        <div class="row">
+           
+            <div class="col-md-12" *ngFor="let result of cmausresponses">
+                
+                <h2 *ngIf="result.Content_Subheading" class="page-sub-title">{{result.Content_Subheading}}</h2>
+                <p style="text-align: justify">{{result.menu}}</p>
+          
+            </div>
+            
+        </div>
+    </div>
+</section>
+
 
