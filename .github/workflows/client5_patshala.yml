@@ -53,9 +53,6 @@ jobs:
           
       - name: Unzip artifact for deployment
         run: unzip release.zip -d wwwroot
-      - name: Copy child folders to parent folder
-        run: |
-          cp -R "/home/runner/work/Edufrontend/Edufrontend/PatashalaUI/dist/." wwwroot/
          
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
@@ -65,3 +62,4 @@ jobs:
           slot-name: 'Production'
           package: .
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_081CA64291EE4E57910BA8FDEE69FF91 }}
+       - name: Job success   
