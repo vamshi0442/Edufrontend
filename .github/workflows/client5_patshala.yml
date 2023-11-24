@@ -55,7 +55,7 @@ jobs:
         run: unzip release.zip -d wwwroot
       - name: Copy child folders to parent folder
         run: |
-          cp -R node-app/Edufrontend/Edufrontend/PatashalaUI/dist/* wwwroot/
+          cp -R wwwroot/home/runner/work/Edufrontend/Edufrontend/PatashalaUI/dist/* wwwroot/
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
