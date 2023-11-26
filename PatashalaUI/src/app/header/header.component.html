@@ -41,7 +41,7 @@
       <div class="collapse navbar-collapse justify-content-end" id="dynamicmuenuItems">
         <ul class="navbar-nav">
             <li class="nav-item dropdown" *ngFor="let menuItem of menuItem">
-                <a class="nav-link text-dark dropdown-toggle" href="#" data-bs-toggle="dropdown">{{menuItem.menu}}</a>
+                <a class="nav-link text-dark dropdown-toggle" [routerLink]="menuItem.menuUrl" data-bs-toggle="dropdown">{{menuItem.menu}}</a>
                 <ul class="dropdown-menu" *ngFor="let subMenuItem of menuItem.subMenu">
                     <li *ngFor="let subMenuItem of menuItem.subMenu">
                         <a class="dropdown-item" [routerLink]="subMenuItem.menuUrl">{{subMenuItem.menu}}</a>
