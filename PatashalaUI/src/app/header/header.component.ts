@@ -66,6 +66,7 @@ getMenu(){
           }
         });
        this.menuItem.push({menu:element.menu, menuUrl:element.menuUrl, subMenu:this.subMenuList});
+       console.log(this.menuItem);
       }
     });
   });
