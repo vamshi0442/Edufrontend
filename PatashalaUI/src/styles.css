@@ -66,14 +66,35 @@ img{
 .mainNav .navbar-nav li.nav-item ul.dropdown-menu {
   border: none;
   border-radius: 0;
-  background: #f8f9fa;
-  padding: 0 10px;
+  background: #d5135b;
+  padding: 0;
+}
+.mainNav .navbar-nav li.nav-item ul.dropdown-menu ul {
+  margin: 0;
+  padding: 0
 }
 .mainNav .navbar-nav li.nav-item ul.dropdown-menu li {
-  margin-bottom: 10px;
+  list-style: none;
+}
+.mainNav .navbar-nav li.nav-item ul.dropdown-menu li {
+  border-top: 1px solid #9b083e;
+}
+.mainNav .navbar-nav li.nav-item ul.dropdown-menu li:first-child {
+  border-top: none;
 }
 .mainNav .navbar-nav li.nav-item ul.dropdown-menu li:last-child {
   margin-bottom: 0px;
+}
+.mainNav .navbar-nav li.nav-item ul.dropdown-menu li a {
+  padding: 8px;
+  color: #fff;
+  background: linear-gradient(to right, #d5135b 50%, #fff 50%);
+  background-size: 200% 100%;
+  background-position:left bottom;
+  transition:all 1s ease;
+}
+.mainNav .navbar-nav li.nav-item ul.dropdown-menu li a:hover {
+  background-position:right bottom;
 }
 .masthead, .aboutus {
   position: relative;
@@ -614,4 +635,30 @@ footer.footerBg {
   padding: 0;
   margin: 0;
   list-style: none;
+}
+.left-panel-heading {
+  padding: 20px 0 10px 0;
+  font-size: 1.5rem;
+  margin: 0
+} 
+.courses-list-left, .courses-list-left li {
+  list-style: none;
+  padding: 0;
+}
+.courses-list-left li a{
+  padding: 8px;
+  text-decoration: none;
+  color: #d5135b;
+  border-top: 1px solid #fff;
+  background: linear-gradient(to right, #d5135b 50%, #e5e5e5 50%);
+  background-size: 200% 100%;
+  background-position:right bottom;
+  width: 100%;
+  display: block;
+  transition:all 1s ease;
+  font-weight: 600;
+}
+.courses-list-left li a:hover {
+  background-position:left bottom;
+  color: #fff;
 }

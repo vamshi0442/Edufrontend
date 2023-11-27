@@ -57,6 +57,7 @@ import { VisionMissionComponent } from './vision-mission/vision-mission.componen
   , AppRoutingModule
   , CarouselModule
   , HttpClientModule
+  ,  
   
   ],
   providers: [],
