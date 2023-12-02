@@ -32,13 +32,13 @@
 </div>
 <nav class="navbar navbar-expand-lg navbar-light bg-light py-1 sticky-top mainNav">
     <div class="container">
-      <a class="navbar-brand" href="#">
-        <img src="assets/img/Patashalalogo.png" alt="Patashala" class="mw-100" width="100" />
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"  data-bs-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="dynamicmuenuItems">
+        <a class="navbar-brand" href="#">
+          <img src="assets/img/Patashalalogo.png" alt="Patashala" class="mw-100" width="150" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
         <ul class="navbar-nav">
             <li class="nav-item dropdown" *ngFor="let menuItem of menuItem">
                 <a class="nav-link text-dark" [ngClass]="{'dropdown-toggle': !(menuItem.menu === 'Contact Us')}"  [routerLink]="menuItem.menuUrl" data-bs-toggle="dropdown">{{menuItem.menu}}</a>
@@ -54,98 +54,7 @@
             </li>
         </ul>
       </div>
-<!-- 
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link text-dark" href="#">Home</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link text-dark dropdown-toggle" href="#" data-bs-toggle="dropdown">About us</a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" routerLink="aboutus">About Patashala</a></li>
-                    <li><a class="dropdown-item" routerLink="ourteam">Our Team</a></li>
-                    
-                </ul>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link text-dark dropdown-toggle" href="#" data-bs-toggle="dropdown">Courses</a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" routerLink="cpa">CPC Commerce Professional Courses</a></li>
-                    <li>Domestice Courses: </li>
-                   
-                    <li><a class="dropdown-item" routerLink="ca">CA</a></li>
-                    <li><a class="dropdown-item" routerLink="cma">CMA</a></li>
-                    <li><a class="dropdown-item" routerLink="cs">CS</a></li>
-                    <li>International Courses: </li>
-                    <li><a class="dropdown-item" routerLink="acca"> ACCA</a></li>
-                    <li><a class="dropdown-item" routerLink="cima"> CIMA</a></li>
-                    <li><a class="dropdown-item" routerLink="cima_us"> CIMA(US)</a></li>
-                </ul>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link text-dark dropdown-toggle" href="#" data-bs-toggle="dropdown">Students</a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" routerLink="study_hub_videos">Studay Hub-Recorded videos</a></li>
-                    <li><a class="dropdown-item" routerLink="online_live_classes">Online-Ive Classes</a></li>
-                    <li><a class="dropdown-item" routerLink="recordedvideos">Resource-Live Classes recordings</a></li>
-                </ul>
-            </li>
-            <li class="nav-item ">
-                <a class="nav-link text-dark "  routerLink="newsandevents" >News/Announcement</a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" routerLink="newsandevents">New Batches Announcements</a></li>
-                    <li><a class="dropdown-item" href="#">Career Oportunities</a></li>
-                    <li><a class="dropdown-item" href="#">Exams Notifications</a></li>
-                    <li><a class="dropdown-item" href="#">Educational Videos by Faculty</a></li>
-                </ul>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-dark" routerLink="contactus">Contact us</a>
-            </li>
-            <li class="nav-item">
-                <a class="btn btn-danger text-white rounded-0" routerLink="contactus">Quick Contact</a>
-            </li>   
-        </ul>
-    
-
-      </div> -->
-      <!-- <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link text-dark" [routerLink]="['/home']">Home</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link text-dark dropdown-toggle" href="#" data-bs-toggle="dropdown">Courses</a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" [routerLink]="['/recordedvideos']">CPC-Commerce Professional Courses</a></li>
-                    <li><a class="dropdown-item " href="javascript:void(0)">Domestice Courses: CA,CMA</a></li>
-                    <li><a class="dropdown-item" href="#">International Courses: ACCA, CIMA, CMA(US)</a></li>
-                </ul>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link text-dark dropdown-toggle" href="#" data-bs-toggle="dropdown">Students</a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Studay Hub-Recorded videos(You Tube) Only Selected Videos</a></li>
-                    <li><a class="dropdown-item" href="#">Online-Ive Classes</a></li>
-                    <li><a class="dropdown-item" href="#">Resource-Live Classes recordings</a></li>
-                </ul>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link text-dark dropdown-toggle" href="#" data-bs-toggle="dropdown">News/Announcement</a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" [routerLink]="['/newsandevents']">New Batches Announcements</a></li>
-                    <li><a class="dropdown-item" href="#">Career Oportunities</a></li>
-                    <li><a class="dropdown-item" href="#">Exams Notifications</a></li>
-                    <li><a class="dropdown-item" href="#">Educational Videos by Faculty</a></li>
-                </ul>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-dark" [routerLink]="['/contactus']">Contact us</a>
-            </li>
-            <li class="nav-item">
-                <a class="btn btn-danger text-white rounded-0" href="#">Quick Contact</a>
-            </li>   
-        </ul>
-      </div> -->
     </div> 
   </nav>
+
+  
