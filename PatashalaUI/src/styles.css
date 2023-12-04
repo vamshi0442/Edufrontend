@@ -662,3 +662,38 @@ footer.footerBg {
   background-position:left bottom;
   color: #fff;
 }
+.latest-news .card  {
+  background: none;
+  border: none;
+}
+.latest-news  .owl-theme .card-body {
+  color: #fff;
+}
+.latest-news  .owl-theme .owl-nav {
+  margin-top: 0;
+}
+.latest-news  .owl-theme .owl-nav .owl-prev {
+  width: 30px;
+  height: 30px;
+  background: rgba(255,255,255,0.5);
+}
+.latest-news .owl-theme .owl-nav .owl-next {
+  width: 30px;
+  height: 30px;
+  background: rgba(255,255,255,0.5);
+}
+.latest-news .owl-theme .owl-nav .owl-prev i, .latest-news .owl-theme .owl-nav .owl-next i {
+  font-size: 16px;
+}
+.latest-news .owl-carousel {
+  position: relative;
+}
+.latest-news .owl-theme .owl-nav {
+  margin-top: 0;
+    position: absolute;
+    right: 12px;
+    top: 0;
+}
+.latest-news  .owl-carousel .owl-item {
+  padding: 0;
+}
