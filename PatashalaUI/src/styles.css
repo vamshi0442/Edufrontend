@@ -55,7 +55,7 @@ img{
   cursor: pointer;
 }
 .mainNav .navbar-nav li.nav-item a:hover {
-  color: #d11561 !important;
+  color: #eb5959 !important;
 }
 .mainNav .navbar-nav li.nav-item a.btn{
   padding-right: 14px;
@@ -66,7 +66,7 @@ img{
 .mainNav .navbar-nav li.nav-item ul.dropdown-menu {
   border: none;
   border-radius: 0;
-  background: #d5135b;
+  background: #eb5959;
   padding: 0;
 }
 .mainNav .navbar-nav li.nav-item ul.dropdown-menu ul {
@@ -77,7 +77,7 @@ img{
   list-style: none;
 }
 .mainNav .navbar-nav li.nav-item ul.dropdown-menu li {
-  border-top: 1px solid #9b083e;
+  border-top: 1px solid #eb5959;
 }
 .mainNav .navbar-nav li.nav-item ul.dropdown-menu li:first-child {
   border-top: none;
@@ -648,7 +648,7 @@ footer.footerBg {
 .courses-list-left li a{
   padding: 8px;
   text-decoration: none;
-  color: #d5135b;
+  color: #eb5959;
   border-top: 1px solid #fff;
   background: linear-gradient(to right, #eb5959 50%, #e5e5e5 50%);
   background-size: 200% 100%;
@@ -661,4 +661,39 @@ footer.footerBg {
 .courses-list-left li a:hover {
   background-position:left bottom;
   color: #fff;
+}
+.latest-news .card  {
+  background: none;
+  border: none;
+}
+.latest-news  .owl-theme .card-body {
+  color: #fff;
+}
+.latest-news  .owl-theme .owl-nav {
+  margin-top: 0;
+}
+.latest-news  .owl-theme .owl-nav .owl-prev {
+  width: 30px;
+  height: 30px;
+  background: rgba(255,255,255,0.5);
+}
+.latest-news .owl-theme .owl-nav .owl-next {
+  width: 30px;
+  height: 30px;
+  background: rgba(255,255,255,0.5);
+}
+.latest-news .owl-theme .owl-nav .owl-prev i, .latest-news .owl-theme .owl-nav .owl-next i {
+  font-size: 16px;
+}
+.latest-news .owl-carousel {
+  position: relative;
+}
+.latest-news .owl-theme .owl-nav {
+  margin-top: 0;
+    position: absolute;
+    right: 12px;
+    top: 0;
+}
+.latest-news  .owl-carousel .owl-item {
+  padding: 0;
 }
