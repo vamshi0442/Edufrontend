@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist",
+            "outputPath": "dist/patashala",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -29,18 +29,10 @@
               "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css",
               "src/styles.css"
             ],
-            "scripts": [
-              
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.production.ts"
-                }
-              ],
               "budgets": [
                 {
                   "type": "initial",
@@ -70,10 +62,7 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "patashala:build:production",
-               "host": "patshala.azurewebsites.net",
-               "port": 443
-
+              "browserTarget": "patashala:build:production"
             },
             "development": {
               "browserTarget": "patashala:build:development"
