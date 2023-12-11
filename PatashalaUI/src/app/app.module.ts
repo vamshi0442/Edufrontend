@@ -1,10 +1,16 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { HttpClientModule } from '@angular/common/http';
+
+import { DialogModule } from 'primeng/dialog';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DropdownModule } from 'primeng/dropdown';
+import { InputTextModule } from 'primeng/inputtext';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 
 
 import { AppComponent } from './app.component';
@@ -53,7 +59,13 @@ import { VisionMissionComponent } from './vision-mission/vision-mission.componen
   ],
   imports: [
     BrowserModule
-  , BrowserAnimationsModule
+  , BrowserAnimationsModule 
+  , DialogModule
+  , FormsModule
+  , DropdownModule
+  , InputTextModule 
+  , ReactiveFormsModule
+  , InputTextareaModule
   , AppRoutingModule
   , CarouselModule
   , HttpClientModule
