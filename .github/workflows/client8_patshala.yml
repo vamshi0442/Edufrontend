@@ -26,6 +26,7 @@ jobs:
         run: |
           cd /home/runner/work/Edufrontend/Edufrontend/PatashalaUI/src
           npm install
+          npm install primeng --legacy-peer-deps
           npm run build --prod --output-path=dist/
 
       - name: Zip artifact for deployment
