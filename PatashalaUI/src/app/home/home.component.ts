@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { HttpClient } from '@angular/common/http';
 import { ApiService } from '../api.service';
+import {FormGroup,FormControl,Validators,FormArray} from '@angular/forms';
+interface dropdownOptions {
+  label: string;
+  value: string;
+}
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -16,6 +21,10 @@ export class HomeComponent implements OnInit {
   tempList:any=[];
   subheading:any=[];
   studentTestimonials:any=[];
+  visible: boolean =true;
+  quickContactForm!: FormGroup;
+  states!: dropdownOptions[];
+  courses!: dropdownOptions[];
   constructor(private httpClient: HttpClient,
     private apiService: ApiService) {
   }
@@ -82,6 +91,32 @@ export class HomeComponent implements OnInit {
           //this.studentTestimonials = data.branches;
         }
     );
+
+    this.quickContactForm = new FormGroup({
+      fullName: new FormControl(null, Validators.compose([Validators.required])),
+      email: new FormControl(null, ),
+      mobile: new FormControl(null, ),
+      state: new FormControl(null, ),
+      course: new FormControl(null,)
+  });
+  this.states = [
+    {label: 'Andhra Pradesh', value: 'AndhraPradesh'},
+    {label: 'Arunachal Pradesh', value: 'ArunachalPradesh'},
+    {label: 'Assam', value: 'Assam'},
+    {label: 'Bihar', value: 'Bihar'}
+  ]
+
+  this.courses  =[
+    {label: 'CS', value:'CS'},
+    {label: ' CA', value:' CA'},
+    {label: 'CMA', value:'CMA'},
+    {label: ' ACCA', value:' ACCA'},
+    {label: 'CIMA', value:'CIMA'},
+    {label: 'CMA(US)', value:'CMA(US)'}
+  ]
+  }
+  onSubmit(){
+
   }
   }
 
