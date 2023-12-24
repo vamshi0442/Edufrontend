@@ -3,6 +3,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 import { HttpClient } from '@angular/common/http';
 import { ApiService } from '../api.service';
 import {FormGroup,FormControl,Validators,FormArray} from '@angular/forms';
+import { EnquiryForm } from './enquiry-form.model';
 interface dropdownOptions {
   label: string;
   value: string;
@@ -14,7 +15,7 @@ interface dropdownOptions {
 })
 
 
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit {  
   listMenuResponse:any = [];
   aboutPatashala:any =[];
   courselist:any =[];
@@ -23,8 +24,11 @@ export class HomeComponent implements OnInit {
   studentTestimonials:any=[];
   visible: boolean =true;
   quickContactForm!: FormGroup;
+  dialogquickContactForm!:FormGroup;
   states!: dropdownOptions[];
   courses!: dropdownOptions[];
+successMessage: any;
+successMessageindialog :any;
   constructor(private httpClient: HttpClient,
     private apiService: ApiService) {
   }
@@ -94,11 +98,29 @@ export class HomeComponent implements OnInit {
 
     this.quickContactForm = new FormGroup({
       fullName: new FormControl(null, Validators.compose([Validators.required])),
-      email: new FormControl(null, ),
-      mobile: new FormControl(null, ),
+      email: new FormControl(null, [Validators.required, Validators.email]),
+      mobile: new FormControl(null,  [Validators.required,
+        Validators.pattern(/^\d{10,14}$/), // Assuming 10-digit mobile number, adjust pattern accordingly
+      ]),
       state: new FormControl(null, ),
-      course: new FormControl(null,)
+       course: new FormControl(null,)
+      // IPAddress:  new FormControl(null,),
+      // CreatedOn:  new FormControl(null,),      
+      // ReturnMessage: new FormControl(null,)
   });
+  this.dialogquickContactForm = new FormGroup({
+    fulName: new FormControl(null, Validators.compose([Validators.required])),
+    demail: new FormControl(null, [Validators.required, Validators.email]),
+    dmobile: new FormControl(null,  [Validators.required,
+      Validators.pattern(/^\d{10,14}$/), // Assuming 10-digit mobile number, adjust pattern accordingly
+    ]),
+    dstate: new FormControl(null, ),
+     dcourse: new FormControl(null,)
+    // IPAddress:  new FormControl(null,),
+    // CreatedOn:  new FormControl(null,),      
+    // ReturnMessage: new FormControl(null,)
+});
+  
   this.states = [
     {label: 'Andhra Pradesh', value: 'AndhraPradesh'},
     {label: 'Arunachal Pradesh', value: 'ArunachalPradesh'},
@@ -115,8 +137,113 @@ export class HomeComponent implements OnInit {
     {label: 'CMA(US)', value:'CMA(US)'}
   ]
   }
-  onSubmit(){
-
+  get fullName() {
+    return this.quickContactForm.get('fullName');
   }
+  get fulName() {
+    return this.dialogquickContactForm.get('fulName');
+  }
+
+  get demail() {
+    return this.dialogquickContactForm.get('demail');
+  }
+  get email() {
+    return this.quickContactForm.get('email');
+  }
+  get dmobile() {
+    return this.dialogquickContactForm.get('dmobile');
+  }
+  get mobile() {
+    return this.quickContactForm.get('mobile');
+  }
+   onSubmit() {
+    console.log(this.quickContactForm);
+    console.log(this.quickContactForm.value); 
+  
+    if (this.quickContactForm.valid) {
+      const formData: EnquiryForm = new EnquiryForm(
+        0, // You may set appropriate default values or handle this differently
+        this.quickContactForm.get('fullName')?.value || '',
+        this.quickContactForm.get('email')?.value || '',
+        this.quickContactForm.get('mobile')?.value || '',
+        new Date(),
+        this.quickContactForm.get('state')?.value || '',
+        this.quickContactForm.get('course')?.value || '',
+        '', // Provide an appropriate value for IPAddress
+        '' // Provide an appropriate value for ReturnMessage
+      );
+      // Assuming you have a method in your API service to post data
+      this.apiService.PostEnquiryForm(formData)
+        .subscribe({
+          next: (response) => {
+            // Handle success response
+            debugger;
+            console.log('Form submitted successfully', response);
+            this.successMessageindialog = response.returnMessage+'....'; 
+           // Reset the form values
+           this.quickContactForm.reset();
+          },
+          error: (error) => {
+            // Handle error response
+            console.error('Error submitting form', error);
+          }
+        });
+    }
+    else {
+      // Mark form controls as touched to trigger validation messages
+      this.markFormGroupTouched(this.quickContactForm);
+    }
+  }
+  donSubmit() {
+    console.log(this.dialogquickContactForm.value);
+  
+    if (this.dialogquickContactForm.valid) {
+      const dformData: EnquiryForm = new EnquiryForm(
+        0, // You may set appropriate default values or handle this differently
+        this.dialogquickContactForm.get('fulName')?.value || '',
+        this.dialogquickContactForm.get('demail')?.value || '',
+        this.dialogquickContactForm.get('dmobile')?.value || '',
+        new Date(),
+        this.dialogquickContactForm.get('dstate')?.value || '',
+        this.dialogquickContactForm.get('dcourse')?.value || '',
+        '', // Provide an appropriate value for IPAddress
+        '' // Provide an appropriate value for ReturnMessage
+      );
+      // Assuming you have a method in your API service to post data
+      this.apiService.PostEnquiryForm(dformData)
+        .subscribe({
+          next: (response) => {
+            // Handle success response
+            debugger;
+            console.log('Form submitted successfully', response);
+            this.successMessageindialog = response.returnMessage+'....'; 
+            // Reset the form values
+            this.dialogquickContactForm.reset();
+          },
+          error: (error) => {
+            // Handle error response
+            console.error('Error submitting form', error);
+          }
+        });
+    }
+    else {
+      // Mark form controls as touched to trigger validation messages
+      this.markFormGroupTouched(this.dialogquickContactForm);
+    }
+  }
+  private markFormGroupTouched(formGroup: FormGroup) {
+    (Object as any).values(formGroup.controls).forEach((control: FormGroup<any>) => {
+      control.markAsTouched();
+
+      if (control instanceof FormGroup) {
+        this.markFormGroupTouched(control);
+      }
+    });
+  }
+// Add a method to display success messages
+private showSuccessMessage(message: string): void {
+  // Display the success message to the user (e.g., using a toast notification, alert, etc.)
+  console.log('Success Message:', message);
+}
   }
 
