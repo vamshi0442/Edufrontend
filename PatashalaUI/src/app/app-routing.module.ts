@@ -17,6 +17,7 @@ import { CimaUsComponent } from './cima-us/cima-us.component';
 import { OnlineLiveClassesComponent } from './online-live-classes/online-live-classes.component';
 import { StudyHubVideosComponent } from './study-hub-videos/study-hub-videos.component';
 import { VisionMissionComponent } from './vision-mission/vision-mission.component';
+import { CreatemenuComponent } from './createmenu/createmenu.component';
 
 const routes: Routes = [
   {path:'home', component:HomeComponent},
@@ -36,6 +37,7 @@ const routes: Routes = [
   {path:'online_live_classes', component:OnlineLiveClassesComponent},
   {path:'study_hub_videos', component:StudyHubVideosComponent},
   {path:'vision-mission',component:VisionMissionComponent},
+  {path:'createmenu', component:CreatemenuComponent},
   {path:'', component:HomeComponent}
 ];
 

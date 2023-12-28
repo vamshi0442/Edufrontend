@@ -11,6 +11,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import { ButtonModule } from 'primeng/button';
+import { MessageService } from "primeng/api"; 
+import { TableModule } from 'primeng/table';
+import { MessagesModule } from 'primeng/messages';
+
 
 
 import { AppComponent } from './app.component';
@@ -33,6 +38,7 @@ import { CimaUsComponent } from './cima-us/cima-us.component';
 import { StudyHubVideosComponent } from './study-hub-videos/study-hub-videos.component';
 import { OnlineLiveClassesComponent } from './online-live-classes/online-live-classes.component';
 import { VisionMissionComponent } from './vision-mission/vision-mission.component';
+import { CreatemenuComponent } from './createmenu/createmenu.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +61,8 @@ import { VisionMissionComponent } from './vision-mission/vision-mission.componen
     CimaUsComponent,
     StudyHubVideosComponent,
     OnlineLiveClassesComponent,
-    VisionMissionComponent
+    VisionMissionComponent,
+    CreatemenuComponent
   ],
   imports: [
     BrowserModule
@@ -69,10 +76,12 @@ import { VisionMissionComponent } from './vision-mission/vision-mission.componen
   , AppRoutingModule
   , CarouselModule
   , HttpClientModule
-  ,  
+  , TableModule
+  , ButtonModule
+  , MessagesModule
   
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
