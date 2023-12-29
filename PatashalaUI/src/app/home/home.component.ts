@@ -179,7 +179,7 @@ successMessageindialog :any;
             // Handle success response
             debugger;
             console.log('Form submitted successfully', response);
-            this.successMessageindialog = response.returnMessage+'....'; 
+            this.successMessage= response.returnMessage+'....'; 
            // Reset the form values
            this.quickContactForm.reset();
           },
