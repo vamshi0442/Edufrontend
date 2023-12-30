@@ -15,9 +15,6 @@ import { ButtonModule } from 'primeng/button';
 import { MessageService } from "primeng/api"; 
 import { TableModule } from 'primeng/table';
 import { MessagesModule } from 'primeng/messages';
-
-
-
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -39,6 +36,7 @@ import { StudyHubVideosComponent } from './study-hub-videos/study-hub-videos.com
 import { OnlineLiveClassesComponent } from './online-live-classes/online-live-classes.component';
 import { VisionMissionComponent } from './vision-mission/vision-mission.component';
 import { CreatemenuComponent } from './createmenu/createmenu.component';
+import { ViewEnquiriesComponent } from './view-enquiries/view-enquiries.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +60,8 @@ import { CreatemenuComponent } from './createmenu/createmenu.component';
     StudyHubVideosComponent,
     OnlineLiveClassesComponent,
     VisionMissionComponent,
-    CreatemenuComponent
+    CreatemenuComponent,
+    ViewEnquiriesComponent
   ],
   imports: [
     BrowserModule
