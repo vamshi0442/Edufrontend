@@ -43,7 +43,6 @@
                   
                 })
             });
-         console.log(this.cmaresponses)
       }
       
       );

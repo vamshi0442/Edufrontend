@@ -44,7 +44,6 @@ export class AccaComponent {
                 
               })
           });
-       console.log(this.caresponses)
     }
     
     );

@@ -1,3 +1,4 @@
+<p-messages></p-messages> 
 <!-- Navigation-->
 <div class="topnav">
     <div class="navbar navbar-light topnavbg">
@@ -25,6 +26,10 @@
                 </li>
                 <li class="list-inline-item">
                     <a href="#!"><i class="bi-whatsapp fs-5 text-white"></i></a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#!"><i class="pi pi-user fs-5 text-white" *ngIf="validUser" (click)="logout()">logout</i></a>
+                    <a href="#!"><i class="pi pi-user fs-5 text-white" *ngIf="!validUser" (click)="loginuser()">login</i></a>
                 </li>
             </ul>
         </div>
@@ -82,5 +87,35 @@
     </div> 
 </nav>
 </div>
+
+<p-dialog header="Login" 
+    [(visible)]="visible"
+    [modal]="true" 
+    [style]="{width: '50vw'}"
+    [draggable]="false" 
+    [resizable]="false">
+    <form [formGroup]="loginForm" (ngSubmit)="loginSubmit(loginForm.value)">
+        <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                            <label for="username" class="form-label">username</label>
+                            <input type="username" class="form-control" id="username"  formControlName="username">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                            <label for="password" class="form-label">Password  </label>
+                            <input type="text" class="form-control" id="password" formControlName="password">
+                             <!-- <div id="emailHelp" class="form-text">Enter password.</div> -->
+                    </div>
+                </div>
+                <div class="row tpad bpad">
+                    <div class="col-md-12 text-end">
+                        <button [disabled]="!loginForm.valid" type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+        </div>
+    </form>
+</p-dialog>
 
   

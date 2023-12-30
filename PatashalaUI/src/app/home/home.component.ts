@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { ApiService } from '../api.service';
 import {FormGroup,FormControl,Validators,FormArray} from '@angular/forms';
 import { EnquiryForm } from './enquiry-form.model';
+import { MessageService } from 'primeng/api';
 interface dropdownOptions {
   label: string;
   value: string;
@@ -30,7 +31,8 @@ export class HomeComponent implements OnInit {
 successMessage: any;
 successMessageindialog :any;
   constructor(private httpClient: HttpClient,
-    private apiService: ApiService) {
+    private apiService: ApiService,
+  private messageService:MessageService) {
   }
   customOptions: OwlOptions = {
     loop: true,
@@ -157,8 +159,8 @@ successMessageindialog :any;
     return this.quickContactForm.get('mobile');
   }
    onSubmit() {
-    console.log(this.quickContactForm);
-    console.log(this.quickContactForm.value); 
+    // console.log(this.quickContactForm);
+    // console.log(this.quickContactForm.value); 
   
     if (this.quickContactForm.valid) {
       const formData: EnquiryForm = new EnquiryForm(
@@ -177,15 +179,14 @@ successMessageindialog :any;
         .subscribe({
           next: (response) => {
             // Handle success response
-            debugger;
-            console.log('Form submitted successfully', response);
+            // console.log('Form submitted successfully', response);
             this.successMessage= response.returnMessage+'....'; 
            // Reset the form values
            this.quickContactForm.reset();
           },
           error: (error) => {
             // Handle error response
-            console.error('Error submitting form', error);
+            // console.error('Error submitting form', error);
           }
         });
     }
@@ -195,7 +196,7 @@ successMessageindialog :any;
     }
   }
   donSubmit() {
-    console.log(this.dialogquickContactForm.value);
+   // console.log(this.dialogquickContactForm.value);
   
     if (this.dialogquickContactForm.valid) {
       const dformData: EnquiryForm = new EnquiryForm(
@@ -214,15 +215,14 @@ successMessageindialog :any;
         .subscribe({
           next: (response) => {
             // Handle success response
-            debugger;
-            console.log('Form submitted successfully', response);
+           // console.log('Form submitted successfully', response);
             this.successMessageindialog = response.returnMessage+'....'; 
             // Reset the form values
             this.dialogquickContactForm.reset();
           },
           error: (error) => {
             // Handle error response
-            console.error('Error submitting form', error);
+           // console.error('Error submitting form', error);
           }
         });
     }
@@ -243,7 +243,12 @@ successMessageindialog :any;
 // Add a method to display success messages
 private showSuccessMessage(message: string): void {
   // Display the success message to the user (e.g., using a toast notification, alert, etc.)
-  console.log('Success Message:', message);
+  // console.log('Success Message:', message);
+  this.messageService.add({ 
+    severity: "success", 
+    summary: message, 
+    detail: message, 
+  });
 }
   }
 

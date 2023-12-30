@@ -101,7 +101,6 @@ onRowEditSave(element:any, type:any){
     }
     this.apiService.PostMenu(this.input).subscribe(data=> {
       if(data['returnMessage'] == "Successfully Posted"){
-      // alert("Successfully Posted")
        this.messageService.add({ 
         severity: "success", 
         summary: "Successfully Posted", 
@@ -109,7 +108,6 @@ onRowEditSave(element:any, type:any){
       }); 
       }
       else{
-       // alert("Something went wrong");
         this.messageService.add({ 
           severity: "success", 
           summary: "Something went wrong", 
@@ -126,7 +124,7 @@ onRowEditSave(element:any, type:any){
       "responses": element.responses,
       "url": element.menuUrl,
       "createdOn": "2023-12-16T11:10:27.167Z",
-      "createdBy": "string",
+      "createdBy": localStorage.getItem("loggedUserId"),
       "udpatedOn": "2023-12-16T11:10:27.167Z",
       "udpatedBy": "string",
       "responses_Subheading": element.responses_Subheading,
