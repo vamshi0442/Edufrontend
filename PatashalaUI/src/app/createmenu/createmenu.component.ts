@@ -69,7 +69,8 @@ subedit(evt:any){
 }
 
 onRowEditInit(element:any, type:any){
-  if(type == "mainmenu"){
+  if(type == "mainmenu")
+  {
     this.input={
       "menu_Id":element.menu_Id,
       "submenu_id":element.submenu_id,
