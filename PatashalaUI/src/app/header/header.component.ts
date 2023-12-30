@@ -181,11 +181,11 @@ redirectSubmenu(event:any){
   logout(){
     localStorage.clear();
     this.validUser =false;
-    window.location.reload(); 
+    window.location.href = '/home'
     this.messageService.add({ 
       severity: "success", 
       summary: "User Successfully logged out", 
-      detail:"User Successfully logged out", 
+      detail:"", 
     }); 
   }
   loginuser(){
