@@ -1,12 +1,20 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { HttpClientModule } from '@angular/common/http';
 
-
+import { DialogModule } from 'primeng/dialog';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DropdownModule } from 'primeng/dropdown';
+import { InputTextModule } from 'primeng/inputtext';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { ButtonModule } from 'primeng/button';
+import { MessageService } from "primeng/api"; 
+import { TableModule } from 'primeng/table';
+import { MessagesModule } from 'primeng/messages';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -27,6 +35,8 @@ import { CimaUsComponent } from './cima-us/cima-us.component';
 import { StudyHubVideosComponent } from './study-hub-videos/study-hub-videos.component';
 import { OnlineLiveClassesComponent } from './online-live-classes/online-live-classes.component';
 import { VisionMissionComponent } from './vision-mission/vision-mission.component';
+import { CreatemenuComponent } from './createmenu/createmenu.component';
+import { ViewEnquiriesComponent } from './view-enquiries/view-enquiries.component';
 
 @NgModule({
   declarations: [
@@ -49,17 +59,28 @@ import { VisionMissionComponent } from './vision-mission/vision-mission.componen
     CimaUsComponent,
     StudyHubVideosComponent,
     OnlineLiveClassesComponent,
-    VisionMissionComponent
+    VisionMissionComponent,
+    CreatemenuComponent,
+    ViewEnquiriesComponent
   ],
   imports: [
     BrowserModule
-  , BrowserAnimationsModule
+  , BrowserAnimationsModule 
+  , DialogModule
+  , FormsModule
+  , DropdownModule
+  , InputTextModule 
+  , ReactiveFormsModule
+  , InputTextareaModule
   , AppRoutingModule
   , CarouselModule
   , HttpClientModule
+  , TableModule
+  , ButtonModule
+  , MessagesModule
   
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

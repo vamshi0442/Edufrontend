@@ -44,7 +44,6 @@ export class CimaComponent {
                 
               })
           });
-       console.log(this.caresponses)
     }
     
     );

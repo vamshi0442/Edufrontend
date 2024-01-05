@@ -43,7 +43,6 @@ export class CaComponent {
                 
               })
           });
-       console.log(this.caresponses)
     }
     
     );
