@@ -164,7 +164,7 @@ redirectSubmenu(event:any){
               localStorage.setItem("loggedUserId", data.userId);
               localStorage.setItem("userroleId", data.role);
               localStorage.setItem("isadmin", data.isadmin);
-              window.location.reload() 
+              window.location.href ='/view-enquiries';
             }
             else{
               this.validUser =false;
