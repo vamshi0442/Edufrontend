@@ -1,5 +1,13 @@
 {
-  "name": "ionic-app",
-  "integrations": {},
-  "type": "angular"
+  "name": "patashala",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "proxies": [
+    {
+      "path": "/api/",
+      "proxyUrl": "https://patashalapi.azurewebsites.net/api"
+    }
+  ]
 }

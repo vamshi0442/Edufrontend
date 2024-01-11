@@ -1,60 +1,96 @@
 <!-- Navigation-->
 <div class="topnav">
-    <nav class="navbar navbar-light topnavbg">
-        <div class="container">
-            <ul class="nav">
-                <li class="list-inline-item me-4">
-                    <p class="text-white mb-0"><i class="bi-phone fs-5 "></i> {{phone}}</p>
-                </li>
-                <li class="list-inline-item me-4">
-                    <p class="text-white mb-0"><i class="bi-envelope fs-5 "></i> {{email}}</p>
-                </li>
-                <li class="list-inline-item">
-                    <p class="text-white mb-0"><i class="bi-pin-map fs-5 "></i> {{address}}</p>                            
-                </li>
-            </ul>
-            <ul class="nav">
-                <li class="list-inline-item me-4">
-                    <a href="#!"><i class="bi-facebook fs-5 text-white"></i></a>
-                </li>
-                <li class="list-inline-item me-4">
-                    <a href="#!"><i class="bi-twitter fs-5 text-white"></i></a>
-                </li>
-                <li class="list-inline-item me-4">
-                    <a href="#!"><i class="bi-youtube fs-5 text-white"></i></a>
-                </li>
-                <li class="list-inline-item">
-                    <a href="#!"><i class="bi-whatsapp fs-5 text-white"></i></a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-</div>
-<nav class="navbar navbar-expand-lg navbar-light bg-light py-1 sticky-top mainNav">
+  <nav class="navbar navbar-light topnavbg">
     <div class="container">
-      <a class="navbar-brand" href="#">
-        <img src="assets/img/Patashalalogo.png" alt="Patashala" class="mw-100" width="100" />
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"  data-bs-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="dynamicmuenuItems">
-        <ul class="navbar-nav">
-            <li class="nav-item dropdown" *ngFor="let menuItem of menuItem">
-                <a class="nav-link text-dark dropdown-toggle" href="#" data-bs-toggle="dropdown">{{menuItem.menu}}</a>
-                <ul class="dropdown-menu" *ngFor="let subMenuItem of menuItem.subMenu">
-                    <li *ngFor="let subMenuItem of menuItem.subMenu">
-                        <a class="dropdown-item" [routerLink]="subMenuItem.menuUrl">{{subMenuItem.menu}}</a>
-                        <ul> 
-                        <li *ngFor="let subsubMenuItem of subMenuItem.subSubMenu"> 
-                            <a class="dropdown-item" [routerLink]="subsubMenuItem.menuUrl">{{subsubMenuItem.menu}}</a></li>
-                        </ul> 
-                    </li>
-                </ul>
+      <ul class="nav">
+        <li class="list-inline-item me-4">
+          <p class="text-white mb-0">
+            <i class="bi-phone fs-5"></i> {{ phone }}
+          </p>
+        </li>
+        <li class="list-inline-item me-4">
+          <p class="text-white mb-0">
+            <i class="bi-envelope fs-5"></i> {{ email }}
+          </p>
+        </li>
+        <li class="list-inline-item">
+          <p class="text-white mb-0">
+            <i class="bi-pin-map fs-5"></i> {{ address }}
+          </p>
+        </li>
+      </ul>
+      <ul class="nav">
+        <li class="list-inline-item me-4">
+          <a href="#!"><i class="bi-facebook fs-5 text-white"></i></a>
+        </li>
+        <li class="list-inline-item me-4">
+          <a href="#!"><i class="bi-twitter fs-5 text-white"></i></a>
+        </li>
+        <li class="list-inline-item me-4">
+          <a href="#!"><i class="bi-youtube fs-5 text-white"></i></a>
+        </li>
+        <li class="list-inline-item">
+          <a href="#!"><i class="bi-whatsapp fs-5 text-white"></i></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+<nav
+  class="navbar navbar-expand-lg navbar-light bg-light py-1 sticky-top mainNav"
+>
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img
+        src="assets/img/Patashalalogo.png"
+        alt="Patashala"
+        class="mw-100"
+        width="100"
+      />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#collapsibleNavbar"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="collapse navbar-collapse justify-content-end"
+      id="dynamicmuenuItems"
+    >
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown" *ngFor="let menuItem of menuItem">
+          <a
+            class="nav-link text-dark dropdown-toggle"
+            href="#"
+            data-bs-toggle="dropdown"
+            >{{ menuItem.menu }}</a
+          >
+          <ul
+            class="dropdown-menu"
+            *ngFor="let subMenuItem of menuItem.subMenu"
+          >
+            <li *ngFor="let subMenuItem of menuItem.subMenu">
+              <a class="dropdown-item" [routerLink]="subMenuItem.menuUrl">{{
+                subMenuItem.menu
+              }}</a>
+              <ul>
+                <li *ngFor="let subsubMenuItem of subMenuItem.subSubMenu">
+                  <a
+                    class="dropdown-item"
+                    [routerLink]="subsubMenuItem.menuUrl"
+                    >{{ subsubMenuItem.menu }}</a
+                  >
+                </li>
+              </ul>
             </li>
-        </ul>
-      </div>
-<!-- 
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <!-- 
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link text-dark" href="#">Home</a>
@@ -109,7 +145,7 @@
     
 
       </div> -->
-      <!-- <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+    <!-- <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link text-dark" [routerLink]="['/home']">Home</a>
@@ -147,9 +183,10 @@
             </li>   
         </ul>
       </div> -->
-    </div> 
-  </nav>
-  <script
+  </div>
+</nav>
+<script
   src="https://code.jquery.com/jquery-3.7.1.min.js"
   integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-  crossorigin="anonymous"></script>
+  crossorigin="anonymous"
+></script>

@@ -27,6 +27,7 @@ import { CimaUsComponent } from './cima-us/cima-us.component';
 import { StudyHubVideosComponent } from './study-hub-videos/study-hub-videos.component';
 import { OnlineLiveClassesComponent } from './online-live-classes/online-live-classes.component';
 import { VisionMissionComponent } from './vision-mission/vision-mission.component';
+import { IonicModule } from '@ionic/angular';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,7 @@ import { VisionMissionComponent } from './vision-mission/vision-mission.componen
   , BrowserAnimationsModule
   , AppRoutingModule
   , CarouselModule
-  , HttpClientModule
+  , HttpClientModule, IonicModule.forRoot({})
   
   ],
   providers: [],
