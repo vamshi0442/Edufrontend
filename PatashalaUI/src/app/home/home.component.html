@@ -60,14 +60,14 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
-                <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+                <div class="features-icons-item mx-auto mb-5 mb-lg-3">
                     <div class="features-icons-icon d-flex"><i class="bi-youtube m-auto text-white"></i></div>
                     <h3>Selected Videos</h3>
                     <p class="mb-0">Regular Doubt Sessions.</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
-                <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+                <div class="features-icons-item mx-auto mb-5 mb-lg-3">
                     <div class="features-icons-icon d-flex"><i class="bi-youtube m-auto text-white"></i></div>
                     <h3>Study Hub</h3>
                     <p class="mb-0">Mock Tests, Approved study material.</p>
@@ -236,7 +236,7 @@
 <section >
     <form [formGroup]="quickContactForm" (ngSubmit)="onSubmit()">
         
-        <div class="container shadow_one">
+        <div class="container shadow_one p-5">
             <div class="row">
                 <div class="col-md-12">
                     <h1 class="text-center tpad bpad heading_color">Quick Contact</h1>
@@ -389,6 +389,11 @@
     [(visible)]="visible"
     [modal]="true" 
     [style]="{width: '50vw'}"
+    [breakpoints]=" 
+        { 
+         
+            '480px': '95vw' 
+        }"
     [draggable]="false" 
     [resizable]="false">
     <form [formGroup]="dialogquickContactForm" (ngSubmit)="donSubmit()">
