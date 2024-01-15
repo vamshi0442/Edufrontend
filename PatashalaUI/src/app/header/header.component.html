@@ -29,8 +29,8 @@
                 </li>
                 <li class="list-inline-item logindropdown">
                     <a href="#!"><i class="bi bi-person fs-5 text-white" *ngIf="validUser" (click)="logout()">Logout</i></a>
-                    <a href="#!" class="mobilelogin"><i class="bi bi-person fs-5 text-white" *ngIf="!validUser" (click)="loginuser()">Login</i></a>
-                    <div class="dropdown mobhide">
+                    <!-- <a href="#!" class="mobilelogin"><i class="bi bi-person fs-5 text-white" *ngIf="!validUser" (click)="loginuser()">Login</i></a> -->
+                    <div class="dropdown">
                         <a href="#!" class="dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-person fs-5 text-white" *ngIf="!validUser">Login</i></a>
                         
                         <ul class="dropdown-menu">
@@ -116,7 +116,7 @@
 </nav>
 </div>
 
-<p-dialog header="Login" 
+<!-- <p-dialog header="Login" 
     [(visible)]="visible"
     [modal]="true" 
     [style]="{width: '30vw'}"
@@ -139,7 +139,7 @@
                     <div class="col-md-12 col-sm-12 mb-3">
                             <label for="password" class="form-label">Password  </label>
                             <input type="text" class="form-control" id="password" formControlName="password">
-                             <!-- <div id="emailHelp" class="form-text">Enter password.</div> -->
+                           
                     </div>
                 </div>
                 <div class="row tpad bpad">
@@ -149,6 +149,6 @@
                 </div>
         </div>
     </form>
-</p-dialog>
+</p-dialog> -->
 
   
