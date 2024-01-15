@@ -44,7 +44,6 @@ export class CmausComponent {
                   
                 })
             });
-         console.log(this.cmausresponses)
       }
       
       );

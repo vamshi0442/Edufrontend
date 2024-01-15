@@ -1,6 +1,4 @@
-<p></p>
-
-
+<div class="sticky-top top120">
 <section class="aboutus">
     <div class="container position-relative">
         <div class="row justify-content-end">
@@ -15,10 +13,26 @@
         </div>
     </div>
 </section>
+</div>
 <section class="container-fluid">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-3 col-sm-12">
+                <h2 class="left-panel-heading">Courses</h2>
+                <ul class="courses-list-left">
+                    <li><a [routerLink]="['/cpa']"> Commerce Professional Courses </a></li>
+                    <li><a [routerLink]="['/cs']" > CS</a></li>
+                    <li><a [routerLink]="['/ca']" > CA</a></li>
+                    <li><a [routerLink]="['/cma']" > CMA</a></li>
+                    <li><a [routerLink]="['/acca']" > ACCA</a></li>
+                <li><a [routerLink]="['/cima']" > CIMA</a></li>
+                <li><a [routerLink]="['/cima_us']" > CMA(US)</a></li>
+                <li><a [routerLink]="['/study_hub_videos']" > Study Hub- Videos</a></li>
+                <li><a [routerLink]="['/online_live_classes']" > Online-Live Classes</a></li>
+                <li><a [routerLink]="['/recordedvideos']" > Resource-Live Classes Recordings</a></li>
+                </ul>
+            </div>
+            <div class="col-md-9 col-sm-12">
                 <br>
                 <p *ngFor="let result of cmaresponses" style="text-align: justify">
                     {{result.menu}}</p>

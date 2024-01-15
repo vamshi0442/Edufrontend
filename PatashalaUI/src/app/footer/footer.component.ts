@@ -36,19 +36,4 @@ export class FooterComponent {
       this.childmenuItems = this.listMenuResponse;
     });
   }
-
-  redirect(event:any){
-    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
-      this.router.navigate( [event.menuUrl],
-          { queryParams: { menuId: event.menu_Id } });
-     });
-  }
-
-  clickMethod(event:any){
-  
-    //  alert(JSON.stringify(event));
-      event['listMenuResponse'].forEach((element: { responses: any; }) => {
-      console.log(element.responses);
-     });
-    }
 }

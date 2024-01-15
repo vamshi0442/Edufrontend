@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../api.service';
 import { HttpClient } from '@angular/common/http';
+import { Title } from "@angular/platform-browser";
+
 
 @Component({
   selector: 'app-vision-mission',
@@ -13,14 +15,15 @@ export class VisionMissionComponent {
   listMenuResponse:any = [];
   subheading:any;
   menuId:any;
-  constructor(private httpClient: HttpClient,
+  constructor(
+    private httpClient: HttpClient,
     private route: ActivatedRoute,
     private apiService: ApiService,
+    private title: Title
   ) {
   }
   ngOnInit(){
     this.route.queryParams.subscribe(params=>{
-      
       this.menuId= params['menuId'];
     });
 
