@@ -1,6 +1,7 @@
+<p-messages></p-messages>
 <!-- Navigation-->
 <div class="topnav">
-  <nav class="navbar navbar-light topnavbg">
+  <div class="navbar navbar-light topnavbg">
     <div class="container">
       <ul class="nav">
         <li class="list-inline-item me-4">
@@ -32,161 +33,186 @@
         <li class="list-inline-item">
           <a href="#!"><i class="bi-whatsapp fs-5 text-white"></i></a>
         </li>
-      </ul>
-    </div>
-  </nav>
-</div>
-<nav
-  class="navbar navbar-expand-lg navbar-light bg-light py-1 sticky-top mainNav"
->
-  <div class="container">
-    <a class="navbar-brand" href="#">
-      <img
-        src="assets/img/Patashalalogo.png"
-        alt="Patashala"
-        class="mw-100"
-        width="100"
-      />
-    </a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#collapsibleNavbar"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div
-      class="collapse navbar-collapse justify-content-end"
-      id="dynamicmuenuItems"
-    >
-      <ul class="navbar-nav">
-        <li class="nav-item dropdown" *ngFor="let menuItem of menuItem">
-          <a
-            class="nav-link text-dark dropdown-toggle"
-            href="#"
-            data-bs-toggle="dropdown"
-            >{{ menuItem.menu }}</a
+        <li class="list-inline-item logindropdown">
+          <a href="#!"
+            ><i
+              class="bi bi-person fs-5 text-white"
+              *ngIf="validUser"
+              (click)="logout()"
+              >Logout</i
+            ></a
           >
-          <ul
-            class="dropdown-menu"
-            *ngFor="let subMenuItem of menuItem.subMenu"
-          >
-            <li *ngFor="let subMenuItem of menuItem.subMenu">
-              <a class="dropdown-item" [routerLink]="subMenuItem.menuUrl">{{
-                subMenuItem.menu
-              }}</a>
-              <ul>
-                <li *ngFor="let subsubMenuItem of subMenuItem.subSubMenu">
-                  <a
-                    class="dropdown-item"
-                    [routerLink]="subsubMenuItem.menuUrl"
-                    >{{ subsubMenuItem.menu }}</a
-                  >
-                </li>
-              </ul>
-            </li>
-          </ul>
+          <!-- <a href="#!" class="mobilelogin"><i class="bi bi-person fs-5 text-white" *ngIf="!validUser" (click)="loginuser()">Login</i></a> -->
+          <div class="dropdown">
+            <a href="#!" class="dropdown-toggle" data-bs-toggle="dropdown"
+              ><i class="bi bi-person fs-5 text-white" *ngIf="!validUser"
+                >Login</i
+              ></a
+            >
+
+            <ul class="dropdown-menu">
+              <form
+                [formGroup]="loginForm"
+                (ngSubmit)="loginSubmit(loginForm.value)"
+              >
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-12 mb-2">
+                      <!-- <label for="username" class="form-label">username</label> -->
+                      <input
+                        type="username"
+                        class="form-control"
+                        id="username"
+                        formControlName="username"
+                        placeholder="User Name"
+                      />
+                    </div>
+                    <div class="col-md-12 mb-2">
+                      <!-- <label for="password" class="form-label">Password  </label> -->
+                      <input
+                        type="password"
+                        class="form-control"
+                        id="password"
+                        formControlName="password"
+                        placeholder="Password"
+                      />
+                      <!-- <div id="emailHelp" class="form-text">Enter password.</div> -->
+                    </div>
+                    <div class="col-md-12 text-end tpad bpad">
+                      <button
+                        [disabled]="!loginForm.valid"
+                        type="submit"
+                        class="btn btn-primary"
+                      >
+                        Login
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </ul>
+          </div>
         </li>
       </ul>
     </div>
-    <!-- 
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link text-dark" href="#">Home</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link text-dark dropdown-toggle" href="#" data-bs-toggle="dropdown">About us</a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" routerLink="aboutus">About Patashala</a></li>
-                    <li><a class="dropdown-item" routerLink="ourteam">Our Team</a></li>
-                    
-                </ul>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link text-dark dropdown-toggle" href="#" data-bs-toggle="dropdown">Courses</a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" routerLink="cpa">CPC Commerce Professional Courses</a></li>
-                    <li>Domestice Courses: </li>
-                   
-                    <li><a class="dropdown-item" routerLink="ca">CA</a></li>
-                    <li><a class="dropdown-item" routerLink="cma">CMA</a></li>
-                    <li><a class="dropdown-item" routerLink="cs">CS</a></li>
-                    <li>International Courses: </li>
-                    <li><a class="dropdown-item" routerLink="acca"> ACCA</a></li>
-                    <li><a class="dropdown-item" routerLink="cima"> CIMA</a></li>
-                    <li><a class="dropdown-item" routerLink="cima_us"> CIMA(US)</a></li>
-                </ul>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link text-dark dropdown-toggle" href="#" data-bs-toggle="dropdown">Students</a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" routerLink="study_hub_videos">Studay Hub-Recorded videos</a></li>
-                    <li><a class="dropdown-item" routerLink="online_live_classes">Online-Ive Classes</a></li>
-                    <li><a class="dropdown-item" routerLink="recordedvideos">Resource-Live Classes recordings</a></li>
-                </ul>
-            </li>
-            <li class="nav-item ">
-                <a class="nav-link text-dark "  routerLink="newsandevents" >News/Announcement</a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" routerLink="newsandevents">New Batches Announcements</a></li>
-                    <li><a class="dropdown-item" href="#">Career Oportunities</a></li>
-                    <li><a class="dropdown-item" href="#">Exams Notifications</a></li>
-                    <li><a class="dropdown-item" href="#">Educational Videos by Faculty</a></li>
-                </ul>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-dark" routerLink="contactus">Contact us</a>
-            </li>
-            <li class="nav-item">
-                <a class="btn btn-danger text-white rounded-0" routerLink="contactus">Quick Contact</a>
-            </li>   
-        </ul>
-    
-
-      </div> -->
-    <!-- <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link text-dark" [routerLink]="['/home']">Home</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link text-dark dropdown-toggle" href="#" data-bs-toggle="dropdown">Courses</a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" [routerLink]="['/recordedvideos']">CPC-Commerce Professional Courses</a></li>
-                    <li><a class="dropdown-item " href="javascript:void(0)">Domestice Courses: CA,CMA</a></li>
-                    <li><a class="dropdown-item" href="#">International Courses: ACCA, CIMA, CMA(US)</a></li>
-                </ul>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link text-dark dropdown-toggle" href="#" data-bs-toggle="dropdown">Students</a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Studay Hub-Recorded videos(You Tube) Only Selected Videos</a></li>
-                    <li><a class="dropdown-item" href="#">Online-Ive Classes</a></li>
-                    <li><a class="dropdown-item" href="#">Resource-Live Classes recordings</a></li>
-                </ul>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link text-dark dropdown-toggle" href="#" data-bs-toggle="dropdown">News/Announcement</a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" [routerLink]="['/newsandevents']">New Batches Announcements</a></li>
-                    <li><a class="dropdown-item" href="#">Career Oportunities</a></li>
-                    <li><a class="dropdown-item" href="#">Exams Notifications</a></li>
-                    <li><a class="dropdown-item" href="#">Educational Videos by Faculty</a></li>
-                </ul>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-dark" [routerLink]="['/contactus']">Contact us</a>
-            </li>
-            <li class="nav-item">
-                <a class="btn btn-danger text-white rounded-0" href="#">Quick Contact</a>
-            </li>   
-        </ul>
-      </div> -->
   </div>
-</nav>
-<script
-  src="https://code.jquery.com/jquery-3.7.1.min.js"
-  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-  crossorigin="anonymous"
-></script>
+</div>
+<div class="sticky-top">
+  <div class="container pr z-9999">
+    <div class="row">
+      <div class="col-md-8 offset-md-4 news-scroll-panel">
+        <owl-carousel-o [options]="customOptions" class="latest-news">
+          <ng-template carouselSlide>
+            <div class="card rounded-0">
+              <div class="card-body">
+                <b>Live Classes</b>
+                Providing personalized mentoring throughout their course
+                journey.
+              </div>
+            </div>
+          </ng-template>
+          <ng-template carouselSlide>
+            <div class="card rounded-0">
+              <div class="card-body">
+                <b>Recordings</b>
+                Interactive live stream classes and recorded Video lectures.
+              </div>
+            </div>
+          </ng-template>
+        </owl-carousel-o>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light py-1 mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img
+          src="assets/img/Patashalalogo.png"
+          alt="Patashala"
+          class="mw-100"
+          width="100"
+        />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#collapsibleNavbar"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div
+        class="collapse navbar-collapse justify-content-end"
+        id="collapsibleNavbar"
+      >
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown" *ngFor="let menuItem of menuItem">
+            <a
+              class="nav-link text-dark"
+              [ngClass]="{
+                'dropdown-toggle': !(menuItem.menu === 'Contact Us')
+              }"
+              [routerLink]="menuItem.menuUrl"
+              data-bs-toggle="dropdown"
+              >{{ menuItem.menu }}</a
+            >
+            <ul
+              class="dropdown-menu"
+              *ngFor="let subMenuItem of menuItem.subMenu"
+            >
+              <li *ngFor="let subMenuItem of menuItem.subMenu">
+                <a class="dropdown-item" [routerLink]="subMenuItem.menuUrl">{{
+                  subMenuItem.menu
+                }}</a>
+                <ul>
+                  <li *ngFor="let subsubMenuItem of subMenuItem.subSubMenu">
+                    <a
+                      class="dropdown-item"
+                      [routerLink]="subsubMenuItem.menuUrl"
+                      >{{ subsubMenuItem.menu }}</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<!-- <p-dialog header="Login" 
+    [(visible)]="visible"
+    [modal]="true" 
+    [style]="{width: '30vw'}"
+    [breakpoints]=" 
+        { 
+         
+            '480px': '80vw' 
+        }" 
+    [draggable]="false" 
+    [resizable]="false">
+    <form [formGroup]="loginForm" (ngSubmit)="loginSubmit(loginForm.value)">
+        <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 mb-3">
+                        <label for="username" class="form-label">username</label>
+                        <input type="username" class="form-control" id="username"  formControlName="username">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 mb-3">
+                            <label for="password" class="form-label">Password  </label>
+                            <input type="text" class="form-control" id="password" formControlName="password">
+                           
+                    </div>
+                </div>
+                <div class="row tpad bpad">
+                    <div class="col-md-12 text-end">
+                        <button [disabled]="!loginForm.valid" type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+        </div>
+    </form>
+</p-dialog> -->
