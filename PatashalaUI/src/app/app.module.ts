@@ -64,24 +64,23 @@ import { ViewEnquiriesComponent } from './view-enquiries/view-enquiries.componen
     CreatemenuComponent,
     ViewEnquiriesComponent,
   ],
-  // imports: [
-  //   BrowserModule
-  // , BrowserAnimationsModule
-  // , DialogModule
-  // , FormsModule
-  // , DropdownModule
-  // , InputTextModule
-  // , ReactiveFormsModule
-  // , InputTextareaModule
-  // , AppRoutingModule
-  // , CarouselModule
-  // , HttpClientModule
-  // , IonicModule.forRoot({})
-  // , TableModule
-  // , ButtonModule
-  // , MessagesModule
-
-  // ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    DialogModule,
+    FormsModule,
+    DropdownModule,
+    InputTextModule,
+    ReactiveFormsModule,
+    InputTextareaModule,
+    AppRoutingModule,
+    CarouselModule,
+    HttpClientModule,
+    IonicModule.forRoot({}),
+    TableModule,
+    ButtonModule,
+    MessagesModule,
+  ],
   providers: [MessageService],
   bootstrap: [AppComponent],
 })
