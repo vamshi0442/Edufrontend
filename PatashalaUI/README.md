@@ -2,6 +2,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.7.
 
+## Run Ionic
+
+npm run start
+ionic capacitor build android --project="patashala"
+ionic capacitor run android --project="patashala" --livereload --external
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
