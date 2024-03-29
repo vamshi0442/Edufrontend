@@ -6,7 +6,7 @@ name: Build and deploy Node.js app to Azure Web App - Patashala
 on:
   push:
     branches:
-      - CLient8
+      - CLient5
   workflow_dispatch:
 
 jobs:
