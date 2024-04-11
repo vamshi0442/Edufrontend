@@ -28,8 +28,10 @@ export class HomeComponent implements OnInit {
   dialogquickContactForm!:FormGroup;
   states!: dropdownOptions[];
   courses!: dropdownOptions[];
-successMessage: any;
-successMessageindialog :any;
+  successMessage: any;
+  successMessageindialog :any;
+  firsttime: string = "true";
+  showDialog: boolean = false; // Flag to control visibility of p-dialog
   constructor(private httpClient: HttpClient,
     private apiService: ApiService,
   private messageService:MessageService) {
@@ -68,7 +70,28 @@ successMessageindialog :any;
       this.tempList =[];
       this.studentTestimonials=[];
       this.aboutPatashala =[];
-      
+      const storedFirstTime = localStorage.getItem("firsttime");
+      // if (storedFirstTime === null || storedFirstTime === undefined) {
+      //   this.firsttime = 'true';
+      //   localStorage.setItem("firsttime", "true");
+      //   this.showDialog = true;
+      // } else {
+      //   this.firsttime = storedFirstTime; // Assign the retrieved value
+      //   localStorage.setItem("firsttime", "false");
+      //   this.showDialog = false;
+      // }
+       // Check if 8 hours have passed, then reset local storage flag
+  //   const storedTime = parseInt(localStorage.getItem('storedTime') || '0', 10);
+  //   const currentTime = new Date().getTime();
+  //   const timeDifference = currentTime - storedTime;
+
+  //   if (timeDifference >= 8 * 60 * 60 * 1000) {
+  //     localStorage.setItem("firsttime", "false");
+  //     localStorage.setItem('storedTime', currentTime.toString()); // Reset the stored time
+  //         }
+  // // Determine whether to show or hide the dialog
+  // this.showDialog = this.firsttime === 'true';
+  
       this.studentTestimonials = data.branches;
           this.listMenuResponse.forEach((element: { listMenuResponse: any; menu:any; menuUrl:any; responses: any; menu_Id :any; submenu_id:any ;content_Subheading:any }) => {
             if(element.submenu_id == 10 || element.submenu_id == 25){

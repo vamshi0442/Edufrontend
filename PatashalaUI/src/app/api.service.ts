@@ -7,9 +7,9 @@ import { Observable } from 'rxjs';
 })
 export class ApiService {
  // Base url
- //testbaseurl = 'https://localhost:44388/api/';
+ //prodbaseurl = 'https://localhost:44388/api/';
   prodbaseurl ='https://patashalapi.azurewebsites.net/api/'; 
-  testbaseurl= 'https://localhost:44388/api/';// 
+  testprodbaseurl= 'https://localhost:44388/api/';// 
  constructor(private httpClient: HttpClient) {}
  // Http Headers
  httpOptions = {

@@ -123,14 +123,14 @@ onRowEditSave(element:any, type:any){
       "menu_Id": element.menu_Id,
       "responses": element.responses,
       "url": element.menuUrl,
-      "createdOn": "2023-12-16T11:10:27.167Z",
+      "createdOn": new Date().getTime(),
       "createdBy": localStorage.getItem("loggedUserId"),
-      "udpatedOn": "2023-12-16T11:10:27.167Z",
-      "udpatedBy": "string",
+      "udpatedOn": new Date().getTime(),
+      "udpatedBy": localStorage.getItem("loggedUserId"),
       "responses_Subheading": element.responses_Subheading,
       "isActive": true,
       "sortorder": 0,
-      "content_Subheading": "string",
+      "content_Subheading":element.content_Subheading,
       "returnMessage": "string"
     }
 

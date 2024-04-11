@@ -5,7 +5,7 @@
             <div class="col-xl-12 text-center">
                 <div class="text-white ms-auto">
                     <!-- Page heading-->
-                    <h1 class="mb-2">About Patashala</h1>
+                    <h1 class="mb-2">{{responses_Subheading}}</h1>
                     
                     <a href="index.html" class="text-decoration-none textprimary">Home <i class="bi bi-chevron-right"></i></a> <span class="textprimary">About Patashala</span>
                 </div>
@@ -18,8 +18,14 @@
     <div class="container">
         <div class="row">
             <div class="learnheading text-center">
-                <h2 class="fw-bold">Learn with passion to live with purpose</h2>
-                <p>Coming soon with text</p>
+                <div class="content-list"  *ngFor="let result of aboutusresponses">
+                
+                    <h2 *ngIf="result.contentsubheading" class="page-sub-title">{{result.contentsubheading}}</h2>
+                    
+                    <p style="text-align: justify">{{result.menu}}</p>
+              
+                </div>
+                
             </div>
             <div class="row learncard text-center py-5">
                 <div class="col-md-6 col-lg-3">

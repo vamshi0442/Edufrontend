@@ -34,11 +34,13 @@
                 <li><a [routerLink]="['/recordedvideos']" > Resource-Live Classes Recordings</a></li>
                 </ul>
             </div>
-            <div class="col-md-9 col-sm-12">
-                <ul *ngFor="let res of csresponses">
-                   <h2 class="page-sub-title">{{res.Content_Subheading}}</h2> 
+            <div class="col-md-9 col-sm-12">  <br>
+                <div  *ngFor="let res of csresponses">                  
+                    <h2 *ngIf="res.Content_Subheading" class="page-sub-title">{{res.Content_Subheading}}</h2>                    
                     <p style="text-align: justify">{{res.menu}}</p>
-                </ul>
+              
+                </div>
+                
             </div>
         </div>
     </div>
