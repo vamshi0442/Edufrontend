@@ -17,6 +17,12 @@ interface dropdownOptions {
 
 
 export class HomeComponent implements OnInit {  
+  images: any = [];
+  imageDescription : any = [];
+  Imgslst: any[] = [];
+  currentPage: number = 0;
+  pageSize: number = 4;
+  autoScrollInterval: any;
   listMenuResponse:any = [];
   aboutPatashala:any =[];
   courselist:any =[];
@@ -42,6 +48,7 @@ export class HomeComponent implements OnInit {
     mouseDrag: false,
     touchDrag: false,
     pullDrag: false,
+    items: 4,  // Display 4 items at a time
     dots: false,
     navSpeed: 700,
     navText: ["<i class='bi bi-chevron-left'></i>", "<i class='bi bi-chevron-right'></i>"],
@@ -70,7 +77,8 @@ export class HomeComponent implements OnInit {
       this.tempList =[];
       this.studentTestimonials=[];
       this.aboutPatashala =[];
-      const storedFirstTime = localStorage.getItem("firsttime");
+      this.loadImages();
+      //this.setupAutoScroll();
       // if (storedFirstTime === null || storedFirstTime === undefined) {
       //   this.firsttime = 'true';
       //   localStorage.setItem("firsttime", "true");
@@ -218,6 +226,7 @@ export class HomeComponent implements OnInit {
       this.markFormGroupTouched(this.quickContactForm);
     }
   }
+  
   donSubmit() {
    // console.log(this.dialogquickContactForm.value);
   
@@ -273,5 +282,50 @@ private showSuccessMessage(message: string): void {
     detail: message, 
   });
 }
+
+// ngOnDestroy(): void {
+//   if (this.autoScrollInterval) {
+//     clearInterval(this.autoScrollInterval);
+//   }
+// }
+
+// setupAutoScroll(): void {
+//   this.autoScrollInterval = setInterval(() => {
+//     if (this.currentPage * this.pageSize >= this.images.length) {
+//       this.currentPage = 0;  // Optionally reset to start or handle as needed
+//     }
+//     this.loadMoreImages();
+//   }, 3000); // Change the interval as needed
+// }
+loadImages(): void {
+  this.apiService.GetImages().subscribe({
+    next: (data: any) => {
+      this.images = this.images.concat(data);
+      this.currentPage++;    
+      // Process each image object directly from the data array
+      this.images.forEach((image: any) => {
+        // Now directly logging and pushing image names, since each item in the array is an image object
+          this.Imgslst.push({ Image: 'assets/img'+image.folder+image.imageName, ImageDescription:image.imageDescription });
+      });
+    
+      // Log the full list after updates
+    },
+    error: (error: any) => {
+      console.error('Error fetching images', error);
+    }
+  });
+}
+
+
+// loadMoreImages(): void {
+//   if (this.currentPage * this.pageSize < this.images.length) {
+//     this.loadImages();
+//   } else {
+//     // Reset or handle end of images list
+//     this.currentPage = 0;
+//     this.images = [];
+//     this.loadImages();
+//   }
+// }
   }
 
