@@ -35,9 +35,10 @@ export class VisionMissionComponent {
             element.listMenuResponse.forEach((x: { responses: any; menu_Id :any;responses_Subheading:any;content_Subheading:any })=>
               {
                 
-                if(x.menu_Id == 31){                  
+                if(x.menu_Id == 7){                  
                   this.visionmissionresponses.push({menu:x.responses,menus:x.menu_Id,Content_Subheading:x.content_Subheading});
                   this.subheading = x.responses_Subheading;
+                  console.log(x.menu_Id);
                 }
                 
               })
