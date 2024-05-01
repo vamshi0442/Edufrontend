@@ -46,6 +46,10 @@ img{
   display: block;
   margin: 10px 0 10px auto;
 }
+.brandlog{
+  aspect-ratio: 3 / 1;
+  mix-blend-mode: darken;
+}
 @media (prefers-reduced-motion: no-preference) {
   :root {
     scroll-behavior: smooth;
@@ -72,11 +76,17 @@ img{
 .mainNav .navbar-nav li.nav-item a:hover {
   color: #eb5959 !important;
 }
+.nav-item a:hover .dropdown-item{
+  display: block;
+}
 .mainNav .navbar-nav li.nav-item a.btn{
   padding-right: 14px;
 }
 .mainNav .navbar-nav li.nav-item a.btn:hover{
   color: #fff !important;
+}
+.mainNav .navbar-nav li.nav-item:hover .dropdown-menu {
+display: block;
 }
 .mainNav .navbar-nav li.nav-item ul.dropdown-menu {
   border: none;
@@ -112,13 +122,14 @@ img{
   background-position:right bottom;
 }
 
+
 .masthead, .aboutus {
   position: relative;
   background-color: #343a40;
   background: url("assets/img/banner1.jpg") no-repeat top center;
   background-size: cover;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 .masthead:before {
   content: "";
@@ -566,11 +577,13 @@ ul.nav.nav-tabs.recordtabs{
   color: #fff;
 }
 /* footer */
+
 footer.footerBg {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-top: 3rem;
+  padding-bottom: 1rem;
   background-color: #0e0a25;
 }
+
 .footerBg h2{
   color: #8d2931;
   margin-bottom: 1em;
@@ -800,6 +813,12 @@ footer.footerBg {
   border: 1px solid #e5e7eb !important;
 }
 .top120{
-  top: 120px;
+  top: 100px;
   z-index: 1019;
+}
+
+.owl-carousel .owl-item img{
+  display: block;
+  aspect-ratio: 3 / 3;
+  width: 100%;
 }
