@@ -1,69 +1,70 @@
 <p-messages></p-messages> 
 <!-- Navigation-->
-<div class="topnav">
-    <div class="navbar navbar-light topnavbg">
-        <div class="container">
-            <ul class="nav">
-                <li class="list-inline-item me-4">
-                    <p class="text-white mb-0"><i class="bi-phone fs-5 "></i> {{phone}}</p>
-                </li>
-                <li class="list-inline-item me-4">
-                    <p class="text-white mb-0"><i class="bi-envelope fs-5 "></i> {{email}}</p>
-                </li>
-                <li class="list-inline-item">
-                    <p class="text-white mb-0"><i class="bi-pin-map fs-5 "></i> {{address}}</p>                            
-                </li>
-            </ul>
-            <ul class="nav">
-                <li class="list-inline-item me-4">
-                    <a href="#!"><i class="bi-facebook fs-5 text-white"></i></a>
-                </li>
-                <li class="list-inline-item me-4">
-                    <a href="#!"><i class="bi-twitter fs-5 text-white"></i></a>
-                </li>
-                <li class="list-inline-item me-4">
-                    <a href="#!"><i class="bi-youtube fs-5 text-white"></i></a>
-                </li>
-                <li class="list-inline-item">
-                    <a href="#!"><i class="bi-whatsapp fs-5 text-white"></i></a>
-                </li>
-                <li class="list-inline-item logindropdown">
-                    <a href="#!"><i class="bi bi-person fs-5 text-white" *ngIf="validUser" (click)="logout()">Logout</i></a>
-                    <!-- <a href="#!" class="mobilelogin"><i class="bi bi-person fs-5 text-white" *ngIf="!validUser" (click)="loginuser()">Login</i></a> -->
-                    <div class="dropdown">
-                        <a href="#!" class="dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-person fs-5 text-white" *ngIf="!validUser">Login</i></a>
-                        
-                        <ul class="dropdown-menu">
-                            <form [formGroup]="loginForm" (ngSubmit)="loginSubmit(loginForm.value)">
-                                <div class="container">
-                                        <div class="row">
-                                            <div class="col-md-12 mb-2">
-                                                
-                                                    <!-- <label for="username" class="form-label">username</label> -->
-                                                    <input type="username" class="form-control" id="username"  formControlName="username" placeholder="User Name">
-                                               
-                                            </div>
-                                            <div class="col-md-12 mb-2">
-                                                
-                                                    <!-- <label for="password" class="form-label">Password  </label> -->
-                                                    <input type="password" class="form-control" id="password" formControlName="password" placeholder="Password">
-                                                        <!-- <div id="emailHelp" class="form-text">Enter password.</div> -->
-                                                
-                                            </div>
-                                            <div class="col-md-12 text-end tpad bpad">
-                                                <button [disabled]="!loginForm.valid" type="submit" class="btn btn-primary">Login</button>
-                                            </div>
-                                        </div>
-                                </div>
-                            </form>
-                        </ul>
-                      </div>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
+
 <div class="sticky-top">
+    <div class="topnav">
+        <div class="navbar navbar-light topnavbg">
+            <div class="container">
+                <ul class="nav">
+                    <li class="list-inline-item me-4">
+                        <p class="text-white mb-0"><i class="bi-phone fs-5 "></i> {{phone}}</p>
+                    </li>
+                    <li class="list-inline-item me-4">
+                        <p class="text-white mb-0"><i class="bi-envelope fs-5 "></i> {{email}}</p>
+                    </li>
+                    <li class="list-inline-item">
+                        <p class="text-white mb-0"><i class="bi-pin-map fs-5 "></i> {{address}}</p>                            
+                    </li>
+                </ul>
+                <ul class="nav">
+                    <li class="list-inline-item me-4">
+                        <a href="#!"><i class="bi-facebook fs-5 text-white"></i></a>
+                    </li>
+                    <li class="list-inline-item me-4">
+                        <a href="#!"><i class="bi-twitter fs-5 text-white"></i></a>
+                    </li>
+                    <li class="list-inline-item me-4">
+                        <a href="#!"><i class="bi-youtube fs-5 text-white"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#!"><i class="bi-whatsapp fs-5 text-white"></i></a>
+                    </li>
+                    <li class="list-inline-item logindropdown">
+                        <a href="#!"><i class="bi bi-person fs-5 text-white" *ngIf="validUser" (click)="logout()">Logout</i></a>
+                        <!-- <a href="#!" class="mobilelogin"><i class="bi bi-person fs-5 text-white" *ngIf="!validUser" (click)="loginuser()">Login</i></a> -->
+                        <div class="dropdown">
+                            <a href="#!" class="dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-person fs-5 text-white" *ngIf="!validUser">Login</i></a>
+                            
+                            <ul class="dropdown-menu">
+                                <form [formGroup]="loginForm" (ngSubmit)="loginSubmit(loginForm.value)">
+                                    <div class="container">
+                                            <div class="row">
+                                                <div class="col-md-12 mb-2">
+                                                    
+                                                        <!-- <label for="username" class="form-label">username</label> -->
+                                                        <input type="username" class="form-control" id="username"  formControlName="username" placeholder="User Name">
+                                                   
+                                                </div>
+                                                <div class="col-md-12 mb-2">
+                                                    
+                                                        <!-- <label for="password" class="form-label">Password  </label> -->
+                                                        <input type="password" class="form-control" id="password" formControlName="password" placeholder="Password">
+                                                            <!-- <div id="emailHelp" class="form-text">Enter password.</div> -->
+                                                    
+                                                </div>
+                                                <div class="col-md-12 text-end tpad bpad">
+                                                    <button [disabled]="!loginForm.valid" type="submit" class="btn btn-primary">Login</button>
+                                                </div>
+                                            </div>
+                                    </div>
+                                </form>
+                            </ul>
+                          </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div> 
     <div class="container pr z-9999">
         <div  class="row">
             <div class="col-md-8 offset-md-4 news-scroll-panel">

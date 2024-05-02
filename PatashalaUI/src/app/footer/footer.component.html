@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-sm-6">
-                <h2>Get in touch</h2>
+                <img src="../../assets/img/Patashalalogo.jpg" alt="patshala">
                 <ul class="list-inline mb-2">
                     <li><i class="bi bi-pin-map"></i><a href="javascript:void(0)"> {{address}}</a></li>
                     <li><i class="bi bi-phone"></i><a href="javascript:void(0)">  +91-{{phone}}</a></li>
@@ -14,6 +14,9 @@
                         <a href="#!"><i class="bi-facebook fs-3"></i></a>
                     </li>
                     <li class="list-inline-item me-4">
+                        <a href="https://www.instagram.com/patshalaindia/?igsh=bzkydzNxMHpvMmNz" target="_blank"><i class="bi-instagram fs-3"></i></a>
+                    </li>
+                    <li class="list-inline-item me-4">
                         <a href="#!"><i class="bi-twitter fs-3"></i></a>
                     </li>
                     <li class="list-inline-item me-4">
@@ -22,8 +25,8 @@
                     <li class="list-inline-item">
                         <a href="#!"><i class="bi-whatsapp fs-3"></i></a>
                     </li>
+                  
                 </ul>
-                <img src="assets/img/whatsapp_img.png" alt="Patshala is one of the best Commerce and Management institutions in Hyderabad" class="my-5">
             </div>
             <div class="col-lg-3 col-sm-6 ">
                 <h2>About Patashala</h2>
@@ -35,23 +38,25 @@
             </div>
             <div class="col-lg-3 col-sm-6">
                 <h2>Courses</h2>
-                <ul class="list-inline mb-2">
-                    <li><a [routerLink]="['/cpa']" class="text-decoration-none"><i class="bi bi-chevron-double-right"></i> Commerce Professional Courses </a></li>
-                   
-                </ul>
-                <p class="mb-0">Domestic Courses </p>
-                <ul class="list-inline mb-2">
-                    <li><a [routerLink]="['/cs']" class="text-decoration-none"><i class="bi bi-chevron-double-right"></i> CS</a></li>
-                    <li><a [routerLink]="['/ca']" class="text-decoration-none"><i class="bi bi-chevron-double-right"></i> CA</a></li>
-                    <li><a [routerLink]="['/cma']" class="text-decoration-none"><i class="bi bi-chevron-double-right"></i> CMA</a></li>
-                </ul>
-                <p class="mb-0">International Courses</p>
-                <ul class="list-inline mb-2">
-                    
-                    <li><a [routerLink]="['/acca']" class="text-decoration-none"><i class="bi bi-chevron-double-right"></i> ACCA</a></li>
-                    <li><a [routerLink]="['/cima']" class="text-decoration-none"><i class="bi bi-chevron-double-right"></i> CIMA</a></li>
-                    <li><a [routerLink]="['/cima_us']" class="text-decoration-none"><i class="bi bi-chevron-double-right"></i> CMA(US)</a></li>
-                </ul>
+                <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">Domestic Courses </p>
+                    <ul class="list-inline mb-2">
+                        <li><a [routerLink]="['/cs']" class="text-decoration-none"><i class="bi bi-chevron-double-right"></i> CS</a></li>
+                        <li><a [routerLink]="['/ca']" class="text-decoration-none"><i class="bi bi-chevron-double-right"></i> CA</a></li>
+                        <li><a [routerLink]="['/cma']" class="text-decoration-none"><i class="bi bi-chevron-double-right"></i> CMA</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <p class="mb-0">International Courses</p>
+                    <ul class="list-inline mb-2">
+                        
+                        <li><a [routerLink]="['/acca']" class="text-decoration-none"><i class="bi bi-chevron-double-right"></i> ACCA</a></li>
+                        <li><a [routerLink]="['/cima']" class="text-decoration-none"><i class="bi bi-chevron-double-right"></i> CIMA</a></li>
+                        <li><a [routerLink]="['/cima_us']" class="text-decoration-none"><i class="bi bi-chevron-double-right"></i> CMA(US)</a></li>
+                    </ul>
+                </div>
+                </div>
             </div>
             <div class="col-lg-3 col-sm-6">
                 <h2>Students</h2>

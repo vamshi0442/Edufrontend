@@ -26,7 +26,16 @@ h1,h2,h3,h4,h5,h6 {
   color: #3f1753;
 }
 .textprimary{
-  color: #dd797b;
+  color: #db1850;
+}
+.textprimary:hover{
+  color: #fff;
+}
+.textprimary span{
+  color: #b92783;
+}
+.textprimary span:hover{
+  color: #db1850;
 }
 .pr{
   position: relative;
@@ -126,10 +135,9 @@ display: block;
 .masthead, .aboutus {
   position: relative;
   background-color: #343a40;
-  background: url("assets/img/banner1.jpg") no-repeat top center;
+  background: url("assets/img/banner99.jpg") no-repeat top center;
   background-size: cover;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  background-position: center;
 }
 .masthead:before {
   content: "";
@@ -579,14 +587,13 @@ ul.nav.nav-tabs.recordtabs{
 /* footer */
 
 footer.footerBg {
-  padding-top: 3rem;
+  padding-top: 1rem;
   padding-bottom: 1rem;
   background-color: #0e0a25;
 }
 
 .footerBg h2{
   color: #8d2931;
-  margin-bottom: 1em;
   font-size: 1.5rem;
 }
 .footerBg p{
@@ -617,10 +624,12 @@ footer.footerBg {
   color:#fff;
 }
 .page-sub-title {
-  width: 100%;
+  width: 50%;
   text-align: center;
-  padding: 30px 0;
-  margin: 0;
+  padding: 5px 0;
+  background-color: #db1850;
+  color: #fff;
+  border-radius: 10px;
 }
 @media only screen and (max-width: 991px) {
   .learncard .card:hover{
