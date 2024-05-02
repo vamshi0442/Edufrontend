@@ -1,7 +1,11 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MessageService } from "primeng/api"; 
+
 
 @Component({
   selector: 'app-header',
@@ -19,13 +23,56 @@ menuItem:any=[];
 menuList:any=[];
 subMenuList:any=[];
 subsubMenuList:any=[];
+visible:boolean=true;
+loginForm!: FormGroup;
+submitted:boolean = false;
+validUser:boolean = false;
 constructor(private httpClient: HttpClient,
   private apiService: ApiService,
-  private router: Router) {
+  private router: Router,
+  private messageService:MessageService) {
 }
-
+customOptions: OwlOptions = {
+  loop: true,
+  autoplay: true,
+  mouseDrag: false,
+  touchDrag: false,
+  pullDrag: false,
+  dots: false,
+  navSpeed: 700,
+  navText: ["<i class='bi bi-chevron-left'></i>", "<i class='bi bi-chevron-right'></i>"],
+  responsive: {
+    0: {
+      items: 1
+    },
+    400: {
+      items: 1
+    },
+    740: {
+      items: 1
+    },
+    940: {
+      items: 1
+    }
+  },
+  nav: true
+}
 ngOnInit(){
    //this.httpClient.get<any>("assets/data.json").subscribe((data)=>{
+    this.loginForm = new FormGroup({
+      username: new FormControl(null, [Validators.required]),
+      password: new FormControl(null,  [Validators.required]),
+  });
+
+   if(localStorage.getItem("loggedUserId")){
+    this.visible = false;
+    this.validUser =true;
+   }
+   else{
+    this.visible = true;
+    this.validUser =false;
+   }
+
     this.apiService.getData().subscribe((data:any)=>{
       
       this.email = data.branches[0].primaryEmail;
@@ -92,4 +139,58 @@ redirectSubmenu(event:any){
         { queryParams: { menuId: event.menu_Id } });
 });
 }
+
+  loginSubmit(evt:any){
+    this.submitted = true;
+
+    // stop here if form is invalid
+    if (this.loginForm.invalid) {
+      this.messageService.add({ 
+        severity: "error", 
+        summary: "Please enter username and password", 
+        detail: "Please enter username and password", 
+      });
+        //return;
+    }
+    else{
+      let input={
+            username: evt.username,
+            passwordhash:evt.password
+          }
+          this.apiService.Login(input).subscribe((data:any)=>{
+            if(data.userId != 0){
+              this.validUser =true;
+              this.visible = false;
+              localStorage.setItem("loggedUserId", data.userId);
+              localStorage.setItem("userroleId", data.role);
+              localStorage.setItem("isadmin", data.isadmin);
+              window.location.href ='/view-enquiries';
+            }
+            else{
+              this.validUser =false;
+              this.messageService.add({ 
+                severity: "success", 
+                summary: "Invalid credentials", 
+                detail: "Invalid credentials", 
+              }); 
+            }
+          });
+    }
+
+  }
+  logout(){
+    localStorage.clear();
+    this.validUser =false;
+    window.location.href = '/home'
+    this.messageService.add({ 
+      severity: "success", 
+      summary: "User Successfully logged out", 
+      detail:"", 
+    }); 
+  }
+  loginuser(){
+    localStorage.clear();
+    this.validUser =false;
+    this.visible =true;
+  }
 }

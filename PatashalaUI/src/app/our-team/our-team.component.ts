@@ -32,7 +32,7 @@ export class OurTeamComponent {
           this.listMenuResponse.forEach((element: { listMenuResponse: any; }) => {
             element.listMenuResponse.forEach((x: { responses: any; menu_Id :any;responses_Subheading:any;content_Subheading:any })=>
               {
-                if(x.menu_Id == 7){                  
+                if(x.menu_Id == 8){                  
                   this.ourteamresponses.push({menu:x.responses,Content_Subheading:x.content_Subheading});
                   if (x.responses_Subheading!=null)
                        this.subheading = x.responses_Subheading;
@@ -40,7 +40,6 @@ export class OurTeamComponent {
                 
               })
           });
-          debugger;
     }
     
     );
