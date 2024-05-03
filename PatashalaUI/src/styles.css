@@ -141,7 +141,7 @@ font-weight: 200;
   cursor: pointer;
 }
 .mainNav .navbar-nav li.nav-item a:hover {
-  color: #eb5959 !important;
+  color: #cb1c65 !important;
 }
 .nav-item a:hover .dropdown-item{
   display: block;
@@ -158,7 +158,7 @@ display: block;
 .mainNav .navbar-nav li.nav-item ul.dropdown-menu {
   border: none;
   border-radius: 0;
-  background: #eb5959;
+  background: #cb1c65;
   padding: 0px;
 }
 .mainNav .navbar-nav li.nav-item ul.dropdown-menu ul {
@@ -169,7 +169,7 @@ display: block;
   list-style: none;
 }
 .mainNav .navbar-nav li.nav-item ul.dropdown-menu li {
-  border-top: 1px solid #e34c4c;
+  border-top: 1px solid #fff;
 }
 .mainNav .navbar-nav li.nav-item ul.dropdown-menu li:first-child {
   border-top: none;
@@ -180,7 +180,7 @@ display: block;
 .mainNav .navbar-nav li.nav-item ul.dropdown-menu li a {
   padding:5px 8px;
   color: #fff;
-  background: linear-gradient(to right, #eb5959 50%, #fff 50%);
+  background: linear-gradient(to right, #cb1c65 50%, #fff 50%);
   background-size: 200% 100%;
   background-position:left bottom;
   transition:all 1s ease;
@@ -781,9 +781,9 @@ footer.footerBg {
 .courses-list-left li a{
   padding: 8px;
   text-decoration: none;
-  color: #eb5959;
+  color: #cb1c65;
   border-top: 1px solid #fff;
-  background: linear-gradient(to right, #eb5959 50%, #e5e5e5 50%);
+  background: linear-gradient(to right, #cb1c65 50%, #e5e5e5 50%);
   background-size: 200% 100%;
   background-position:right bottom;
   width: 100%;
@@ -830,7 +830,7 @@ footer.footerBg {
   margin-bottom: 0;
 }
 .latest-news  .owl-theme .owl-nav [class*=owl-]:hover {
-  color: #eb5959;
+  color: #cb1c65;
 }
 .latest-news  .owl-carousel .owl-item {
   padding: 0;
