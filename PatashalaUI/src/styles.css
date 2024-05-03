@@ -5,10 +5,10 @@
   box-sizing: border-box;
 }
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 h1,h2,h3,h4,h5,h6 {
-  font-family: 'Roboto', sans-serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 .tpad {
   padding-top: 10px;
@@ -37,8 +37,12 @@ h1,h2,h3,h4,h5,h6 {
 .textprimary span:hover{
   color: #db1850;
 }
+.text-white:hover{
+  color: #b92783 !important;
+}
 .pr{
   position: relative;
+  display: flex;
 }
 .z-9999 {
   z-index: 9999;
@@ -64,6 +68,54 @@ img{
     scroll-behavior: smooth;
   }
 }
+.contscr {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+.ann-content span{
+font-size: 15px;
+font-weight: 200;
+}
+.flash-box123 {
+  width: 200px;
+  height: 25px;
+  position: relative;
+  background: #002147;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  line-height: 2.6;
+  top: 2px;
+}
+.flash-box123:before {
+  content: "";
+  position: absolute;
+  right: -20px;
+  bottom: 0;
+  top: 0px;
+  width: 0;
+  height: 0;
+  border-left:20px solid #002147;
+  border-top: 10px solid transparent;
+  border-bottom: 15px solid transparent;
+}
+.flash-box123 p {
+  line-height: 20px !important;
+  color: #fff;
+  font-weight: bold;
+}
+.flash-box123:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 30px solid #ffe0f1;
+  border-top: 10px solid transparent;
+  border-bottom: 14px solid transparent;
+}
 .bg-light {
   --bs-bg-opacity: 1;
   background-color: rgb(255 255 255) !important;
@@ -71,8 +123,9 @@ img{
 }
 .topnavbg{
   position: relative;
-  background: url("assets/img/topnavbg.png") no-repeat center center;
+  /* background: url("assets/img/topnavbg.png") no-repeat center center; */
   background-size: cover;
+  background: #002147;
 }
 .mainNav {
   margin-top: 0px;
@@ -610,6 +663,7 @@ footer.footerBg {
 .footerBg ul li a, .footerBg ul li {
   color: #fff;
 }
+
 .footerBg ul li a {
   padding: 5px 0;
   display: inline-block; 
@@ -632,9 +686,25 @@ footer.footerBg {
   width: 50%;
   text-align: center;
   padding: 5px 0;
-  background-color: #db1850;
+  background-color: #002147;
   color: #fff;
   border-radius: 10px;
+}
+.page-sub-title:hover{
+  background-color: #db1850;
+  color: #fff;
+}
+.list-inline .list-inline-item i:hover{
+  color: #db1850;
+}
+.list-inline li i a:hover{
+  color: #db1850;
+}
+.list-inline .text-decoration-none:hover{
+  color: #db1850;
+}
+.list-inline li i a:hover{
+  color: #db1850;
 }
 @media only screen and (max-width: 991px) {
   .learncard .card:hover{
