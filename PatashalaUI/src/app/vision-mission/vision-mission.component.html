@@ -8,7 +8,7 @@
                 <div class="text-white ms-auto">
                     <!-- Page heading-->
                     <h1 class="mb-2">{{subheading}}</h1>
-                    <a href="index.html" class="text-decoration-none textprimary">Home <i class="bi bi-chevron-right"></i></a> <span class="textprimary">{{subheading}}</span>
+                    <a href="index.html" class="text-decoration-none textprimary">Home <i class="bi bi-chevron-right"></i></a> <span >{{subheading}}</span>
                 </div>
             </div>
         </div>
@@ -17,13 +17,34 @@
 <section class="container-fluid">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-6">
                 <ul class="content-list">
-                    <li *ngFor="let res of visionmissionresponses">
-                    <br>
-                        <h2 class="page-sub-title">{{res.Content_Subheading}}</h2>  
-                        <p style="text-align: justify">{{res.menu}}</p>
-                </li>
+                    <li>
+                        <br>
+                        <h4 class="page-sub-title">{{ visionmissionresponses[0].Content_Subheading }}</h4>
+                        <p style="text-align: justify">{{ visionmissionresponses[0].menu }}</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <div class="whowe">
+                <img src="../../assets/img/vision.webp" alt="" class="p-5 ">
+            </div>
+            </div>
+            </div>
+            <div class="row">
+            <div class="col-md-6">
+                <div class="whowe">
+                <img src="../../assets/img/mission.jpg" alt="" class="p-5 ">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <ul class="content-list">
+                    <li>
+                        <br>
+                        <h4 class="page-sub-title">{{ visionmissionresponses[1].Content_Subheading }}</h4>
+                        <p style="text-align: justify">{{ visionmissionresponses[1].menu }}</p>
+                    </li>
                 </ul>
             </div>
         </div>
