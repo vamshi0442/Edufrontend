@@ -207,7 +207,6 @@ display: block;
 .masthead:before {
   content: "";
   position: absolute;
-  /* background-color: #22175c; */
   height: 100%;
   width: 100%;
   top: 0;
