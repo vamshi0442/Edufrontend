@@ -199,8 +199,7 @@ display: block;
 
 .masthead, .aboutus {
   position: relative;
-  background-color: #343a40;
-  background: url("assets/img/banner99.jpg") no-repeat top center;
+  background-image: url('assets/img/banner99.jpg');
   background-size: cover;
   background-position: center;
 }

@@ -21,6 +21,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import {GalleryComponent} from './gallery/gallery.component';
 import { NewsAndEventsComponent } from './news-and-events/news-and-events.component';
 import { RecordedVideosComponent } from './recorded-videos/recorded-videos.component';
 import { OurTeamComponent } from './our-team/our-team.component';
@@ -46,6 +47,7 @@ import { ViewEnquiriesComponent } from './view-enquiries/view-enquiries.componen
     HomeComponent,
     AboutUsComponent,
     ContactUsComponent,
+    GalleryComponent,
     NewsAndEventsComponent,
     RecordedVideosComponent,
     OurTeamComponent,

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AboutUsComponent } from './about-us/about-us.component'; 
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { GalleryComponent } from './gallery/gallery.component';
 import { RecordedVideosComponent  } from './recorded-videos/recorded-videos.component';
 import { NewsAndEventsComponent } from './news-and-events/news-and-events.component';
 import { CmaComponent  } from './cma/cma.component';
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path:'home', component:HomeComponent},
   {path:'aboutus', component:AboutUsComponent},
   {path:'contactus', component:ContactUsComponent},
+  {path:'gallery', component:GalleryComponent},
   {path:'recordedvideos', component:RecordedVideosComponent},
   {path:'newsandevents', component:NewsAndEventsComponent},
   {path:'cma', component:CmaComponent},

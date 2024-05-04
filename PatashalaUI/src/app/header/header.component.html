@@ -69,45 +69,26 @@
 
     </div>
 
-    <div class=" pr z-9999">
+    <div class="pr">
         <div class="col-md-2 news-scroll-panel">
         <div class="flash-box123">
             <p>Announcement</p>
           </div>
           </div>
         <div class="col-md-10 news-scroll-panel">
-            <!-- <owl-carousel-o [options]="customOptions" class="latest-news">
-                    <ng-template carouselSlide >
-                       <div class="card rounded-0">
-                           <div class="card-body">
-                            <b>Live Classes</b>
-                            Providing personalized mentoring throughout their course journey.
-                           </div>
-                       </div>
-                   </ng-template>
-                   <ng-template carouselSlide >
-                    <div class="card rounded-0">
-                        <div class="card-body">
-                            <b>Recordings</b>
-                            Interactive live stream classes and recorded Video lectures.
-                        </div>
-                    </div>
-                </ng-template>
-                </owl-carousel-o> -->
-                
             <marquee scrollamount="05" onMouseOver="stop()" onMouseOut="start()">
                 <div class="contscr">
-
-                    <div>
-                            <div class="ann-content"><i class="fa fa-arrow-right" aria-hidden="true"></i> <img
-                                    src="../../assets/img/new.gif"><b>Recordings:-</b>
-                               <span>Interactive live stream classes and recorded Video lectures.</span> </div>
-                        </div>&nbsp;&nbsp;&nbsp;&nbsp;
                     <div>
                         <div class="ann-content" > <i class="fa fa-arrow-right"
                                 aria-hidden="true"></i><img src="../../assets/img/new.gif"> <b>Live Classes:-</b>
                             <span>Providing personalized mentoring throughout their course journey.</span></div>
-                    </div>
+                    </div>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <div>
+                            <div class="ann-content"><i class="fa fa-arrow-right" aria-hidden="true"></i> <img
+                                    src="../../assets/img/new.gif"><b>Recordings:-</b>
+                               <span>Interactive live stream classes and recorded Video lectures.</span> </div>
+                        </div>
+                  
 
                 </div>
             </marquee>
@@ -139,9 +120,14 @@
                                         <a class="dropdown-item"
                                             [routerLink]="subsubMenuItem.menuUrl">{{subsubMenuItem.menu}}</a>
                                     </li>
+                                    
                                 </ul>
                             </li>
+                         
                         </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" [routerLink]="'/gallery'">Gallery</a>
                     </li>
                 </ul>
             </div>
