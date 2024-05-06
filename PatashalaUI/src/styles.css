@@ -119,7 +119,7 @@ font-weight: 200;
   bottom: 0;
   width: 0;
   height: 0;
-  border-left: 30px solid #ffe0f1;
+  border-left: 30px solid #ba2780;
   border-top: 10px solid transparent;
   border-bottom: 14px solid transparent;
 }
@@ -165,7 +165,7 @@ display: block;
 .mainNav .navbar-nav li.nav-item ul.dropdown-menu {
   border: none;
   border-radius: 0;
-  background: #cb1c65;
+  /* background: #cb1c65; */
   padding: 0px;
 }
 .mainNav .navbar-nav li.nav-item ul.dropdown-menu ul {
@@ -186,14 +186,15 @@ display: block;
 }
 .mainNav .navbar-nav li.nav-item ul.dropdown-menu li a {
   padding:5px 8px;
-  color: #fff;
-  background: linear-gradient(to right, #cb1c65 50%, #fff 50%);
+  color: rgba(var(--bs-dark-rgb), var(--bs-text-opacity)) !important;
   background-size: 200% 100%;
   background-position:left bottom;
   transition:all 1s ease;
 }
 .mainNav .navbar-nav li.nav-item ul.dropdown-menu li a:hover {
   background-position:right bottom;
+  background: #cb1c65;
+  color: #fff !important;
 }
 
 
@@ -870,7 +871,7 @@ footer.footerBg {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .news-scroll-panel {
-  background-color: #ffe0f1;
+  background-color: #ba2780;
 }
 .latest-news .owl-theme .owl-nav {
   background-color: #ffe0f1;
