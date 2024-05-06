@@ -9,3 +9,6 @@
     object-fit: cover;
     transition: 0.25s ease-in-out;
   }
+  .pt-4 {
+    padding-top: 3.5rem !important;
+}

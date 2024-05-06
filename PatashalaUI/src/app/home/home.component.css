@@ -1,3 +1,7 @@
 .form-control{
     margin-bottom: 14px;
 }
+.learncard img {
+    width: auto !important;
+    margin: auto;
+}
