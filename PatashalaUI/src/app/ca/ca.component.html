@@ -1,4 +1,3 @@
-
 <div class="sticky-top top120">
     <section class="aboutus">
         <div class="container position-relative">
@@ -7,39 +6,43 @@
                     <div class="text-white ms-auto">
                         <!-- Page heading-->
                         <h2 class="mb-2">{{responses_Subheading}}</h2>
-                        
-                        <a href="javascript:void(0)" class="text-decoration-none textprimary">Courses <i class="bi bi-chevron-right"></i></a> <a href="javascript:void(0)" class="text-decoration-none textprimary">Domestic Courses <i class="bi bi-chevron-right"></i></a> <span class="textprimary">CA</span>
+
+                        <a href="javascript:void(0)" class="text-decoration-none textprimary">Courses <i
+                                class="bi bi-chevron-right"></i></a> <a href="javascript:void(0)"
+                            class="text-decoration-none textprimary">Domestic Courses <i
+                                class="bi bi-chevron-right"></i></a> <span class="textprimary">CA</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 </div>
-    <section class="container-fluid">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-sm-12">
-                    <h2 class="left-panel-heading">Courses</h2>
-                    <ul class="courses-list-left">
-                        <li><a [routerLink]="['/cpa']"> Commerce Professional Courses </a></li>
-                        <li><a [routerLink]="['/cs']" > CS</a></li>
-                        <li><a [routerLink]="['/ca']" > CA</a></li>
-                        <li><a [routerLink]="['/cma']" > CMA</a></li>
-                        <li><a [routerLink]="['/acca']" > ACCA</a></li>
-                    <li><a [routerLink]="['/cima']" > CIMA</a></li>
-                    <li><a [routerLink]="['/cima_us']" > CMA(US)</a></li>
-                    <li><a [routerLink]="['/study_hub_videos']" > Study Hub- Videos</a></li>
-                    <li><a [routerLink]="['/online_live_classes']" > Online-Live Classes</a></li>
-                    <li><a [routerLink]="['/recordedvideos']" > Resource-Live Classes Recordings</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-9 col-sm-12">
-                    <br> 
-                    <p *ngFor="let result of caresponses" style="text-align: justify">
-                        {{result.menu}}</p>
-                </div>
+<section class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-12">
+                <h2 class="left-panel-heading">CA - Courses</h2>
+                <div class="features-image-2">
+                    <img src="assets/img/course-02.jpg" alt="patshala">
+                    </div>
+                <ul class="courses-list-left">
+                    <li><a [routerLink]="['/cpa']"> Commerce Professional Courses </a></li>
+                    <li><a [routerLink]="['/cs']"> CS</a></li>
+                    <li><a [routerLink]="['/ca']"> CA</a></li>
+                    <li><a [routerLink]="['/cma']"> CMA</a></li>
+                    <li><a [routerLink]="['/acca']"> ACCA</a></li>
+                    <li><a [routerLink]="['/cima']"> CIMA</a></li>
+                    <li><a [routerLink]="['/cima_us']"> CMA(US)</a></li>
+                    <li><a [routerLink]="['/study_hub_videos']"> Study Hub- Videos</a></li>
+                    <li><a [routerLink]="['/online_live_classes']"> Online-Live Classes</a></li>
+                    <li><a [routerLink]="['/recordedvideos']"> Resource-Live Classes Recordings</a></li>
+                </ul>
+            </div>
+            <div class="col-md-9 col-sm-12">
+                <br>
+                <p *ngFor="let result of caresponses" style="text-align: justify">
+                    {{result.menu}}</p>
             </div>
         </div>
-    </section>
-    
-
+    </div>
+</section>

@@ -167,6 +167,7 @@ display: block;
   border-radius: 0;
   /* background: #cb1c65; */
   padding: 0px;
+  box-shadow:0 6px 15px 0 rgb(155 151 151 / 46%);
 }
 .mainNav .navbar-nav li.nav-item ul.dropdown-menu ul {
   margin: 0;
@@ -235,12 +236,10 @@ display: block;
   max-width: 20rem;
 }
 .features-icons .features-icons-item .features-icons-icon {
-    border: 1px solid #e51813;
     border-radius: 50%;
-    width: 120px;
-    height: 120px;
+    width: 160px;
+    height: 140px;
     margin: auto;
-    background: #e51813;
     margin-bottom: 2rem;
 }
 .features-icons .features-icons-item .features-icons-icon i {
@@ -787,7 +786,7 @@ footer.footerBg {
 .courses-list-left li a{
   padding: 8px;
   text-decoration: none;
-  color: #cb1c65;
+  color: #002147;
   border-top: 1px solid #fff;
   background: linear-gradient(to right, #cb1c65 50%, #e5e5e5 50%);
   background-size: 200% 100%;
