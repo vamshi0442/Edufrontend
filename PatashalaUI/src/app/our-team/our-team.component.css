@@ -2,13 +2,6 @@
     width: 100%;
 }
 
-.team_view {
-    width: clamp(7.5rem, 40vw, 10.625rem);
-    height: clamp(7.5rem, 40vw, 10.625rem);
-    border-radius: 50%;
-    object-fit: cover;
-    transition: 0.25s ease-in-out;
-  }
   .pt-4 {
     padding-top: 3.5rem !important;
 }
