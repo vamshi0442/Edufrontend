@@ -19,7 +19,6 @@ export class FacultyComponent {
   }
   ngOnInit(){
     this.route.queryParams.subscribe(params=>{
-      
       this.menuId= params['menuId'];
     });
     // this.httpClient.get<any>("assets/data.json").subscribe((data)=>{
@@ -30,7 +29,7 @@ export class FacultyComponent {
               {
                 if(x.menu_Id == 8){                  
                   this.ourteamresponses.push({menu:x.responses,Content_Subheading:x.content_Subheading});
-                  if (x.responses_Subheading!=null)
+                  if(x.responses_Subheading!=null)
                        this.subheading = x.responses_Subheading;
                 }
               })
