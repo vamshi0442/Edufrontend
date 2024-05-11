@@ -38,6 +38,7 @@ import { OnlineLiveClassesComponent } from './online-live-classes/online-live-cl
 import { VisionMissionComponent } from './vision-mission/vision-mission.component';
 import { CreatemenuComponent } from './createmenu/createmenu.component';
 import { ViewEnquiriesComponent } from './view-enquiries/view-enquiries.component';
+import { PopupMessageComponent } from './popup-message/popup-message.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { ViewEnquiriesComponent } from './view-enquiries/view-enquiries.componen
     OnlineLiveClassesComponent,
     VisionMissionComponent,
     CreatemenuComponent,
-    ViewEnquiriesComponent
+    ViewEnquiriesComponent,
+    PopupMessageComponent
   ],
   imports: [
     BrowserModule
