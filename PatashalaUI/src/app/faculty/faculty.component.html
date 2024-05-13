@@ -1,52 +1,30 @@
- <!-- about-->
- <div class="sticky-top top120">
- <section class="aboutus">
+<div class="sticky-top top120">
+  <section class="aboutus">
     <div class="container position-relative">
-        <div class="row justify-content-end">
-            <div class="col-xl-12 text-center">
-                <div class="text-white ms-auto">
-                    <!-- Page heading-->
-                    <h1 class="mb-2">Faculty</h1>
-                    <a href="index.html" class="text-decoration-none textprimary">Home <i class="bi bi-chevron-right"></i></a> <span class="textprimary">Faculty</span>
-                </div>
-            </div>
+      <div class="row justify-content-end">
+        <div class="col-xl-12 text-center">
+          <div class="text-white ms-auto">
+            <!-- Page heading-->
+            <h1 class="mb-2">Faculty</h1>
+            <a href="index.html" class="text-decoration-none textprimary">Home <i class="bi bi-chevron-right"></i></a>
+            <span class="textprimary">Faculty</span>
+          </div>
         </div>
+      </div>
     </div>
-</section>
+  </section>
 </div>
 <!----faclity-->
+
 <section class="special py-5">
-    <div class="container">
-        <div class="row">
-            <div class="learnheading text-center">
-                <h2 class="fw-bold">{{ourteamresponses[2].Content_Subheading}}</h2>
-            </div>
-            <div class="row specialcard py-5">
-                <div class="col-md-3">
-                    <div class="whowe">
-                        <img src="assets/img/Gallery/Faculty/13.jpg" alt="patshala" class="mb-3 team_view">
-                        <p class="fw-bold text-dark text-decoration-none">{{ourteamresponses[3].menu}}</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="whowe">
-                        <img src="assets/img/Gallery/Faculty/26.jpg" alt="patshala" class="mb-3 team_view">
-                        <p class="fw-bold text-dark text-decoration-none">{{ourteamresponses[4].menu}}</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="whowe">
-                        <img src="assets/img/Gallery/Faculty/5.JPG" alt="patshala" class="mb-3 team_view">
-                        <p class="fw-bold text-dark text-decoration-none">{{ourteamresponses[5].menu}}</p>
-                    </div>
-                </div>
-                <div class="col-md-3 mt-3">
-                    <div class="whowe">
-                        <img src="assets/img/Gallery/Faculty/14.JPG" alt="patshala" class="mb-3 team_view">
-                        <p class="fw-bold text-dark text-decoration-none">{{ourteamresponses[6].menu}}</p>
-                    </div>
-                </div>
-            </div>
+  <div class="container" >
+    <div class="row" >
+      <div class="col-md-3" *ngFor="let imageData of imageData">
+        <div class="whowe">
+          <img [src]="imageData.imageUrl" alt="patshala" class="mb-3 img-data">
+          <p class="fw-bold text-dark text-decoration-none">{{ imageData.imageDescription }}</p>
         </div>
+      </div>
     </div>
+  </div>
 </section>

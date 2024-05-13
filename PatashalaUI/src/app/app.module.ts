@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { HttpClientModule } from '@angular/common/http';
-
+import {CommonModule} from '@angular/common'
 import { DialogModule } from 'primeng/dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DropdownModule } from 'primeng/dropdown';
@@ -22,6 +22,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import {GalleryComponent} from './gallery/gallery.component';
+import {FacultyComponent } from './faculty/faculty.component'
 import { NewsAndEventsComponent } from './news-and-events/news-and-events.component';
 import { RecordedVideosComponent } from './recorded-videos/recorded-videos.component';
 import { OurTeamComponent } from './our-team/our-team.component';
@@ -49,6 +50,7 @@ import { PopupMessageComponent } from './popup-message/popup-message.component';
     AboutUsComponent,
     ContactUsComponent,
     GalleryComponent,
+    FacultyComponent,
     NewsAndEventsComponent,
     RecordedVideosComponent,
     OurTeamComponent,
@@ -82,6 +84,7 @@ import { PopupMessageComponent } from './popup-message/popup-message.component';
   , TableModule
   , ButtonModule
   , MessagesModule
+  ,CommonModule
   
   ],
   providers: [MessageService],
