@@ -625,14 +625,15 @@ display: block;
 ul.nav.nav-tabs.recordtabs{
   border-bottom: none;
   margin-top: 2em;
+  margin-left: 15em;
   
 }
 .nav-tabs.recordtabs a.nav-link {
   border: 1px solid #c9c9c9;
-  border-radius: 30px;
+  border-radius: 0px;
   margin-right: 16px;
   margin-bottom: 10px;
-  padding: 12px 22px;
+  padding: 5px 15px;
   color: #444242;
   font-weight: 500;
   transition: all .5s ease-in-out;
@@ -642,11 +643,11 @@ ul.nav.nav-tabs.recordtabs{
   -webkit-transition: all .5s ease-in-out;
 }
 .nav-tabs.recordtabs a.nav-link:hover{
-  background: #dc3545;
+  background: #d01d5e;
   color: #fff;
 }
 .nav-tabs.recordtabs a.nav-link.active{
-  background: #dc3545;
+  background: #d01d5e;
   color: #fff;
 }
 /* footer */
@@ -714,6 +715,9 @@ footer.footerBg {
   color: #db1850;
 }
 @media only screen and (max-width: 991px) {
+  ul.nav.nav-tabs.recordtabs {
+    margin-left:0 !important;
+  }
   .learncard .card:hover{
     transform: translateY(-10px);
   }
@@ -882,6 +886,7 @@ footer.footerBg {
 }
 .download-brochure {
   text-align: center;
+
 }
 .download-brochure > a{
   width: auto;
@@ -889,6 +894,7 @@ footer.footerBg {
   border-radius: 25px;
   background: #cb1c65;
   color: #fff;
+  cursor: pointer;
   text-decoration: none;
 }
 .error-res-message{

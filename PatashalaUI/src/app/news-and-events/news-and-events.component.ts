@@ -182,4 +182,14 @@ private showSuccessMessage(message: string): void {
     detail: message, 
   });
 }
+downloadImage(): void {
+  const imagePath = 'assets/img/New_Batches_Patashala.jpg';
+  const link = document.createElement('a');
+  link.setAttribute('href', imagePath);
+  link.setAttribute('download', 'New_Batches_Patashala.jpg');
+  link.style.display = 'none';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+} 
   }
