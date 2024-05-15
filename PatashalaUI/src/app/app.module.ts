@@ -40,7 +40,7 @@ import { VisionMissionComponent } from './vision-mission/vision-mission.componen
 import { CreatemenuComponent } from './createmenu/createmenu.component';
 import { ViewEnquiriesComponent } from './view-enquiries/view-enquiries.component';
 import { PopupMessageComponent } from './popup-message/popup-message.component';
-
+import { DowloadFileService } from './dowload-file.service'
 @NgModule({
   declarations: [
     AppComponent,
@@ -87,7 +87,7 @@ import { PopupMessageComponent } from './popup-message/popup-message.component';
   ,CommonModule
   
   ],
-  providers: [MessageService],
+  providers: [MessageService,DowloadFileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
