@@ -123,7 +123,7 @@ font-weight: 200;
   bottom: 0;
   width: 0;
   height: 0;
-  border-left: 30px solid #b82784;
+  border-left: 30px solid #002147;
   border-top: 10px solid transparent;
   border-bottom: 14px solid transparent;
 }
@@ -881,7 +881,7 @@ footer.footerBg {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .news-scroll-panel {
-  background-color: #b82784;
+  background-color: #002147;
 }
 .latest-news .owl-theme .owl-nav {
   background-color: #ffe0f1;

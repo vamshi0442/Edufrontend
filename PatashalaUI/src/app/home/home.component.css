@@ -6,16 +6,19 @@
     margin: auto;
 }
 .rounded-pill1{
-    background-color: #d01d5e;
+    /* background-color: #d01d5e; */
     text-align: center;
-    color: #fff;
+    border: 2px solid #d01d5e !important;
+    color: #d01d5e;
     border-bottom-left-radius:60px!important;
     border-top-right-radius:60px!important;
 }
-.text-style{
-    font-style: italic;
-}
+
 .border-primary{
-    border: 1px solid #fff !important;
+    border: 1px solid #d01d5e !important;
     border-radius: 10px;
+}
+.text-primary {
+    --bs-text-opacity: 1;
+    color: #002147;
 }
