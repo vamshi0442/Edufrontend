@@ -5,3 +5,17 @@
     width: auto !important;
     margin: auto;
 }
+.rounded-pill1{
+    background-color: #d01d5e;
+    text-align: center;
+    color: #fff;
+    border-bottom-left-radius:60px!important;
+    border-top-right-radius:60px!important;
+}
+.text-style{
+    font-style: italic;
+}
+.border-primary{
+    border: 1px solid #fff !important;
+    border-radius: 10px;
+}
