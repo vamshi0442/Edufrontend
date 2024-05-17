@@ -135,7 +135,7 @@ font-weight: 200;
 .topnavbg{
   position: relative;
   /* background: url("assets/img/topnavbg.png") no-repeat center center; */
-  background:linear-gradient(-180deg, #b82784 0%, #cf1f60 100%);
+  background:linear-gradient(-180deg, #853a66 0%, #cf1f60 100%);
   background-size: cover;
 
 }
