@@ -60,6 +60,18 @@ export class OurTeamComponent {
     
     );
    
-   
+    this.apiService.getOurteam().subscribe(
+      (data: any) => {
+        this.imageData = data.map((item: any) => {
+          return {
+            imageUrl: item.imagesUrl,
+          };
+        });
+        console.log(this.imageData)
+      },
+      (error: any) => {
+        console.error('Error fetching images:', error);
+      }
+    );
   }
 }

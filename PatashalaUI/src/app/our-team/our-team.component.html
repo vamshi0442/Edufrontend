@@ -20,9 +20,12 @@
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-md-4 pt-5 text-center">
-                        <div class="features-image-2 pt-4">
-                            <img src="assets/img/charmain.jpg"  alt="Patshala Academy" class="img_about">
+                        <div class="features-image-2 pt-4" *ngIf="imageData.length > 1; else noData">
+                            <img [src]="imageData[0].imageUrl" alt="patshala" class="mb-3 img-data">
                         </div>
+                        <ng-template #noData>
+                            <p>No images available.</p>
+                          </ng-template>
                     </div>
                     <div class="col-md-8 pt-5">
                         <h2 class="page-sub-title">{{ourteamresponses[0].Content_Subheading}}</h2>
@@ -35,16 +38,22 @@
                         <p style="text-align: justify">{{ourteamresponses[1].menu}}</p>
                     </div>
                     <div class="col-md-4 pt-5">
-                        <div class="features-image-2 pt-4">
-                            <img src="assets/img/charmain_wis.JPG"  alt="Patshala Academy">
+                        <div class="features-image-2 pt-4" *ngIf="imageData.length > 1; else noData">
+                            <img [src]="imageData[1].imageUrl" alt="patshala" class="mb-3 img-data">
                         </div>
+                        <ng-template #noData>
+                            <p>No images available.</p>
+                          </ng-template>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-4 pt-5 text-center">
-                        <div class="features-image-2 pt-4">
-                            <img src="assets/img/Gallery/Faculty/29.JPG"  alt="Patshala Academy" class="img_about">
+                    <div class="col-md-4 pt-5">
+                        <div class="features-image-2 pt-4" *ngIf="imageData.length > 1; else noData">
+                            <img [src]="imageData[5].imageUrl" alt="patshala" class="mb-3 img-data">
                         </div>
+                        <ng-template #noData>
+                            <p>No images available.</p>
+                          </ng-template>
                     </div>
                     <div class="col-md-8 pt-5">
                         <h2 class="page-sub-title">CHRO(Chief Human Resources Officer)</h2>
@@ -57,16 +66,22 @@
                         <p style="text-align: justify">Leading our technological initiatives is Farzana, our CTO. She drives innovation and oversees the development and implementation of cutting-edge technology solutions that propel our organization forward in the digital age.</p>
                     </div>
                     <div class="col-md-4 pt-5">
-                        <div class="features-image-2 pt-4">
-                            <img src="assets/img/Gallery/Faculty/30.JPG"  alt="Patshala Academy">
+                        <div class="features-image-2 pt-4" *ngIf="imageData.length > 1; else noData">
+                            <img [src]="imageData[6].imageUrl" alt="patshala" class="mb-3 img-data">
                         </div>
+                        <ng-template #noData>
+                            <p>No images available.</p>
+                          </ng-template>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-4 pt-5 text-center">
-                        <div class="features-image-2 pt-4">
-                            <img src="assets/img/Gallery/Faculty/28.jpg"  alt="Patshala Academy" class="img_about">
+                    <div class="col-md-4 pt-5">
+                        <div class="features-image-2 pt-4" *ngIf="imageData.length > 1; else noData">
+                            <img [src]="imageData[4].imageUrl" alt="patshala" class="mb-3 img-data">
                         </div>
+                        <ng-template #noData>
+                            <p>No images available.</p>
+                          </ng-template>
                     </div>
                     <div class="col-md-8 pt-5">
                         <h2 class="page-sub-title">CMO (Chief Marketing Officer)</h2>
@@ -79,16 +94,22 @@
                         <p style="text-align: justify">Leading our technological initiatives is Farzana, our CTO. She drives innovation and oversees the development and implementation of cutting-edge technology solutions that propel our organization forward in the digital age.</p>
                     </div>
                     <div class="col-md-4 pt-5">
-                        <div class="features-image-2 pt-4">
-                            <img src="assets/img/Gallery/Faculty/13.jpg"  alt="Patshala Academy">
+                        <div class="features-image-2 pt-4" *ngIf="imageData.length > 1; else noData">
+                            <img [src]="imageData[2].imageUrl" alt="patshala" class="mb-3 img-data">
                         </div>
+                        <ng-template #noData>
+                            <p>No images available.</p>
+                          </ng-template>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-4 pt-5 text-center">
-                        <div class="features-image-2 pt-4">
-                            <img src="assets/img/Gallery/Faculty/14.JPG"  alt="Patshala Academy" class="img_about">
+                    <div class="col-md-4 pt-5">
+                        <div class="features-image-2 pt-4" *ngIf="imageData.length > 1; else noData">
+                            <img [src]="imageData[3].imageUrl" alt="patshala" class="mb-3 img-data">
                         </div>
+                        <ng-template #noData>
+                            <p>No images available.</p>
+                          </ng-template>
                     </div>
                     <div class="col-md-8 pt-5">
                         <h2 class="page-sub-title">COO (Chief Operations Officer)</h2>
