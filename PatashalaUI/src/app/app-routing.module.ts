@@ -21,7 +21,6 @@ import { StudyHubVideosComponent } from './study-hub-videos/study-hub-videos.com
 import { VisionMissionComponent } from './vision-mission/vision-mission.component';
 import { CreatemenuComponent } from './createmenu/createmenu.component';
 import { ViewEnquiriesComponent } from './view-enquiries/view-enquiries.component';
-import { PopupMessageComponent} from './popup-message/popup-message.component'
 
 const routes: Routes = [
   {path:'home', component:HomeComponent},
@@ -45,7 +44,6 @@ const routes: Routes = [
   {path:'vision-mission',component:VisionMissionComponent},
   {path:'createmenu', component:CreatemenuComponent},
   {path:'view-enquiries', component:ViewEnquiriesComponent},
-  {path:'popupMessage',component:PopupMessageComponent},
   {path:'', component:HomeComponent}
 ];
 

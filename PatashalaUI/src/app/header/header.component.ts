@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MessageService } from "primeng/api"; 
-import { PopupService } from '../popup.service';
+
 
 @Component({
   selector: 'app-header',
@@ -30,7 +30,7 @@ validUser:boolean = false;
 constructor(private httpClient: HttpClient,
   private apiService: ApiService,
   private router: Router,
-  private messageService:MessageService,private popupService: PopupService) {
+  private messageService:MessageService) {
 }
 customOptions: OwlOptions = {
   loop: true,
@@ -193,8 +193,5 @@ redirectSubmenu(event:any){
     this.validUser =false;
     this.visible =true;
   }
-  showPopupMessage() {
-    this.popupService.showMessage('Your message here');
-    console.log("showPopupMessage")
-  }
+
 }

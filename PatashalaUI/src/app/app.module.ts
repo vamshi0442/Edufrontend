@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { HttpClientModule } from '@angular/common/http';
@@ -39,7 +39,6 @@ import { OnlineLiveClassesComponent } from './online-live-classes/online-live-cl
 import { VisionMissionComponent } from './vision-mission/vision-mission.component';
 import { CreatemenuComponent } from './createmenu/createmenu.component';
 import { ViewEnquiriesComponent } from './view-enquiries/view-enquiries.component';
-import { PopupMessageComponent } from './popup-message/popup-message.component';
 import { DowloadFileService } from './dowload-file.service'
 @NgModule({
   declarations: [
@@ -67,7 +66,6 @@ import { DowloadFileService } from './dowload-file.service'
     VisionMissionComponent,
     CreatemenuComponent,
     ViewEnquiriesComponent,
-    PopupMessageComponent
   ],
   imports: [
     BrowserModule
@@ -85,6 +83,7 @@ import { DowloadFileService } from './dowload-file.service'
   , ButtonModule
   , MessagesModule
   ,CommonModule
+  ,RouterModule
   
   ],
   providers: [MessageService,DowloadFileService],
