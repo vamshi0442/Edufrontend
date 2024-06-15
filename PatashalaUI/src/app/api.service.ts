@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, count } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +10,10 @@ export class ApiService {
  //prodbaseurl = 'https://localhost:44388/api/';
   prodbaseurl ='https://patashalapi.azurewebsites.net/api/'; 
   testprodbaseurl= 'https://localhost:44388/api/';// 
+  apiUrl = 'https://patashalapi.azurewebsites.net/api/GettheImages';
+ 
+
+
  constructor(private httpClient: HttpClient) {}
  // Http Headers
  httpOptions = {
@@ -82,7 +86,15 @@ export class ApiService {
     const headers= new HttpHeaders().set('content-type', 'application/json')
     return this.httpClient.post<any>(`${this.prodbaseurl}GetResponseData`, requestBody, this.httpOptions);
   }
-
+  getFacultyImages(pageNumber: number, eventType: string): Observable<any> {
+    const url = `${this.apiUrl}?pagenumber=${pageNumber}&eventType=${eventType}`;
+    return this.httpClient.get<any>(url);
+  }
+  getOurteam(){
+    const url ='${this.apiUrl}patshalagallery/Leadership?';
+    console.log(url)
+    return this.httpClient.get<any>(url);
+  }
   public PostMenuResponses(input:any){
     return this.httpClient.post<any>(`${this.prodbaseurl}PostMenuResponses`, input, this.httpOptions)
   }

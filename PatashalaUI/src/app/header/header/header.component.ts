@@ -504,7 +504,7 @@ getdynamicMenu(){
     "menu_Id": 15,
     "submenu_id": 4,
     "menu": "Career Oppurtunities",
-     "menuUrl": "/newsandevents",
+     "menuUrl": "/aboutus",
     "isActive": true,
     "listMenuResponse": [
       {

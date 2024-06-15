@@ -1,0 +1,11 @@
+.page-sub-title {
+    width: 100%;
+}
+
+  .pt-4 {
+    padding-top: 3.5rem !important;
+}
+img {
+  height: 200px;
+  width: 200px;
+border: 2px solid #eee;}

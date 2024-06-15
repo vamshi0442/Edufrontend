@@ -21,25 +21,81 @@
         <!-- {{branchTestimonials}} -->
         <p class="text-center w-75 m-auto">Looking for additional support or have questions about Patashala? <br>Our team is here to help.</p>
         <div class="row my-3">
-                     <div class="col-lg-4" *ngFor="let branch of branchTestimonials">
-                <div class="branch d-flex align-items-stretch flex-wrap p-4 pb-0">
-                    <ul class="list-inline w-100">
-                        <li class="list-inline-item"><h4 class="mb-1">{{branch.branchAddressName}}</h4></li>
-                        <li class="list-inline-item float-end"><img src="assets/img/ind.png" width="50" /></li>
+             <div class="col-lg-4">
+            <div class="branch d-flex align-items-stretch flex-wrap p-4 pb-0">
+                <ul class="list-inline w-100">
+                    <li class="list-inline-item"><h4 class="mb-1">{{branchTestimonials[0].branchAddressName}}</h4></li>
+                    <li class="list-inline-item float-end"><img src="assets/img/ind.png" width="50" /></li>
+                </ul>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.4250741328833!2d78.44343507421077!3d17.439357401307824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb912b12ad790d%3A0x45a3ca4d3e56c617!2sPatshala%20Corporate%20Office!5e0!3m2!1sen!2sin!4v1714562156014!5m2!1sen!2sin"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                <div class="address">
+                 <br/>
+                    <h6 class="mb-3">
+                        {{branchTestimonials[0].housenumber}}, 
+                        {{branchTestimonials[0].addessLine1}} {{branchTestimonials[0].addessLine2}}, 
+                        {{branchTestimonials[0].city}} {{branchTestimonials[0].district}} {{branchTestimonials[0].state}} {{branchTestimonials[0].zipcode}}
+                    </h6>
+                    <h6 class="mb-5"><i class="bi-phone"></i> {{branchTestimonials[0].primaryPhonenumber}}</h6>
+                </div> 
+            </div>
+        </div> 
+        <div class="col-lg-4">
+            <div class="branch d-flex align-items-stretch flex-wrap p-4 pb-0">
+                <ul class="list-inline w-100">
+                    <li class="list-inline-item"><h4 class="mb-1">{{branchTestimonials[1].branchAddressName}}</h4></li>
+                    <li class="list-inline-item float-end"><img src="assets/img/ind.png" width="50" /></li>
+                </ul>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.370692668442!2d78.43734417421082!3d17.441963001232537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91112ea58e57%3A0x7bc304ccd8a4f47a!2sPatshala!5e0!3m2!1sen!2sin!4v1714562405382!5m2!1sen!2sin" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                <div class="address">
+                    <br/>
+                    <h6 class="mb-3">
+                        {{branchTestimonials[1].housenumber}}, 
+                        {{branchTestimonials[1].addessLine1}} {{branchTestimonials[1].addessLine2}}, 
+                        {{branchTestimonials[1].city}} {{branchTestimonials[1].district}} {{branchTestimonials[1].state}} {{branchTestimonials[1].zipcode}}
+                    </h6>
+                    <h6 class="mb-5"><i class="bi-phone"></i> {{branchTestimonials[1].primaryPhonenumber}}</h6>
+                </div> 
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="branch d-flex align-items-stretch flex-wrap p-4 pb-0">
+                <ul class="list-inline w-100">
+                    <li class="list-inline-item"><h4 class="mb-1">{{branchTestimonials[2].branchAddressName}}</h4></li>
+                    <li class="list-inline-item float-end"><img src="assets/img/ind.png" width="50" /></li>
+                </ul>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.1732372956294!2d78.4792367742099!3d17.40347200234346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb99ddef23c8d9%3A0xe6096aaa78901bfb!2sPAGE%20Junior%20College%20Himayat%20Nagar!5e0!3m2!1sen!2sin!4v1714559002180!5m2!1sen!2sin" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                
+                <div class="address">
+                    <br/>
+                    <h6 class="mb-3">
+                        {{branchTestimonials[2].housenumber}}, 
+                        {{branchTestimonials[2].addessLine1}} {{branchTestimonials[2].addessLine2}}, 
+                        {{branchTestimonials[2].city}} {{branchTestimonials[2].district}} {{branchTestimonials[2].state}} {{branchTestimonials[2].zipcode}}
+                    </h6>
+                    <h6 class="mb-5"><i class="bi-phone"></i> {{branchTestimonials[2].primaryPhonenumber}}</h6>
+                </div> 
+            </div>
+        </div>
 
-                    </ul>
-                    <div class="address">
-                        <h6 class="mb-3">
-                            {{branch.housenumber}}, 
-                            {{branch.addessLine1}} {{branch.addessLine2}}, 
-                            {{branch.city}} {{branch.district}} {{branch.state}} {{branch.zipcode}} </h6>
-                        <h6 class="mb-5"><i class="bi-phone"></i> {{branch.primaryPhonenumber}}</h6>
-                        <!-- <a href="#" class="text-decoration-none fw-bold">Explore</a>  -->
-                    </div> 
-                 </div>
-              </div>
-        </div>  
-        
+        <div class="col-lg-4">
+            <div class="branch d-flex align-items-stretch flex-wrap p-4 pb-0">
+                <ul class="list-inline w-100">
+                    <li class="list-inline-item"><h4 class="mb-1">{{branchTestimonials[3].branchAddressName}}</h4></li>
+                    <li class="list-inline-item float-end"><img src="assets/img/ind.png" width="50" /></li>
+                </ul>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3808.1004362158424!2d78.54330317123511!3d17.358899467234526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb98bf3e6ee4cb%3A0xea47ad8283f0a0a6!2sRoad%20No.%205%2C%20L.%20B.%20Nagar%2C%20Hyderabad%2C%20Telangana%20500035!5e0!3m2!1sen!2sin!4v1715581223830!5m2!1sen!2sin"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                
+                <div class="address">
+                    <br/>
+                    <h6 class="mb-3">
+                        {{branchTestimonials[3].housenumber}}, 
+                        {{branchTestimonials[3].addessLine1}} {{branchTestimonials[3].addessLine3}}, 
+                        {{branchTestimonials[3].city}} {{branchTestimonials[3].district}} {{branchTestimonials[3].state}} {{branchTestimonials[3].zipcode}}
+                    </h6>
+                    <h6 class="mb-5"><i class="bi-phone"></i> {{branchTestimonials[2].primaryPhonenumber}}</h6>
+                </div> 
+            </div>
+        </div>
+                    
+        </div> 
+       
         <div class="row my-5">
             <h1 class="text-center">Let's Connect</h1>
             <div class="col-lg-4">
@@ -97,98 +153,5 @@
         <!-- <div class="row tpad">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7612.56974995962!2d78.4439795!3d17.44607405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb90e76b6662c5%3A0x9ad96c95b077cb8e!2sSanjeeva%20Reddy%20Nagar%2C%20Hyderabad%2C%20Telangana%20500038!5e0!3m2!1sen!2sin!4v1699980581497!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div> -->
-        <!-- <div class="row my-3">
-            <div class="col-lg-4">
-                <div class="branch d-flex align-items-stretch flex-wrap p-4 pb-0">
-                    <ul class="list-inline w-100">
-                        <li class="list-inline-item"><h4 class="mb-1">United States</h4></li>
-                        <li class="list-inline-item float-end"><img src="assets/img/usa.png" width="50" /></li>
-                    </ul>
-                    <div class="address">
-                        <h5 class="mb-3">4985 Alexander Drive,Collection, Texas</h5>
-                        <h5 class="mb-5">940-391-7463</h5>
-                        <a href="#" class="text-decoration-none fw-bold">Explore</a> 
-                    </div> 
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="branch d-flex align-items-stretch flex-wrap p-4">
-                    <ul class="list-inline w-100">
-                        <li class="list-inline-item"><h4 class="mb-1">India</h4></li>
-                        <li class="list-inline-item float-end"><img src="assets/img/ind.png" width="50" /></li>
-                    </ul>
-                    <div class="address">
-                        <h5 class="mb-3">M-11, Anna Nagar East, Anna Nagar East, Chennai</h5>
-                        <h5 class="mb-5">00442626012</h5>
-                        <a href="#" class="text-decoration-none fw-bold">Explore</a> 
-                    </div> 
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="branch d-flex align-items-stretch flex-wrap p-4">
-                    <ul class="list-inline w-100">
-                        <li class="list-inline-item"><h4 class="mb-1">United States</h4></li>
-                        <li class="list-inline-item float-end"><img src="assets/img/usa.png" width="50" /></li>
-                    </ul>
-                    <div class="address">
-                        <h5 class="mb-3">4985 Alexander Drive,Collection, Texas</h5>
-                        <h5 class="mb-5">940-391-7463</h5>
-                        <a href="#" class="text-decoration-none fw-bold">Explore</a> 
-                    </div> 
-                </div>
-            </div>
-        </div> 
-      <div class="mt-4"></div>
-        <div class="row my-3">
-            <div class="col-lg-4">
-                <div class="branch d-flex align-items-stretch flex-wrap p-4 pb-0">
-                    <ul class="list-inline w-100">
-                        <li class="list-inline-item"><h4 class="mb-1">United States</h4></li>
-                        <li class="list-inline-item float-end"><img src="assets/img/usa.png" width="50" /></li>
-                    </ul>
-                    <div class="address">
-                        <h5 class="mb-3">4985 Alexander Drive,Collection, Texas</h5>
-                        <h5 class="mb-5">940-391-7463</h5>
-                        <a href="#" class="text-decoration-none fw-bold">Explore</a> 
-                    </div> 
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="branch d-flex align-items-stretch flex-wrap p-4">
-                    <ul class="list-inline w-100">
-                        <li class="list-inline-item"><h4 class="mb-1">India</h4></li>
-                        <li class="list-inline-item float-end"><img src="assets/img/ind.png" width="50" /></li>
-                    </ul>
-                    <div class="address">
-                        <h5 class="mb-3">M-11, Anna Nagar East, Anna Nagar East, Chennai</h5>
-                        <h5 class="mb-5">00442626012</h5>
-                        <a href="#" class="text-decoration-none fw-bold">Explore</a> 
-                    </div> 
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="branch d-flex align-items-stretch flex-wrap p-4">
-                    <ul class="list-inline w-100">
-                        <li class="list-inline-item"><h4 class="mb-1">United States</h4></li>
-                        <li class="list-inline-item float-end"><img src="assets/img/usa.png" width="50" /></li>
-                    </ul>
-                    <div class="address">
-                        <h5 class="mb-3">4985 Alexander Drive,Collection, Texas</h5>
-                        <h5 class="mb-5">940-391-7463</h5>
-                        <a href="#" class="text-decoration-none fw-bold">Explore</a> 
-                    </div> 
-                </div>
-            </div>
-        </div>
-
-        <div class="row quick">
-            <div class="col-md-10">
-              
-            </div>
-            <div class="col-md-2">
-                <button class="quickcon">Quick Contact</button>
-            </div>
-        </div>
-    </div>
-</section> -->
+      
 <!-- Footer-->

@@ -5,7 +5,7 @@
     border: none;
     box-shadow: 3px 5px 6px 3px #3c3c3c3d;
     padding: 35px 15px 20px;
-    background: #dc0e4f;
+    background: #002147;
     color: #fff;
     font-size: 18px;
     right: 0;
@@ -68,4 +68,33 @@
     .mobhide{
         display: none;
     }
+}
+.text-white:hover {
+    color: #ffffff !important;
+}
+.navbar-nav li:hover > ul.dropdown-menu {
+    display: block;
+}
+.dropdown-submenu {
+    position:relative;
+}
+.dropdown-submenu > .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top:-6px;
+}
+
+/* rotate caret on hover */
+.dropdown-menu > li > a:hover:after {
+    text-decoration: underline;
+    transform: rotate(-90deg);
+} 
+.facebook{
+    color: rgb(11 87 208) !important;
+}
+.whatsapp{
+    color: #38e238!important;
+}
+.youtube{
+    color: rgb(245, 40, 40) !important;
 }

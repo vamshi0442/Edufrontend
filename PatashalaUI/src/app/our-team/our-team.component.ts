@@ -10,6 +10,8 @@ import { ApiService } from '../api.service';
   styleUrls: ['./our-team.component.css']
 })
 export class OurTeamComponent {
+  imageData: any[] = []; 
+  imageId:any[]=[];
   ourteamresponses:any =[];
   listMenuResponse:any = [];
   subheading:any;
@@ -24,10 +26,23 @@ export class OurTeamComponent {
       
       this.menuId= params['menuId'];
     });
-
+    this.apiService.getFacultyImages(1, 'Leadership').subscribe(
+      (data: any) => {
+        this.imageData = data.map((item: any) => {
+          return {
+            imageId:item.imageId,
+            imageUrl: item.imagesUrl,
+            imageDescription: item.imageDescription
+          };
+        });
+        console.log(this.imageData)
+      },
+      (error: any) => {
+        console.error('Error fetching images:', error);
+      }
+    );
     // this.httpClient.get<any>("assets/data.json").subscribe((data)=>{
       this.apiService.getData().subscribe((data:any)=>{
-      
       this.listMenuResponse = data.listMenuSubMenu;
           this.listMenuResponse.forEach((element: { listMenuResponse: any; }) => {
             element.listMenuResponse.forEach((x: { responses: any; menu_Id :any;responses_Subheading:any;content_Subheading:any })=>
@@ -42,8 +57,21 @@ export class OurTeamComponent {
           });
     }
     
+    
     );
    
-   
+    this.apiService.getOurteam().subscribe(
+      (data: any) => {
+        this.imageData = data.map((item: any) => {
+          return {
+            imageUrl: item.imagesUrl,
+          };
+        });
+        console.log(this.imageData)
+      },
+      (error: any) => {
+        console.error('Error fetching images:', error);
+      }
+    );
   }
 }

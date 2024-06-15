@@ -1,3 +1,27 @@
 .form-control{
     margin-bottom: 14px;
 }
+.learncard img {
+    width: auto !important;
+    margin: auto;
+}
+.rounded-pill1{
+    /* background-color: #d01d5e; */
+    text-align: center;
+    border: 2px solid #d01d5e !important;
+    color: #d01d5e;
+    border-bottom-left-radius:60px!important;
+    border-top-right-radius:60px!important;
+}
+
+.border-primary{
+    border: 1px solid #d01d5e !important;
+    border-radius: 10px;
+}
+.text-primary {
+    --bs-text-opacity: 1;
+    color: #002147;
+}
+.sub_course{
+    background-color:#d01d5e ;color: #fff;border-radius:5px ;padding: 0px 10px;
+}

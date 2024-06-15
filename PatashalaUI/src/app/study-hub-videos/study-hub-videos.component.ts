@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./study-hub-videos.component.css']
 })
 export class StudyHubVideosComponent {
-
+ 
 }

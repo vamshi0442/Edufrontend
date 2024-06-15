@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { HttpClientModule } from '@angular/common/http';
-
+import {CommonModule} from '@angular/common'
 import { DialogModule } from 'primeng/dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DropdownModule } from 'primeng/dropdown';
@@ -21,6 +21,8 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import {GalleryComponent} from './gallery/gallery.component';
+import {FacultyComponent } from './faculty/faculty.component'
 import { NewsAndEventsComponent } from './news-and-events/news-and-events.component';
 import { RecordedVideosComponent } from './recorded-videos/recorded-videos.component';
 import { OurTeamComponent } from './our-team/our-team.component';
@@ -37,7 +39,7 @@ import { OnlineLiveClassesComponent } from './online-live-classes/online-live-cl
 import { VisionMissionComponent } from './vision-mission/vision-mission.component';
 import { CreatemenuComponent } from './createmenu/createmenu.component';
 import { ViewEnquiriesComponent } from './view-enquiries/view-enquiries.component';
-
+import { DowloadFileService } from './dowload-file.service'
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +48,8 @@ import { ViewEnquiriesComponent } from './view-enquiries/view-enquiries.componen
     HomeComponent,
     AboutUsComponent,
     ContactUsComponent,
+    GalleryComponent,
+    FacultyComponent,
     NewsAndEventsComponent,
     RecordedVideosComponent,
     OurTeamComponent,
@@ -61,7 +65,7 @@ import { ViewEnquiriesComponent } from './view-enquiries/view-enquiries.componen
     OnlineLiveClassesComponent,
     VisionMissionComponent,
     CreatemenuComponent,
-    ViewEnquiriesComponent
+    ViewEnquiriesComponent,
   ],
   imports: [
     BrowserModule
@@ -78,9 +82,11 @@ import { ViewEnquiriesComponent } from './view-enquiries/view-enquiries.componen
   , TableModule
   , ButtonModule
   , MessagesModule
+  ,CommonModule
+  ,RouterModule
   
   ],
-  providers: [MessageService],
+  providers: [MessageService,DowloadFileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

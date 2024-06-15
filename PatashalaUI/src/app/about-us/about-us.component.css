@@ -1,0 +1,19 @@
+.broadcost{
+    display: ruby-text;
+}
+.pt-4 {
+    padding-top: 3.5rem !important;
+}
+.page-sub-title {
+    width: 100%;
+    text-align: center;
+    padding: 5px 0;
+    background-color: #002147;
+    color: #fff;
+    border-radius: 10px;
+}
+.elementtitle {
+    text-align: center;
+    color: #ba2880;
+    font-weight: 600;
+}

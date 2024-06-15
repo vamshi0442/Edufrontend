@@ -4,6 +4,7 @@ import { EnquiryForm } from '../home/enquiry-form.model';
 import { HttpClient } from '@angular/common/http';
 import { ApiService } from '../api.service';
 import { MessageService } from 'primeng/api';
+import { DowloadFileService} from '../dowload-file.service'
 interface dropdownOptions {
   label: string;
   value: string;
@@ -32,7 +33,7 @@ export class NewsAndEventsComponent  {
   showDialog: boolean = false; // Flag to control visibility of p-dialog
   constructor(private httpClient: HttpClient,
     private apiService: ApiService,
-  private messageService:MessageService) {
+  private messageService:MessageService,private DowloadFileService:DowloadFileService) {
   }
   
   ngOnInit(): void {
@@ -182,4 +183,14 @@ private showSuccessMessage(message: string): void {
     detail: message, 
   });
 }
+public downloadImage(): void {
+ this.DowloadFileService.downloadImage().subscribe(response=>{
+  let file=response.headers.get('content-dispositon')?.split(';')[1].split('=')[1];
+  let blob:Blob=response.body as Blob;
+  let a = document.createElement('a');
+ // a.download = file;
+  a.href = window.URL.createObjectURL(blob);
+  a.click();
+ })
+} 
   }
