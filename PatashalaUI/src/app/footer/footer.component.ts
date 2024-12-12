@@ -36,4 +36,5 @@ export class FooterComponent {
       this.childmenuItems = this.listMenuResponse;
     });
   }
+  
 }

@@ -1,0 +1,69 @@
+<!-- about-->
+<div class="sticky-top top120">
+  <section class="aboutus">
+    <div class="container position-relative">
+      <div class="row justify-content-end">
+        <div class="col-xl-12 text-center">
+          <div class="text-white ms-auto">
+            <!-- Page heading-->
+            <h1 class="mb-2">Gallery</h1>
+            <a href="index.html" class="text-decoration-none textprimary">Home <i class="bi bi-chevron-right"></i></a>
+            <span class="textprimary">Gallery</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<section class="recordedSec py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <p class="text-center"></p>
+        <!-- Dropdown for folder selection -->
+        <div class="row align-items-center">
+          <!-- Previous button -->
+          <button class="carousel-control-prev" (click)="scrollLeft()">
+            ‹
+          </button>
+
+          <!-- Scrollable container for folder buttons -->
+          <div class="folder-buttons-container">
+            <div class="folder-buttons">
+              <button *ngFor="let folder of folders" (click)="onFolderChange(folder.name)" class="btn btn-primary m-2">
+                {{ folder.description }}
+              </button>
+            </div>
+          </div>
+
+          <!-- Next button -->
+          <button class="carousel-control-next" (click)="scrollRight()">
+            ›
+          </button>
+        </div>
+        <div class="row" *ngIf="imagesByFolder.length > 0; else noImagesTemplate">
+          <h3 class="text-center">{{ getSelectedFolderDescription() }}</h3>
+          <div class="col-lg-4" *ngFor="let img of imagesByFolder">
+            <div class="card pt-4">
+              <div class="image-container">
+                <img [src]="img.imageUrl" [alt]="img.imageDescription"
+                  (error)="img.imageUrl = 'assets/img/fallback-image.jpg'" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <ng-template #noImagesTemplate>
+          <p>No images available in this folder.</p>
+        </ng-template>
+        <div class="row quick">
+          <div class="col-md-10">
+            <h1>Discover the power of Patashala</h1>
+          </div>
+          <div class="col-md-2">
+            <button class="quickcon">Quick Contact</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

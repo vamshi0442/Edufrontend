@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { HttpClient } from '@angular/common/http';
 import { ApiService } from '../api.service';
-import {FormGroup,FormControl,Validators,FormArray} from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 import { EnquiryForm } from './enquiry-form.model';
 import { MessageService } from 'primeng/api';
+import { Router } from '@angular/router';
 interface dropdownOptions {
   label: string;
   value: string;
@@ -16,31 +17,34 @@ interface dropdownOptions {
 })
 
 
-export class HomeComponent implements OnInit {  
+export class HomeComponent implements OnInit {
+  imageData: any[] = []; 
+ 
   images: any = [];
-  imageDescription : any = [];
+  imageDescription: any = [];
   Imgslst: any[] = [];
   currentPage: number = 0;
   pageSize: number = 4;
   autoScrollInterval: any;
-  listMenuResponse:any = [];
-  aboutPatashala:any =[];
-  courselist:any =[];
-  tempList:any=[];
-  subheading:any=[];
-  studentTestimonials:any=[];
-  visible: boolean =true;
+  listMenuResponse: any = [];
+  aboutPatashala: any = [];
+  courselist: any = [];
+  tempList: any = [];
+  subheading: any = [];
+  studentTestimonials: any = [];
+  visible: boolean = true;
   quickContactForm!: FormGroup;
-  dialogquickContactForm!:FormGroup;
+  dialogquickContactForm!: FormGroup;
   states!: dropdownOptions[];
   courses!: dropdownOptions[];
   successMessage: any;
-  successMessageindialog :any;
+  successMessageindialog: any;
   firsttime: string = "true";
   showDialog: boolean = false; // Flag to control visibility of p-dialog
+
   constructor(private httpClient: HttpClient,
     private apiService: ApiService,
-  private messageService:MessageService) {
+    private messageService: MessageService, public router: Router) {
   }
   customOptions: OwlOptions = {
     loop: true,
@@ -48,6 +52,7 @@ export class HomeComponent implements OnInit {
     mouseDrag: false,
     touchDrag: false,
     pullDrag: false,
+    lazyLoad:true,
     items: 4,  // Display 4 items at a time
     dots: false,
     navSpeed: 700,
@@ -69,14 +74,14 @@ export class HomeComponent implements OnInit {
     nav: true
   }
   ngOnInit(): void {
-    
-      // this.httpClient.get<any>("assets/response_1699881964735.json").subscribe((data)=>{
-      this.apiService.getData().subscribe((data:any)=>{
+
+    // this.httpClient.get<any>("assets/response_1699881964735.json").subscribe((data)=>{
+    this.apiService.getData().subscribe((data: any) => {
       this.listMenuResponse = data.listMenuSubMenu;
-      this.courselist =[];
-      this.tempList =[];
-      this.studentTestimonials=[];
-      this.aboutPatashala =[];
+      this.courselist = [];
+      this.tempList = [];
+      this.studentTestimonials = [];
+      this.aboutPatashala = [];
       this.loadImages();
       //this.setupAutoScroll();
       // if (storedFirstTime === null || storedFirstTime === undefined) {
@@ -88,88 +93,149 @@ export class HomeComponent implements OnInit {
       //   localStorage.setItem("firsttime", "false");
       //   this.showDialog = false;
       // }
-       // Check if 8 hours have passed, then reset local storage flag
-  //   const storedTime = parseInt(localStorage.getItem('storedTime') || '0', 10);
-  //   const currentTime = new Date().getTime();
-  //   const timeDifference = currentTime - storedTime;
+      // Check if 8 hours have passed, then reset local storage flag
+      //   const storedTime = parseInt(localStorage.getItem('storedTime') || '0', 10);
+      //   const currentTime = new Date().getTime();
+      //   const timeDifference = currentTime - storedTime;
 
-  //   if (timeDifference >= 8 * 60 * 60 * 1000) {
-  //     localStorage.setItem("firsttime", "false");
-  //     localStorage.setItem('storedTime', currentTime.toString()); // Reset the stored time
-  //         }
-  // // Determine whether to show or hide the dialog
-  // this.showDialog = this.firsttime === 'true';
-  
+      //   if (timeDifference >= 8 * 60 * 60 * 1000) {
+      //     localStorage.setItem("firsttime", "false");
+      //     localStorage.setItem('storedTime', currentTime.toString()); // Reset the stored time
+      //         }
+      // // Determine whether to show or hide the dialog
+      // this.showDialog = this.firsttime === 'true';
+
       this.studentTestimonials = data.branches;
-          this.listMenuResponse.forEach((element: { listMenuResponse: any; menu:any; menuUrl:any; responses: any; menu_Id :any; submenu_id:any ;content_Subheading:any }) => {
-            if(element.submenu_id == 10 || element.submenu_id == 25){
-              
-              element.listMenuResponse.forEach((x: { responses: any; menu_Id :any })=>
-              {
-                if(x.menu_Id == element.menu_Id){
-                  this.tempList.push({menu:element.menu, menuUrl:element.menuUrl, menu_Id: element.menu_Id, response: x.responses});
-                  this.courselist =  this.tempList;
-                  // this.courselist = JSON.stringify(this.tempList);
-                 // this.subheading =x.
-                }
-                
-              })
-              
+      this.listMenuResponse.forEach((element: { listMenuResponse: any; menu: any; menuUrl: any; responses: any; menu_Id: any; submenu_id: any; content_Subheading: any }) => {
+        if (element.submenu_id == 10 || element.submenu_id == 25) {
+
+          element.listMenuResponse.forEach((x: { responses: any; menu_Id: any }) => {
+            if (x.menu_Id == element.menu_Id) {
+              this.tempList.push({ menu: element.menu, menuUrl: element.menuUrl, menu_Id: element.menu_Id, response: x.responses });
+              this.courselist = this.tempList;
+              // this.courselist = JSON.stringify(this.tempList);
+              // this.subheading =x.
             }
-            if(element.menu_Id==6){
-              
-              element.listMenuResponse.forEach((x:{responses: any;responses_Subheading:any;})=>{
-                let tt = String(x.responses)
-                this.aboutPatashala.push(tt.substring(0,620));
-                this.subheading = x.responses_Subheading;
-              })
-            }
-          });
-          //this.studentTestimonials = data.branches;
+
+          })
+
         }
+        if (element.menu_Id == 6) {
+
+          element.listMenuResponse.forEach((x: { responses: any; responses_Subheading: any; }) => {
+            let tt = String(x.responses)
+            this.aboutPatashala.push(tt.substring(0, 620));
+            this.subheading = x.responses_Subheading;
+          })
+        }
+      });
+      //this.studentTestimonials = data.branches;
+    }
     );
 
     this.quickContactForm = new FormGroup({
       fullName: new FormControl(null, Validators.compose([Validators.required])),
       email: new FormControl(null, [Validators.required, Validators.email]),
-      mobile: new FormControl(null,  [Validators.required,
-        Validators.pattern(/^\d{10,14}$/), // Assuming 10-digit mobile number, adjust pattern accordingly
+      mobile: new FormControl(null, [Validators.required,
+      Validators.pattern(/^\d{10,14}$/), // Assuming 10-digit mobile number, adjust pattern accordingly
       ]),
-      state: new FormControl(null, ),
-       course: new FormControl(null,)
+      state: new FormControl(null,),
+      course: new FormControl(null,)
       // IPAddress:  new FormControl(null,),
       // CreatedOn:  new FormControl(null,),      
       // ReturnMessage: new FormControl(null,)
-  });
-  this.dialogquickContactForm = new FormGroup({
-    fulName: new FormControl(null, Validators.compose([Validators.required])),
-    demail: new FormControl(null, [Validators.required, Validators.email]),
-    dmobile: new FormControl(null,  [Validators.required,
+    });
+    this.dialogquickContactForm = new FormGroup({
+      fulName: new FormControl(null, Validators.compose([Validators.required])),
+      demail: new FormControl(null, [Validators.required, Validators.email]),
+      dmobile: new FormControl(null, [Validators.required,
       Validators.pattern(/^\d{10,14}$/), // Assuming 10-digit mobile number, adjust pattern accordingly
-    ]),
-    dstate: new FormControl(null, ),
-     dcourse: new FormControl(null,)
-    // IPAddress:  new FormControl(null,),
-    // CreatedOn:  new FormControl(null,),      
-    // ReturnMessage: new FormControl(null,)
-});
-  
-  this.states = [
-    {label: 'Andhra Pradesh', value: 'AndhraPradesh'},
-    {label: 'Arunachal Pradesh', value: 'ArunachalPradesh'},
-    {label: 'Assam', value: 'Assam'},
-    {label: 'Bihar', value: 'Bihar'}
-  ]
+      ]),
+      dstate: new FormControl(null,),
+      dcourse: new FormControl(null,)
+      // IPAddress:  new FormControl(null,),
+      // CreatedOn:  new FormControl(null,),      
+      // ReturnMessage: new FormControl(null,)
+    });
+    this.apiService.NewGetbannerImages().subscribe(
+      (data: any) => {
+        this.imageData = data.map((item: any) => {
+          return {
+            imageUrl: item.imagesUrl,
+            imageDescription: item.imageDescription
+          };
+        });
+        console.log(this.imageData)
+      },
+      (error: any) => {
+        console.error('Error fetching images:', error);
+      }
+    );
 
-  this.courses  =[
-    {label: 'CS', value:'CS'},
-    {label: ' CA', value:' CA'},
-    {label: 'CMA', value:'CMA'},
-    {label: ' ACCA', value:' ACCA'},
-    {label: 'CIMA', value:'CIMA'},
-    {label: 'CMA(US)', value:'CMA(US)'}
-  ]
+    this.states = [
+      { label: 'Andhra Pradesh', value: 'Amaravati' },
+      { label: "Arunachal Pradesh", value: 'Itanagar' },
+      { label: 'Assam', value: 'Dispur' },
+      { label: 'Bihar', value: 'Patna' },
+      { label: 'Chhattisgarh', value: 'Raipur' },
+      { label: 'Goa', value: 'Panaji' },
+      { label: 'Gujarat', value: 'Gandhinagar' },
+      { label: 'Haryana', value: 'Chandigarh' },
+      { label: 'Himachal Pradesh', value: 'Shimla' },
+      { label: 'Jharkhand', value: 'Ranchi' },
+      { label: 'Karnataka', value: 'Bangalore' },
+      { label: 'Kerala', value: 'Thiruvananthapuram' },
+      { label: 'Madhya Pradesh', value: 'Bhopal' },
+      { label: 'Maharashtra', value: 'Mumbai' },
+      { label: 'Manipur', value: 'Imphal' },
+      { label: 'Meghalaya', value: 'Shillong' },
+      { label: 'Mizoram', value: 'Aizawl' },
+      { label: 'Nagaland', value: 'Kohima' },
+      { label: 'Odisha', value: 'Bhubaneshwar' },
+      { label: 'Punjab', value: 'Chandigarh' },
+      { label: 'Rajasthan', value: 'Jaipur' },
+      { label: 'Sikkim', value: 'Gangtok' },
+      { label: 'Tamil Nadu', value: 'Chennai' },
+      { label: 'Telangana', value: 'Hyderabad' },
+      { label: 'Tripura', value: 'Agartala' },
+      { label: 'Uttarakhand', value: 'Dehradun' },
+      { label: 'Uttar Pradesh', value: 'Lucknow' },
+      { label: 'West Bengal', value: 'Kolkata' }
+    ]
+
+    this.courses = [
+      { label: ' CA', value: ' CA' },
+      { label: 'CMA', value: 'CMA' },
+      { label: 'CS', value: 'CS' },
+      { label: 'ACCA(UK)',value: 'ACCA(UK)' },
+      { label: 'CMA(US)', value: 'CMA(US)' },
+      { label: 'CLAT',value: 'CLAT'},
+      { label: 'IPMAT' ,value: 'IPMAT'},
+      { label: 'CAT',value: 'CAT'},
+      { label: 'ICET' ,value: 'ICET'},
+      { label: 'TS LAWCET' ,value:'TS LAWCET' },
+      { label: 'SAT' ,value:'SAT'}
+    ]
   }
+ 
+    // getBannerImages(folder: string) {
+    //   this.apiService.getFacultyImages(1, folder).subscribe(
+    //     (data: any) => {
+    //       this.imagesByFolder = data.map((item: any) => ({
+    //         imageId: item.imageId,
+    //         imageUrl: item.imagesUrl,
+    //         imageDescription: item.imageDescription
+    //       }));
+    //       console.log(`Images from ${folder}:`, this.imagesByFolder);
+    //     },
+    //     (error: any) => {
+    //       console.error(`Error fetching images from ${folder}:`, error);
+    //     }
+    //   );
+    // }
+
+
+
   get fullName() {
     return this.quickContactForm.get('fullName');
   }
@@ -189,10 +255,10 @@ export class HomeComponent implements OnInit {
   get mobile() {
     return this.quickContactForm.get('mobile');
   }
-   onSubmit() {
+  onSubmit() {
     // console.log(this.quickContactForm);
     // console.log(this.quickContactForm.value); 
-  
+
     if (this.quickContactForm.valid) {
       const formData: EnquiryForm = new EnquiryForm(
         0, // You may set appropriate default values or handle this differently
@@ -211,9 +277,9 @@ export class HomeComponent implements OnInit {
           next: (response) => {
             // Handle success response
             // console.log('Form submitted successfully', response);
-            this.successMessage= response.returnMessage+'....'; 
-           // Reset the form values
-           this.quickContactForm.reset();
+            this.successMessage = response.returnMessage + '....';
+            // Reset the form values
+            this.quickContactForm.reset();
           },
           error: (error) => {
             // Handle error response
@@ -226,10 +292,10 @@ export class HomeComponent implements OnInit {
       this.markFormGroupTouched(this.quickContactForm);
     }
   }
-  
+
   donSubmit() {
-   // console.log(this.dialogquickContactForm.value);
-  
+    // console.log(this.dialogquickContactForm.value);
+
     if (this.dialogquickContactForm.valid) {
       const dformData: EnquiryForm = new EnquiryForm(
         0, // You may set appropriate default values or handle this differently
@@ -247,14 +313,14 @@ export class HomeComponent implements OnInit {
         .subscribe({
           next: (response) => {
             // Handle success response
-           // console.log('Form submitted successfully', response);
-            this.successMessageindialog = response.returnMessage+'....'; 
+            // console.log('Form submitted successfully', response);
+            this.successMessageindialog = response.returnMessage + '....';
             // Reset the form values
             this.dialogquickContactForm.reset();
           },
           error: (error) => {
             // Handle error response
-           // console.error('Error submitting form', error);
+            // console.error('Error submitting form', error);
           }
         });
     }
@@ -272,60 +338,63 @@ export class HomeComponent implements OnInit {
       }
     });
   }
-// Add a method to display success messages
-private showSuccessMessage(message: string): void {
-  // Display the success message to the user (e.g., using a toast notification, alert, etc.)
-  // console.log('Success Message:', message);
-  this.messageService.add({ 
-    severity: "success", 
-    summary: message, 
-    detail: message, 
-  });
-}
-
-// ngOnDestroy(): void {
-//   if (this.autoScrollInterval) {
-//     clearInterval(this.autoScrollInterval);
-//   }
-// }
-
-// setupAutoScroll(): void {
-//   this.autoScrollInterval = setInterval(() => {
-//     if (this.currentPage * this.pageSize >= this.images.length) {
-//       this.currentPage = 0;  // Optionally reset to start or handle as needed
-//     }
-//     this.loadMoreImages();
-//   }, 3000); // Change the interval as needed
-// }
-loadImages(): void {
-  this.apiService.GetImages().subscribe({
-    next: (data: any) => {
-      this.images = this.images.concat(data);
-      this.currentPage++;    
-      // Process each image object directly from the data array
-      this.images.forEach((image: any) => {
-        // Now directly logging and pushing image names, since each item in the array is an image object
-          this.Imgslst.push({ Image: 'assets/img'+image.folder+image.imageName, ImageDescription:image.imageDescription });
-      });
-    
-      // Log the full list after updates
-    },
-    error: (error: any) => {
-      console.error('Error fetching images', error);
-    }
-  });
-}
-
-
-// loadMoreImages(): void {
-//   if (this.currentPage * this.pageSize < this.images.length) {
-//     this.loadImages();
-//   } else {
-//     // Reset or handle end of images list
-//     this.currentPage = 0;
-//     this.images = [];
-//     this.loadImages();
-//   }
-// }
+  // Add a method to display success messages
+  private showSuccessMessage(message: string): void {
+    // Display the success message to the user (e.g., using a toast notification, alert, etc.)
+    // console.log('Success Message:', message);
+    this.messageService.add({
+      severity: "success",
+      summary: message,
+      detail: message,
+    });
   }
+
+  // ngOnDestroy(): void {
+  //   if (this.autoScrollInterval) {
+  //     clearInterval(this.autoScrollInterval);
+  //   }
+  // }
+
+  setupAutoScroll(): void {
+    this.autoScrollInterval = setInterval(() => {
+      if (this.currentPage * this.pageSize >= this.images.length) {
+        this.currentPage = 0;  // Optionally reset to start or handle as needed
+      }
+      this.loadMoreImages();
+    }, 300); // Change the interval as needed
+  }
+  loadImages(): void {
+    this.apiService.GetImages().subscribe({
+      next: (data: any) => {
+        this.images = this.images.concat(data);
+        this.currentPage++;
+        // Process each image object directly from the data array
+        this.images.forEach((image: any) => {
+          // Now directly logging and pushing image names, since each item in the array is an image object
+          this.Imgslst.push({ Image: 'assets/img' + image.folder + image.imageName, ImageDescription: image.imageDescription });
+        });
+
+        // Log the full list after updates
+      },
+      error: (error: any) => {
+        console.error('Error fetching images', error);
+      }
+    });
+  }
+
+
+  loadMoreImages(): void {
+    if (this.currentPage * this.pageSize < this.images.length) {
+      this.loadImages();
+    } else {
+      // Reset or handle end of images list
+      this.currentPage = 0;
+      this.images = [];
+      this.loadImages();
+    }
+  }
+  course(){
+    this.router.navigate(['ca']);
+  }
+}
 

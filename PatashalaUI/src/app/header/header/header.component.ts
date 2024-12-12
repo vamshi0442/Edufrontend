@@ -1,737 +1,2491 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+    selector: 'app-header',
+    templateUrl: './header.component.html',
+    styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-listMenuResponse:any = [];
-dynamicmenuItems:any =[];
-childmenuItems:any =[];
+    listMenuResponse: any = [];
+    dynamicmenuItems: any = [];
+    childmenuItems: any = [];
 
 
-ngOnInit(){
-  this.getdynamicMenu();
-  this.dynamicmenuItems = this.listMenuResponse;
-  this.childmenuItems = this.listMenuResponse;
+    ngOnInit() {
+        this.getdynamicMenu();
+        this.dynamicmenuItems = this.listMenuResponse;
+        this.childmenuItems = this.listMenuResponse;
 
-}
+    }
 
-getdynamicMenu(){
+    getdynamicMenu() {
 
-  this.listMenuResponse = [
+        this.listMenuResponse = [
+            {
+                "menu_Id": 1,
+                "submenu_id": 0,
+                "menu": "Home",
+                "menuUrl": "",
+                "isActive": true,
+                "listMenuResponse": [
+                    {
+                        "menuResponsesId": 1,
+                        "menu_Id": 1,
+                        "responses": "test",
+                        "url": null,
+                        "createdOn": "2023-10-05T00:28:42.153",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": ".",
+                        "isActive": true,
+                        "sortorder": 0,
+                        "content_Subheading": "string",
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 2,
+                        "menu_Id": 1,
+                        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
+                        "url": null,
+                        "createdOn": "2023-10-05T00:29:39.03",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 0,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 3,
+                        "menu_Id": 1,
+                        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
+                        "url": null,
+                        "createdOn": "2023-10-05T00:30:14.16",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 0,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 11,
+                        "menu_Id": 1,
+                        "responses": "Dr. K. SAI KUMAR GOUD\\nTULASI RAM CHINNI\\nSrinath Gupta\\nCA Srinivas\\nBabitha Rani\\nCA adiba Maruf\\nNeeraja\\nVivek Srinivas\\nSheetal kabra\\nRanga reddy.",
+                        "url": null,
+                        "createdOn": "2023-10-05T00:30:58.087",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 0,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 19,
+                        "menu_Id": 1,
+                        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.\r\nAccounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
+                        "url": null,
+                        "createdOn": "2023-10-05T00:34:32.743",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 0,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    }
+                ],
+                "returnMessage": null
+            },
+            {
+                "menu_Id": 2,
+                "submenu_id": 0,
+                "menu": "Partners",
+                "menuUrl": "/#",
+                "isActive": true,
+                "listMenuResponse": [
+                    {
+                        "menuResponsesId": 4,
+                        "menu_Id": 2,
+                        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
+                        "url": null,
+                        "createdOn": "2023-10-05T00:30:30.527",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 0,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 5,
+                        "menu_Id": 2,
+                        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
+                        "url": null,
+                        "createdOn": "2023-10-05T00:30:30.527",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 0,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    }
+                ],
+                "returnMessage": null
+            },
+            {
+                "menu_Id": 3,
+                "submenu_id": 0,
+                "menu": "Gallery",
+                "menuUrl": "/gallery",
+                "isActive": true,
+                "listMenuResponse": [
+                    {
+                        "menuResponsesId": 6,
+                        "menu_Id": 3,
+                        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
+                        "url": null,
+                        "createdOn": "2023-10-05T00:30:45.273",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 0,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 7,
+                        "menu_Id": 3,
+                        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
+                        "url": null,
+                        "createdOn": "2023-10-05T00:30:45.273",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 0,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 8,
+                        "menu_Id": 3,
+                        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
+                        "url": null,
+                        "createdOn": "2023-10-05T00:30:47.86",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 0,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    }
+                ],
+                "returnMessage": null
+            },
+            {
+                "menu_Id": 4,
+                "submenu_id": 0,
+                "menu": "Students",
+                "menuUrl": "/#",
+                "isActive": true,
+                "listMenuResponse": [
+                    {
+                        "menuResponsesId": 9,
+                        "menu_Id": 4,
+                        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
+                        "url": null,
+                        "createdOn": "2023-10-05T00:30:55.69",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 0,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 10,
+                        "menu_Id": 4,
+                        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
+                        "url": null,
+                        "createdOn": "2023-10-05T00:30:55.69",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 0,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    }
+                ],
+                "returnMessage": null
+            },
+            {
+                "menu_Id": 5,
+                "submenu_id": 0,
+                "menu": "News/Announcement",
+                "menuUrl": "/#",
+                "isActive": true,
+                "listMenuResponse": [
+                    {
+                        "menuResponsesId": 12,
+                        "menu_Id": 5,
+                        "responses": "Dr. K. SAI KUMAR GOUD",
+                        "url": null,
+                        "createdOn": "2023-10-05T00:31:03.66",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 3,
+                        "content_Subheading": "About Faculty",
+                        "returnMessage": null
+                    }
+                ],
+                "returnMessage": null
+            },
+            {
+                "menu_Id": 6,
+                "submenu_id": 1,
+                "menu": "About Patashala",
+                "menuUrl": "/aboutus",
+                "isActive": true,
+                "listMenuResponse": [
+                    {
+                        "menuResponsesId": 17,
+                        "menu_Id": 6,
+                        "responses": "Welcome to PATSHALA – Your Gateway to Success in Commerce, Competitive, and Entrance Exams!",
+                        "url": null,
+                        "createdOn": "2023-10-05T00:33:53.43",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": "About Patashala",
+                        "isActive": true,
+                        "sortorder": 1,
+                        "content_Subheading": "",
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 99,
+                        "menu_Id": 6,
+                        "responses": "PATSHALA emerges as a pioneering initiative in the realm of commerce professional and competitive exam coaching/training. With a steadfast commitment to excellence, PATSHALA offers both Virtual (online) and Face-to-Face (offline) coaching, catering to a diverse array of courses including CA, CMA, CS, ACCA (UK), CIMA (UK), CPA (USA), CMA (USA), CLAT, AILET, SLAT, IPMAT, CAT, ICET, and TSLAWCET.",
+                        "url": null,
+                        "createdOn": "2024-04-10T19:08:59.817",
+                        "createdBy": "Vamhi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": "",
+                        "isActive": true,
+                        "sortorder": 2,
+                        "content_Subheading": "",
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 100,
+                        "menu_Id": 6,
+                        "responses": "At PATSHALA, we recognize that each student is unique and deserves personalized attention. That's why we employ a blend of efficient learning techniques and state-of-the-art study tools to empower our students with the knowledge and skills needed to excel in their chosen exams. Whether it's mastering complex financial concepts or sharpening problem-solving abilities, our comprehensive approach ensures that students are well-prepared and confident on exam day.",
+                        "url": null,
+                        "createdOn": "2024-04-10T19:10:14.243",
+                        "createdBy": "Vamhi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": "",
+                        "isActive": true,
+                        "sortorder": 3,
+                        "content_Subheading": "Our Approach:",
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 101,
+                        "menu_Id": 6,
+                        "responses": "Quality education is at the heart of everything we do at PATSHALA. We are driven by a passion for professional excellence and ethical conduct, aiming to transform our students into world-class finance professionals with a global outlook. Through rigorous training, mentorship, and guidance, we instill in our students the values of integrity, diligence, and perseverance – qualities that are essential for success in today's competitive world.",
+                        "url": null,
+                        "createdOn": "2024-04-10T19:11:00.94",
+                        "createdBy": "Vamhi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": "",
+                        "isActive": true,
+                        "sortorder": 4,
+                        "content_Subheading": "Our Commitment to Quality Education:",
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 102,
+                        "menu_Id": 6,
+                        "responses": "Whether you're a commerce professional looking to advance your career or an aspiring student aiming to crack competitive entrance exams, PATSHALA is here to guide you every step of the way. With our comprehensive coaching programs, experienced faculty, and unwavering support, we are committed to helping you achieve your academic and professional goals.",
+                        "url": null,
+                        "createdOn": "2024-04-10T19:11:46.557",
+                        "createdBy": "Vamhi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": "",
+                        "isActive": true,
+                        "sortorder": 5,
+                        "content_Subheading": "Join Us on Your Journey to Success:",
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 103,
+                        "menu_Id": 6,
+                        "responses": "Discover the difference that quality education can make in your life. Join PATSHALA and embark on a transformative journey towards success and excellence. Contact us today to learn more about our programs, admission process, and how we can help you unlock your full potential.",
+                        "url": null,
+                        "createdOn": "2024-04-10T19:12:19.12",
+                        "createdBy": "Vamhi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": "",
+                        "isActive": true,
+                        "sortorder": 6,
+                        "content_Subheading": "Experience the PATSHALA Difference:",
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 104,
+                        "menu_Id": 6,
+                        "responses": "Welcome to PATSHALA – Where Success Begins!",
+                        "url": null,
+                        "createdOn": "2024-04-10T19:12:38.727",
+                        "createdBy": "Vamhi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": "",
+                        "isActive": true,
+                        "sortorder": 7,
+                        "content_Subheading": "",
+                        "returnMessage": null
+                    }
+                ],
+                "returnMessage": null
+            },
+            {
+                "menu_Id": 7,
+                "submenu_id": 1,
+                "menu": "Vision & Mission",
+                "menuUrl": "/vision-mission",
+                "isActive": true,
+                "listMenuResponse": [
+                    {
+                        "menuResponsesId": 51,
+                        "menu_Id": 7,
+                        "responses": "To produce skilled professionals and provide valuable human resources to the corporate sector by bridging the gap between academics & industry requirements.",
+                        "url": null,
+                        "createdOn": "2023-11-19T17:10:00.743",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": "Vision-Mission",
+                        "isActive": true,
+                        "sortorder": 1,
+                        "content_Subheading": "Vision Statement",
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 52,
+                        "menu_Id": 7,
+                        "responses": "Our mission is to provide high-quality education that aligns with the demands of the profession and society. We are dedicated to achieve excellence in teaching and learning.",
+                        "url": null,
+                        "createdOn": "2023-11-19T17:11:18.033",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": "Vision-Mission",
+                        "isActive": true,
+                        "sortorder": 2,
+                        "content_Subheading": "Mission Statement",
+                        "returnMessage": null
+                    }
+                ],
+                "returnMessage": null
+            },
+            {
+                "menu_Id": 8,
+                "submenu_id": 1,
+                "menu": "Our Team",
+                "menuUrl": "/ourteam",
+                "isActive": true,
+                "listMenuResponse": [
+                    {
+                        "menuResponsesId": 18,
+                        "menu_Id": 8,
+                        "responses": "Ram Mohan Komanduri is a successful entrepreneur and holds various positions among multiple organizations as a Chairman, Chief Executive Officer, Chief Technology Officer, Project Delivery Executive, Board of Director and Angel Investor.     Having pursued his Masters in Science from UK and MBA from USA and certified director from the prestigious New York Film Academy, USA his leadership is committed to defining, following and practicing the highest level of corporate governance across all business functions.    With over 20 Years of experience in SAP implementations which includes Fortune 100 companies and vast experience in managing global projects in United States of America, United Kingdom, Europe, Israel , Saudi Arabia & India.  His compassion to amplify human potential and create the next opportunity for people, businesses, and communities is what inspires us.    Building high technology Virtual Movie Studio in Dallas, TX with his rare combination of expertise in software industry and his passion in film making     Patshala is his dream project aimed to create a new era in commerce education both in India & USA with his brother(Sai Sir) who is transforming himself from an successful academician to world class entrepreneur. As a part of our commitment to rise commerce education to global best practices, with a broad selection of key governance principles and regulations.",
+                        "url": null,
+                        "createdOn": "2023-10-05T00:34:28.423",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": "",
+                        "isActive": true,
+                        "sortorder": 1,
+                        "content_Subheading": "About Founder & Chairman",
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 14,
+                        "menu_Id": 8,
+                        "responses": "Dr. Kothapally Sai Kumar Goud is a highly educated individual with a strong background in finance and Professional education. He is a tax consultant in Hyderabad for the past 17 years specializing direct tax. He holds multiple degrees, including a CMA (Cost and Management Accountant), CS (Company Secretary), LLB (Bachelor of Laws), MBA (Master of Business administration), and a MS from London. Sai Kumar Goud has excelled academically and received recognition for his achievements, including being a Hyderabad Topper in CMA Examinations and holding a Merit Certificate from CMA Bhavan for clearing both groups of CMA Final in the 1st attempt, ranking 12th nationwide. He has extensive teaching and management experience in professional education and has trained thousands of students in various courses. Currently, he holds the position of CEO and Director of PATSHALA. He served as Working partner & Director in SHIPS Academy (Sri Haritha Educational society), Professional courses Head in Tapasya Educational institutions and as the Vice President and Head of Professional Courses at AVINASH Group of Institutions, offering coaching for a wide range of local, national, and international courses including CA, CS, CMA, ACCA, CIMA, CLAT, IPMAT, CAT, ICET and more. Additionally, he has prior work experience in the fields of consulting and cost management.   ",
+                        "url": null,
+                        "createdOn": "2023-10-05T00:31:06.22",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": "",
+                        "isActive": true,
+                        "sortorder": 2,
+                        "content_Subheading": "About  CEO & Director",
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 13,
+                        "menu_Id": 8,
+                        "responses": "Dr.K.Sai Kumar Goud",
+                        "url": null,
+                        "createdOn": "2023-10-05T00:31:03.66",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": "",
+                        "isActive": true,
+                        "sortorder": 3,
+                        "content_Subheading": "About Faculty",
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 62,
+                        "menu_Id": 8,
+                        "responses": "Tulasi Ram Chinni",
+                        "url": null,
+                        "createdOn": "2023-11-19T18:41:51.56",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": "",
+                        "isActive": true,
+                        "sortorder": 4,
+                        "content_Subheading": "",
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 63,
+                        "menu_Id": 8,
+                        "responses": "Srinath Gupta",
+                        "url": null,
+                        "createdOn": "2023-11-19T18:42:04.19",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": "",
+                        "isActive": true,
+                        "sortorder": 5,
+                        "content_Subheading": "",
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 64,
+                        "menu_Id": 8,
+                        "responses": "CA Srinivas",
+                        "url": null,
+                        "createdOn": "2023-11-19T18:42:38.26",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": "",
+                        "isActive": true,
+                        "sortorder": 6,
+                        "content_Subheading": "",
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 65,
+                        "menu_Id": 8,
+                        "responses": "Babitha Rani",
+                        "url": null,
+                        "createdOn": "2023-11-19T18:42:55.44",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": "",
+                        "isActive": true,
+                        "sortorder": 7,
+                        "content_Subheading": "",
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 66,
+                        "menu_Id": 8,
+                        "responses": "CA Adiba Maruf",
+                        "url": null,
+                        "createdOn": "2023-11-19T18:43:38.637",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": "",
+                        "isActive": true,
+                        "sortorder": 8,
+                        "content_Subheading": "",
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 67,
+                        "menu_Id": 8,
+                        "responses": "Neeraja",
+                        "url": null,
+                        "createdOn": "2023-11-19T18:43:59.77",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": "",
+                        "isActive": true,
+                        "sortorder": 9,
+                        "content_Subheading": "",
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 68,
+                        "menu_Id": 8,
+                        "responses": "Vivek Srinivas",
+                        "url": null,
+                        "createdOn": "2023-11-19T18:44:16.027",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": "",
+                        "isActive": true,
+                        "sortorder": 10,
+                        "content_Subheading": "",
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 69,
+                        "menu_Id": 8,
+                        "responses": "Sheetal Kabra",
+                        "url": null,
+                        "createdOn": "2023-11-19T18:44:32.9",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": "",
+                        "isActive": true,
+                        "sortorder": 11,
+                        "content_Subheading": "",
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 70,
+                        "menu_Id": 8,
+                        "responses": "Ranga Reddy",
+                        "url": null,
+                        "createdOn": "2023-11-19T18:44:48.243",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": "Our Team",
+                        "isActive": true,
+                        "sortorder": 12,
+                        "content_Subheading": "",
+                        "returnMessage": null
+                    }
+                ],
+                "returnMessage": null
+            },
+            {
+                "menu_Id": 9,
+                "submenu_id": 55,
+                "menu": "CPC-Commerce Professioanal Courses",
+                "menuUrl": "",
+                "isActive": true,
+                "listMenuResponse": [
+                    {
+                        "menuResponsesId": 20,
+                        "menu_Id": 9,
+                        "responses": "CPA, which stands for Certified Public Accountant, is a professional designation that signifies the highest level of competence in the field of accountancy. The CPA examination is administered by the American Institute of Certified Public Accountants (AICPA). In India, the Chartered Accountant (CA) designation is considered equivalent to the CPA credential.",
+                        "url": null,
+                        "createdOn": "2023-10-05T00:34:45.597",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 1,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 36,
+                        "menu_Id": 9,
+                        "responses": "The CPA program encompasses a comprehensive curriculum that includes subjects such as accounting, law, analytics, taxation, auditing, evaluation, regulatory frameworks and procedures, ethics, and financial planning and management.",
+                        "url": null,
+                        "createdOn": "2023-10-24T20:36:35.83",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": "Certified Public Accountant",
+                        "isActive": true,
+                        "sortorder": 2,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 88,
+                        "menu_Id": 9,
+                        "responses": "The CPA Exam is composed of three types of assessments",
+                        "url": null,
+                        "createdOn": "2023-11-19T19:45:51.793",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 3,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 89,
+                        "menu_Id": 9,
+                        "responses": "1.Multiple-choice questions (MCQs), ",
+                        "url": null,
+                        "createdOn": "2023-11-19T19:46:12.887",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 4,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 90,
+                        "menu_Id": 9,
+                        "responses": "2.Task-based simulations (TBS)",
+                        "url": null,
+                        "createdOn": "2023-11-19T19:46:35.797",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 5,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 91,
+                        "menu_Id": 9,
+                        "responses": "3.Written communication tasks. ",
+                        "url": null,
+                        "createdOn": "2023-11-19T19:46:55.097",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 6,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 92,
+                        "menu_Id": 9,
+                        "responses": "These examinations evaluate candidates on their knowledge, problem-solving skills, and communication abilities within the realm of accounting and finance.",
+                        "url": null,
+                        "createdOn": "2023-11-19T19:47:20.23",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 7,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    }
+                ],
+                "returnMessage": null
+            },
+            {
+                "menu_Id": 10,
+                "submenu_id": 55,
+                "menu": "CEEC- Competetive Entrance Exam Courses",
+                "menuUrl": "",
+                "isActive": true,
+                "listMenuResponse": [
+                    {
+                        "menuResponsesId": 43,
+                        "menu_Id": 10,
+                        "responses": null,
+                        "url": null,
+                        "createdOn": "2023-10-24T20:56:51.92",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 0,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    }
+                ],
+                "returnMessage": null
+            },
+            {
+                "menu_Id": 11,
+                "submenu_id": 4,
+                "menu": "Study Hub- Videos",
+                "menuUrl": "study_hub_videos",
+                "isActive": true,
+                "listMenuResponse": [
+                    {
+                        "menuResponsesId": 22,
+                        "menu_Id": 11,
+                        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.\r\nAccounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
+                        "url": null,
+                        "createdOn": "2023-10-05T00:34:57.92",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 0,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    }
+                ],
+                "returnMessage": null
+            },
+            {
+                "menu_Id": 12,
+                "submenu_id": 4,
+                "menu": "Online-Live Classes",
+                "menuUrl": "online_live_classes",
+                "isActive": true,
+                "listMenuResponse": [
+                    {
+                        "menuResponsesId": 23,
+                        "menu_Id": 12,
+                        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.\r\nAccounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
+                        "url": null,
+                        "createdOn": "2023-10-05T00:35:04.96",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 0,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 24,
+                        "menu_Id": 12,
+                        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.\r\nAccounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
+                        "url": null,
+                        "createdOn": "2023-10-05T00:35:08.257",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 0,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    }
+                ],
+                "returnMessage": null
+            },
+            {
+                "menu_Id": 13,
+                "submenu_id": 4,
+                "menu": "Resource-Live Classes Recordings",
+                "menuUrl": "recordedvideos",
+                "isActive": true,
+                "listMenuResponse": [
+                    {
+                        "menuResponsesId": 25,
+                        "menu_Id": 13,
+                        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.\r\nAccounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
+                        "url": null,
+                        "createdOn": "2023-10-05T00:35:23.1",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 0,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    }
+                ],
+                "returnMessage": null
+            },
+            {
+                "menu_Id": 14,
+                "submenu_id": 5,
+                "menu": "New Batches Announcements",
+                "menuUrl": "newsandevents",
+                "isActive": true,
+                "listMenuResponse": [
+                    {
+                        "menuResponsesId": 26,
+                        "menu_Id": 14,
+                        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.\r\nAccounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
+                        "url": null,
+                        "createdOn": "2023-10-05T00:35:27.407",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": "",
+                        "isActive": true,
+                        "sortorder": 0,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 28,
+                        "menu_Id": 14,
+                        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.\r\nAccounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
+                        "url": null,
+                        "createdOn": "2023-10-05T00:35:36.653",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": "",
+                        "isActive": true,
+                        "sortorder": 0,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 29,
+                        "menu_Id": 14,
+                        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.\r\nAccounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
+                        "url": null,
+                        "createdOn": "2023-10-05T00:35:39.54",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": "",
+                        "isActive": true,
+                        "sortorder": 0,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 30,
+                        "menu_Id": 14,
+                        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.\r\nAccounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
+                        "url": null,
+                        "createdOn": "2023-10-05T00:35:41.877",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": "",
+                        "isActive": true,
+                        "sortorder": 0,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 27,
+                        "menu_Id": 14,
+                        "responses": "CIMA, which stands for The Chartered Institute of Management Accountants, offers an esteemed qualification for individuals aspiring to excel as management accountants or pursue careers in the fields of finance and management. It enjoys a strong reputation within the business and finance sectors.",
+                        "url": null,
+                        "createdOn": "2023-10-05T00:35:34.247",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": "",
+                        "isActive": true,
+                        "sortorder": 1,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    }
+                ],
+                "returnMessage": null
+            },
+            {
+                "menu_Id": 15,
+                "submenu_id": 5,
+                "menu": "Career Oppurtunities",
+                "menuUrl": "",
+                "isActive": true,
+                "listMenuResponse": [
+                    {
+                        "menuResponsesId": 31,
+                        "menu_Id": 15,
+                        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.\r\nAccounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
+                        "url": null,
+                        "createdOn": "2023-10-05T00:35:46.717",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 0,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 44,
+                        "menu_Id": 15,
+                        "responses": "CS professionals have a promising future and hold prestigious job profiles in the field of Commerce and Accounting.\r\nThey can pursue careers in various sectors, including stock exchanges, company affairs departments, financial auditing firms, law boards, and government departments.\r\nThe CS course opens up diverse career avenues, and individuals can choose roles in corporate governance, legal compliance, and corporate management.\r\nTrained and certified Company Secretaries can work as independent advisors to firms, providing expertise in areas such as loans, taxes, partnerships, government licenses, registrations, and more. They can also join CS firms to offer services to clients.\r\nThe CS profession continues to be highly regarded and offers significant opportunities for those who complete the course and become certified Company Secretaries. The evolving regulatory landscape and increasing demand for corporate governance and compliance further enhance the importance of CS professionals in the business world.\r\n",
+                        "url": null,
+                        "createdOn": "2023-10-24T20:57:16.107",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": "Career Opportunities for CS Professionals:",
+                        "isActive": true,
+                        "sortorder": 0,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    }
+                ],
+                "returnMessage": null
+            },
+            {
+                "menu_Id": 16,
+                "submenu_id": 5,
+                "menu": "Exam Notifications",
+                "menuUrl": "",
+                "isActive": true,
+                "listMenuResponse": [
+                    {
+                        "menuResponsesId": 32,
+                        "menu_Id": 16,
+                        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.\r\nAccounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
+                        "url": null,
+                        "createdOn": "2023-10-05T00:35:55.22",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 0,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    }
+                ],
+                "returnMessage": null
+            },
+            {
+                "menu_Id": 17,
+                "submenu_id": 5,
+                "menu": "Educational Videos BY Faculty",
+                "menuUrl": "",
+                "isActive": true,
+                "listMenuResponse": [
+                    {
+                        "menuResponsesId": 33,
+                        "menu_Id": 17,
+                        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.\r\nAccounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
+                        "url": null,
+                        "createdOn": "2023-10-05T00:35:59.953",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 0,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    }
+                ],
+                "returnMessage": null
+            },
+            {
+                "menu_Id": 23,
+                "submenu_id": 41,
+                "menu": "CA",
+                "menuUrl": "Ca",
+                "isActive": true,
+                "listMenuResponse": [
+                    {
+                        "menuResponsesId": 38,
+                        "menu_Id": 23,
+                        "responses": "Chartered Accountants or CAs, are financial experts responsible for conducting essential accounting procedures. They are highly qualified professionals with comprehensive knowledge in areas like Accounting, Auditing, Taxation, Financial matters, and related services, catering to both individuals and organizations. Becoming a Chartered Accountant entails completing a demanding five-year professional certification program that focuses on taxation, accounting, auditing, financial analysis, and budgeting for individuals, businesses, or organizations.",
+                        "url": null,
+                        "createdOn": "2023-10-24T20:42:22.32",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": "Chartered Accountants",
+                        "isActive": true,
+                        "sortorder": 1,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 76,
+                        "menu_Id": 23,
+                        "responses": "To achieve the Chartered Accountant designation, individuals must successfully navigate a three-tiered training program established by the Institute of Chartered Accountants of India (ICAI), which serves as the governing body overseeing and maintaining the standards of the chartered accountancy profession in India. Aspiring Chartered Accountants can opt for one of two routes: The Foundation Course Route, beginning after completing Class 12, or the Direct Entry Route, designed for graduates.",
+                        "url": null,
+                        "createdOn": "2023-11-19T18:59:59.15",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 2,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 77,
+                        "menu_Id": 23,
+                        "responses": "Career prospects in chartered accountancy are driven by the profession's attractiveness due to its lucrative and secure nature. In a world where financial matters are central to everything, businesses depend on experts to manage their financial affairs. Upon completion of the CA course, graduates can explore diverse career opportunities, including roles as consultants, auditors, financial managers, business analysts, and more. Chartered Accountants engage in a wide range of activities, such as filing tax returns, auditing financial statements, facilitating business registration with government authorities, maintaining investment records, and preparing and reviewing financial reports.",
+                        "url": null,
+                        "createdOn": "2023-11-19T19:00:44.8",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 3,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 78,
+                        "menu_Id": 23,
+                        "responses": "CAs are in high demand across various sectors, including banks, financial institutions, and corporations, which opens up a wealth of job opportunities. CA-certified individuals also have the option to establish their own auditing firms, offering auditing services to clients. Graduates can command competitive starting salaries, typically ranging from INR 500,000 to INR 2,500,000 per annum. With experience and advanced skills, this figure can potentially rise to as high as INR 7,500,000 per annum, depending on individual capabilities. Chartered Accountants are esteemed professionals and are often regarded as highly qualified individuals.",
+                        "url": null,
+                        "createdOn": "2023-11-19T19:01:08.84",
+                        "createdBy": "\r\nVamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 4,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 79,
+                        "menu_Id": 23,
+                        "responses": "In summary, the field of chartered accountancy presents a promising and rewarding career path due to the strong demand for financial expertise and the substantial earning potential it offers.",
+                        "url": null,
+                        "createdOn": "2023-11-19T19:01:31.05",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 4,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    }
+                ],
+                "returnMessage": null
+            },
+            {
+                "menu_Id": 24,
+                "submenu_id": 41,
+                "menu": "CMA",
+                "menuUrl": "cma",
+                "isActive": true,
+                "listMenuResponse": [
+                    {
+                        "menuResponsesId": 37,
+                        "menu_Id": 24,
+                        "responses": "The Cost and Management Accountant (CMA) designation is a nationally recognized certification in management accounting, providing expertise in financial planning, strategic management, corporate finance, decision-making, and professional ethics. CMAs specialize in cost management, cost reduction, and cost auditing, making them valuable in various business organizations.",
+                        "url": null,
+                        "createdOn": "2023-10-24T20:40:22.453",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": "Certified Management Accountant",
+                        "isActive": true,
+                        "sortorder": 1,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 53,
+                        "menu_Id": 24,
+                        "responses": "In India, the CMA program is administered by the Institute of Cost Accountants of India (ICAI), formerly known as the Institute of Cost and Works Accountants of India (ICWAI). This institute operates under the Cost and Works Accountants Act, 1959, a special act of Parliament that regulates the profession of cost and management accountancy.",
+                        "url": null,
+                        "createdOn": "2023-11-19T18:27:41.783",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 2,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 54,
+                        "menu_Id": 24,
+                        "responses": "The CMA course in India consists of three stages ",
+                        "url": null,
+                        "createdOn": "2023-11-19T18:28:05.213",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 3,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 55,
+                        "menu_Id": 24,
+                        "responses": "1.Foundation",
+                        "url": null,
+                        "createdOn": "2023-11-19T18:29:01.11",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 4,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 56,
+                        "menu_Id": 24,
+                        "responses": "2.Intermediate",
+                        "url": null,
+                        "createdOn": "2023-11-19T18:29:21.717",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 5,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 57,
+                        "menu_Id": 24,
+                        "responses": "3.Final",
+                        "url": null,
+                        "createdOn": "2023-11-19T18:30:12.003",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 6,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 58,
+                        "menu_Id": 24,
+                        "responses": "To attain CMA certification, candidates must complete all three stages and fulfil specific requirements, including practical training and work experience.",
+                        "url": null,
+                        "createdOn": "2023-11-19T18:30:29.103",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 7,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 59,
+                        "menu_Id": 24,
+                        "responses": "The CMA designation offers diverse career opportunities, with CMAs working in various business functions such as Accounting and Finance, Sales and Marketing, Operations, Strategic Planning and Analysis, Information Technology, and Human Resources. Their skills in strategic management and accounting are transferable to a wide range of industries. ",
+                        "url": null,
+                        "createdOn": "2023-11-19T18:30:48.067",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 8,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 60,
+                        "menu_Id": 24,
+                        "responses": "Certified Management Accountant is a great career choice with its easy and quick course with high annual salary and Limitless career choice. It also gives a chance to work abroad. It also provides growth and value as an employee and business appeal.",
+                        "url": null,
+                        "createdOn": "2023-11-19T18:31:06.61",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 9,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 61,
+                        "menu_Id": 24,
+                        "responses": "Overall, the CMA course in India equips professionals with the knowledge and skills necessary to excel in the fields of management accounting and financial management, making them valuable assets to organizations across the country.",
+                        "url": null,
+                        "createdOn": "2023-11-19T18:31:42.65",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 10,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    }
+                ],
+                "returnMessage": null
+            },
+            {
+                "menu_Id": 26,
+                "submenu_id": 42,
+                "menu": "ACCA(UK)",
+                "menuUrl": "acca",
+                "isActive": true,
+                "listMenuResponse": [
+                    {
+                        "menuResponsesId": 39,
+                        "menu_Id": 26,
+                        "responses": "ACCA, short for the Association of Chartered Certified Accountants, is a globally recognized professional accounting body that offers a comprehensive and internationally respected qualification in the fields of accounting and finance. This certification, awarded by ACCA based in the United Kingdom, is designed to equip individuals with the necessary skills and knowledge to thrive in today's rapidly evolving business landscape. ACCA's reach extends to 180 countries, making it a highly regarded qualification with a global reputation. It is often referred to as the \"global CA\" because it offers enhanced career prospects worldwide. The ACCA program prepares professionals for various domains, including accounting, auditing, taxation, management, finance, investment banking, corporate finance, forensic audit, and consulting. This high-level professional qualification is equivalent to completing a full university degree. ACCA is in compliance with the International Federation of Accountants (IFAC), a global accounting body, and is built upon international accounting and auditing standards.",
+                        "url": null,
+                        "createdOn": "2023-10-24T20:47:58.783",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": "Association of Chartered Certified Accountants",
+                        "isActive": true,
+                        "sortorder": 1,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 71,
+                        "menu_Id": 26,
+                        "responses": "The ACCA qualification comprises 13 subjects divided into three levels: ",
+                        "url": null,
+                        "createdOn": "2023-11-19T18:56:04.32",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 2,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 72,
+                        "menu_Id": 26,
+                        "responses": "1.\tApplied Knowledge",
+                        "url": null,
+                        "createdOn": "2023-11-19T18:56:28.82",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 3,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 73,
+                        "menu_Id": 26,
+                        "responses": "2.\tApplied Skills ",
+                        "url": null,
+                        "createdOn": "2023-11-19T18:56:45.507",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 3,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 74,
+                        "menu_Id": 26,
+                        "responses": "3.\tStrategic professional.",
+                        "url": null,
+                        "createdOn": "2023-11-19T18:57:13.647",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 5,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 75,
+                        "menu_Id": 26,
+                        "responses": "It provides a pathway to a rewarding career in accounting, finance, and management. The core values of ACCA emphasize providing opportunities, embracing diversity, fostering innovation, upholding integrity, and maintaining accountability within the accounting and finance field. ACCA is indeed a prestigious qualification that can lead to a successful and rewarding career in the accounting and finance industry, both in your home country and internationally. It's known for its high standards and rigorous training, making it a respected choice for those pursuing a career in this field.",
+                        "url": null,
+                        "createdOn": "2023-11-19T18:57:42.077",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 6,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    }
+                ],
+                "returnMessage": null
+            },
+            {
+                "menu_Id": 27,
+                "submenu_id": 42,
+                "menu": "CIMA(UK)",
+                "menuUrl": "cima",
+                "isActive": true,
+                "listMenuResponse": [
+                    {
+                        "menuResponsesId": 40,
+                        "menu_Id": 27,
+                        "responses": "CIMA, which stands for The Chartered Institute of Management Accountants, offers an esteemed qualification for individuals aspiring to excel as management accountants or pursue careers in the fields of finance and management. It enjoys a strong reputation within the business and finance sectors.",
+                        "url": null,
+                        "createdOn": "2023-10-24T20:49:07.47",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": "Chartered Institue of Management",
+                        "isActive": true,
+                        "sortorder": 1,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 93,
+                        "menu_Id": 27,
+                        "responses": "As a globally recognized professional management accounting body headquartered in the UK, CIMA tailors its internationally acclaimed qualification to cater to the distinct needs of professionals worldwide.",
+                        "url": null,
+                        "createdOn": "2023-11-19T19:49:18.873",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 2,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 94,
+                        "menu_Id": 27,
+                        "responses": "The CIMA program is structured into separate levels, each accompanied by its own set of examinations. These levels encompass the Certificate in Business Accounting, Operational level, Management level, and Strategic level.",
+                        "url": null,
+                        "createdOn": "2023-11-19T19:49:31.113",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 2,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 95,
+                        "menu_Id": 27,
+                        "responses": "Encompassing a wide array of subjects, including management accounting, financial strategy, risk management, financial management, and business ethics, the CIMA curriculum equips individuals with the essential knowledge and competencies required for making strategic decisions within a business context.",
+                        "url": null,
+                        "createdOn": "2023-11-19T19:49:58.09",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 4,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 96,
+                        "menu_Id": 27,
+                        "responses": "Successful completion of the CIMA qualification opens doors to diverse career opportunities in the fields of finance, management, and strategic decision-making. Graduates often secure roles such as management accountants, financial analysts, finance managers, or similar positions.",
+                        "url": null,
+                        "createdOn": "2023-11-19T19:51:45.207",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 5,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 97,
+                        "menu_Id": 27,
+                        "responses": "For individuals aspiring to build a career in management accounting, finance, or strategic management, the CIMA course provides an internationally recognized qualification and a pathway to a wide range of prospects in the business world.",
+                        "url": null,
+                        "createdOn": "2023-11-19T19:52:10.6",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 6,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    }
+                ],
+                "returnMessage": null
+            },
+            {
+                "menu_Id": 28,
+                "submenu_id": 42,
+                "menu": "CMA(US)",
+                "menuUrl": "cmaus",
+                "isActive": true,
+                "listMenuResponse": [
+                    {
+                        "menuResponsesId": 41,
+                        "menu_Id": 28,
+                        "responses": "The Certified Management Accountant (CMA) designation is a globally recognized pinnacle achievement in management accounting, overseen by the Institute of Management Accountants (IMA) based in the USA. The CMA program has earned recognition in over 170 countries, making it the most highly sought-after certification in accounting and finance by businesses and recruiters worldwide",
+                        "url": null,
+                        "createdOn": "2023-10-24T20:50:16.607",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": "Certified Management Accountant USA",
+                        "isActive": true,
+                        "sortorder": 1,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 45,
+                        "menu_Id": 28,
+                        "responses": "The CMA course is tailored for accountants and financial professionals seeking an advanced-level credential. It encompasses a wide range of topics, including accounting, business, finance, and analytics, enabling candidates to master 12 essential skills crucial for success in the accounting and finance realm. ",
+                        "url": null,
+                        "createdOn": "2023-11-17T21:06:00.803",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 2,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 46,
+                        "menu_Id": 28,
+                        "responses": "Aspiring professionals can earn this prestigious American certification in just 12 to 18 months by completing the two-part program:",
+                        "url": null,
+                        "createdOn": "2023-11-17T21:06:45.997",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 3,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 47,
+                        "menu_Id": 28,
+                        "responses": "1. Financial Planning, Performance, and Analytics (Part 1) and ",
+                        "url": null,
+                        "createdOn": "2023-11-17T21:08:22.987",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 4,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 48,
+                        "menu_Id": 28,
+                        "responses": "2. Strategic Financial Management (Part 2). d ",
+                        "url": null,
+                        "createdOn": "2023-11-17T21:08:40.19",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 5,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 49,
+                        "menu_Id": 28,
+                        "responses": "The CMA qualification offers global career prospects, with roles such as Senior Analyst, Finance Manager, Budget Analyst, Treasurer, Finance Controller, Internal Auditor, Financial Analyst, Cost Accountant, and Management Trainee.",
+                        "url": null,
+                        "createdOn": "2023-11-17T21:09:00.72",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 6,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 50,
+                        "menu_Id": 28,
+                        "responses": "To be eligible for the CMA program, candidates should have a bachelor's degree from an accredited college or university, hold membership with the Institute of Management Accountants (IMA), and possess two years of professional work experience. For those beginning their CMA journey after completing high school (12th grade), they will only receive the CMA certificate upon completing their undergraduate degree.",
+                        "url": null,
+                        "createdOn": "2023-11-17T21:10:26.68",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 76,
+                        "content_Subheading": "CMA USA Eligibility",
+                        "returnMessage": null
+                    }
+                ],
+                "returnMessage": null
+            },
+            {
+                "menu_Id": 29,
+                "submenu_id": 100,
+                "menu": "Branch Address",
+                "menuUrl": "/contactus",
+                "isActive": true,
+                "listMenuResponse": [],
+                "returnMessage": null
+            },
+            {
+                "menu_Id": 30,
+                "submenu_id": 41,
+                "menu": "CS",
+                "menuUrl": "cs",
+                "isActive": true,
+                "listMenuResponse": [
+                    {
+                        "menuResponsesId": 21,
+                        "menu_Id": 30,
+                        "responses": "The CS course focuses on training students to handle the legal aspects of a firm or a company. Company Secretaries play a crucial role in a company's strategy, decision-making, and ensuring compliance with legal, ethical, and regulatory requirements. The Institute of Company Secretaries of India (ICSI) is the regulatory body responsible for training and regulating Company Secretaries in India under the Company Secretaries Act of 1980.",
+                        "url": null,
+                        "createdOn": "2023-10-05T00:34:50.31",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": "Company Secretary",
+                        "isActive": true,
+                        "sortorder": 1,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 80,
+                        "menu_Id": 30,
+                        "responses": "The CS program consists of three levels:",
+                        "url": null,
+                        "createdOn": "2023-11-19T19:05:11.833",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 2,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 81,
+                        "menu_Id": 30,
+                        "responses": "1.\tCSEET (replacing the Foundation Program), ",
+                        "url": null,
+                        "createdOn": "2023-11-19T19:05:31.837",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 3,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 82,
+                        "menu_Id": 30,
+                        "responses": "2.\tExecutive Program",
+                        "url": null,
+                        "createdOn": "2023-11-19T19:06:00.31",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 4,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 83,
+                        "menu_Id": 30,
+                        "responses": "3.\tProfessional Program",
+                        "url": null,
+                        "createdOn": "2023-11-19T19:06:18.323",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 5,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 84,
+                        "menu_Id": 30,
+                        "responses": "The CS Exam is now recognized as equivalent to a postgraduate degree, which provides opportunities for higher studies and research in the field.",
+                        "url": null,
+                        "createdOn": "2023-11-19T19:06:37.48",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 6,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 85,
+                        "menu_Id": 30,
+                        "responses": "CS professionals have a promising future and hold prestigious job profiles in the field of Commerce and Accounting.",
+                        "url": null,
+                        "createdOn": "2023-11-19T19:07:07.873",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 7,
+                        "content_Subheading": "Career Opportunities for CS Professionals",
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 86,
+                        "menu_Id": 30,
+                        "responses": "They can pursue careers in various sectors, including stock exchanges, company affairs departments, financial auditing firms, law boards, and government departments. The CS course opens up diverse career avenues, and individuals can choose roles in corporate governance, legal compliance, and corporate management. Trained and certified Company Secretaries can work as independent advisors to firms, providing expertise in areas such as loans, taxes, partnerships, government licenses, registrations, and more. They can also join CS firms to offer services to clients.",
+                        "url": null,
+                        "createdOn": "2023-11-19T19:07:38.83",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 8,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 87,
+                        "menu_Id": 30,
+                        "responses": "The CS profession continues to be highly regarded and offers significant opportunities for those who complete the course and become certified Company Secretaries. The evolving regulatory landscape and increasing demand for corporate governance and compliance further enhance the importance of CS professionals in the business world.",
+                        "url": null,
+                        "createdOn": "2023-11-19T19:08:13.527",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 9,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    }
+                ],
+                "returnMessage": null
+            },
+            {
+                "menu_Id": 33,
+                "submenu_id": 32,
+                "menu": "Create Menu",
+                "menuUrl": "/createmenu",
+                "isActive": true,
+                "listMenuResponse": [],
+                "returnMessage": null
+            },
+            {
+                "menu_Id": 34,
+                "submenu_id": 32,
+                "menu": "View Enquiries",
+                "menuUrl": "/view-enquiries",
+                "isActive": true,
+                "listMenuResponse": [],
+                "returnMessage": null
+            },
+            {
+                "menu_Id": 37,
+                "submenu_id": 0,
+                "menu": "Contact Us",
+                "menuUrl": "/contactus",
+                "isActive": true,
+                "listMenuResponse": [],
+                "returnMessage": null
+            },
+            {
+                "menu_Id": 38,
+                "submenu_id": 42,
+                "menu": "CPA(USA)",
+                "menuUrl": "cpa",
+                "isActive": true,
+                "listMenuResponse": [],
+                "returnMessage": null
+            },
+            {
+                "menu_Id": 39,
+                "submenu_id": 8,
+                "menu": "Leadership Team",
+                "menuUrl": "/RamMohanKomanduri",
+                "isActive": true,
+                "listMenuResponse": [],
+                "returnMessage": null
+            },
+            {
+                "menu_Id": 40,
+                "submenu_id": 8,
+                "menu": "Our Faculty",
+                "menuUrl": "/ourfaculty",
+                "isActive": true,
+                "listMenuResponse": [],
+                "returnMessage": null
+            },
+            {
+                "menu_Id": 41,
+                "submenu_id": 9,
+                "menu": "INDIAN COURSES",
+                "menuUrl": "",
+                "isActive": true,
+                "listMenuResponse": [],
+                "returnMessage": null
+            },
+            {
+                "menu_Id": 42,
+                "submenu_id": 9,
+                "menu": "GLOBAL COURSES",
+                "menuUrl": "",
+                "isActive": true,
+                "listMenuResponse": [],
+                "returnMessage": null
+            },
+            {
+                "menu_Id": 43,
+                "submenu_id": 10,
+                "menu": "LAW",
+                "menuUrl": "",
+                "isActive": true,
+                "listMenuResponse": [],
+                "returnMessage": null
+            },
+            {
+                "menu_Id": 44,
+                "submenu_id": 10,
+                "menu": "MANAGEMENT",
+                "menuUrl": "",
+                "isActive": true,
+                "listMenuResponse": [],
+                "returnMessage": null
+            },
+            {
+                "menu_Id": 45,
+                "submenu_id": 10,
+                "menu": "INDIAN COURSES",
+                "menuUrl": "",
+                "isActive": true,
+                "listMenuResponse": [],
+                "returnMessage": null
+            },
+            {
+                "menu_Id": 46,
+                "submenu_id": 43,
+                "menu": "CLAT",
+                "menuUrl": "/clat",
+                "isActive": true,
+                "listMenuResponse": [
+                    {
+                        "menuResponsesId": 105,
+                        "menu_Id": 46,
+                        "responses": "CLAT [Common Law Admission Test] CLAT is a centralized national-level entrance test for admissions into 25 out of 27 national law universities(NLUs) in India except NLU Delhi and NLU Meghalaya having their own entrance examination namely AILET and MEGUAT respectively.",
+                        "url": null,
+                        "createdOn": "2024-11-12T15:26:35.31",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 1,
+                        "content_Subheading": "ABOUT CLAT:",
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 106,
+                        "menu_Id": 46,
+                        "responses": "For integrated U.G. course(degree+law) Senior Secondary School or Intermediate (12th) or its corresponding credential from a recognized board is required. ",
+                        "url": null,
+                        "createdOn": "2024-11-12T15:29:06.41",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": "Eligibility Criteria:",
+                        "isActive": true,
+                        "sortorder": 2,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 107,
+                        "menu_Id": 46,
+                        "responses": "For P.G. course B.L. or L.L.B University degree or a similar degree from a recognized University.",
+                        "url": null,
+                        "createdOn": "2024-11-12T15:29:45.54",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 3,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 108,
+                        "menu_Id": 46,
+                        "responses": "1.English language",
+                        "url": null,
+                        "createdOn": "2024-11-12T15:30:45.027",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": "Syllabus – ",
+                        "isActive": true,
+                        "sortorder": 4,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 109,
+                        "menu_Id": 46,
+                        "responses": "2.\tCurrent Affairs and General knowledge ",
+                        "url": null,
+                        "createdOn": "2024-11-12T15:31:17.567",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 5,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 110,
+                        "menu_Id": 46,
+                        "responses": "3.Logical Reasoning",
+                        "url": null,
+                        "createdOn": "2024-11-12T15:31:38.49",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 6,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 111,
+                        "menu_Id": 46,
+                        "responses": "4.Legal Reasoning ",
+                        "url": null,
+                        "createdOn": "2024-11-12T15:32:06.02",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 7,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 112,
+                        "menu_Id": 46,
+                        "responses": "5. Quantitative Techniques.",
+                        "url": null,
+                        "createdOn": "2024-11-12T15:32:26.93",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 8,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 113,
+                        "menu_Id": 46,
+                        "responses": "The exam is to be conducted once in a year with 2hours of duration consisting 120 multiple choice questions in passage format .  The marking scheme includes one mark for every correct answer and 0.25 marks deducted for every wrong answer. ",
+                        "url": null,
+                        "createdOn": "2024-11-12T15:33:45.177",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 9,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    }
+                ],
+                "returnMessage": null
+            },
+            {
+                "menu_Id": 47,
+                "submenu_id": 43,
+                "menu": "SLAT",
+                "menuUrl": "/slat",
+                "isActive": true,
+                "listMenuResponse": [],
+                "returnMessage": null
+            },
+            {
+                "menu_Id": 48,
+                "submenu_id": 43,
+                "menu": "AILET",
+                "menuUrl": "/ailet",
+                "isActive": true,
+                "listMenuResponse": [],
+                "returnMessage": null
+            },
+            {
+                "menu_Id": 49,
+                "submenu_id": 43,
+                "menu": "TS LAWCET",
+                "menuUrl": "/tslawcet",
+                "isActive": true,
+                "listMenuResponse": [
+                    {
+                        "menuResponsesId": 114,
+                        "menu_Id": 49,
+                        "responses": "TS LAWCET (Telangana State Law Common Entrance Test) is a state-level entrance exam conducted for admission into undergraduate law courses offered by various colleges and universities in Telangana. TS LAWCET is conducted by Osmania University, Hyderabad, on behalf of the Telangana State Council of Higher Education (TSCHE).",
+                        "url": null,
+                        "createdOn": "2024-11-12T15:36:23.457",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 1,
+                        "content_Subheading": "About TS Lawcet:",
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 115,
+                        "menu_Id": 49,
+                        "responses": "The exam is held once a year, and candidates who qualify the exam can secure admission into various undergraduate law courses, including 3-year LLB, 5-year Integrated LLB, and LLM programs.",
+                        "url": null,
+                        "createdOn": "2024-11-12T15:37:37.067",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 2,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 116,
+                        "menu_Id": 49,
+                        "responses": "The syllabus for TS LAWCET is divided into three sections: ",
+                        "url": null,
+                        "createdOn": "2024-11-12T15:38:10.763",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 3,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 117,
+                        "menu_Id": 49,
+                        "responses": "1.\tGeneral Knowledge and current affairs ",
+                        "url": null,
+                        "createdOn": "2024-11-12T15:38:40.863",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 4,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 118,
+                        "menu_Id": 49,
+                        "responses": "2.Legal reasoning ",
+                        "url": null,
+                        "createdOn": "2024-11-12T15:39:24.16",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 6,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 119,
+                        "menu_Id": 49,
+                        "responses": "3.English Comprehension ",
+                        "url": null,
+                        "createdOn": "2024-11-12T15:39:38.527",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 7,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 120,
+                        "menu_Id": 49,
+                        "responses": "4.Quantitative Ability and logical reasoning ",
+                        "url": null,
+                        "createdOn": "2024-11-12T15:39:52.44",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 8,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 121,
+                        "menu_Id": 49,
+                        "responses": "Candidates for 5 year LL.B. course should have passed two year Intermediate Examination (10+2 pattern) or any other examination recognized as equivalent by the University concerned or the Board of Intermediate Education.",
+                        "url": null,
+                        "createdOn": "2024-11-12T15:40:24.463",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": "TS LAWCET Eligibility Criteria for 5-Year LLB Course:",
+                        "isActive": true,
+                        "sortorder": 9,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 122,
+                        "menu_Id": 49,
+                        "responses": "Candidates for 3-year LL. B. Course should have passed any Graduate Degree (10+2 +3 pattern) of a recognized University or any other examination recognized as equivalent by the Universities.",
+                        "url": null,
+                        "createdOn": "2024-11-12T15:40:53.843",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": "TS LAWCET Eligibility Criteria for 3-Year LLB Course:",
+                        "isActive": true,
+                        "sortorder": 10,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 123,
+                        "menu_Id": 49,
+                        "responses": "It is a Computer-Based examination with a duration of 90 minutes with no negative marking. ",
+                        "url": null,
+                        "createdOn": "2024-11-12T15:41:24.653",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": "TS LAWCET Eligibility Criteria for 3-Year LLB Course:",
+                        "isActive": true,
+                        "sortorder": 11,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    }
+                ],
+                "returnMessage": null
+            },
+            {
+                "menu_Id": 50,
+                "submenu_id": 44,
+                "menu": "IPMAT",
+                "menuUrl": "/ipmat",
+                "isActive": true,
+                "listMenuResponse": [
+                    {
+                        "menuResponsesId": 124,
+                        "menu_Id": 50,
+                        "responses": "IPMAT is a national-level entrance examination for admission into the prestigious IIMs for five-year Integrated Programme in Management for undergraduate (BBA/BCA/BHM) or integrated MBA courses (5 year degree). IPMAT or Integrated Program in Management Aptitude Test is conducted annually by the Indian Institute of Management(IIM)-INDORE . Five IIMs offer the IPMAT program to students, including IIM Indore, IIM Rohtak, IIM Ranchi.  IIM Bodh Gaya and  Jammu together conduct and examination called JIPMAT which also considers IPMAT SCORES   . IPMAT is a dual degree program (Bachelors + Masters) and includes MBA from the respective IIMs.",
+                        "url": null,
+                        "createdOn": "2024-11-12T15:44:42.76",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 1,
+                        "content_Subheading": "ABOUT IPMAT",
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 125,
+                        "menu_Id": 50,
+                        "responses": "Candidates should have passed Standard XII. The IPMAT exam is held in 2 stages, i.e.",
+                        "url": null,
+                        "createdOn": "2024-11-12T15:45:48.46",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": "Eligibility Criteria:",
+                        "isActive": true,
+                        "sortorder": 2,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 126,
+                        "menu_Id": 50,
+                        "responses": "1.Written Test",
+                        "url": null,
+                        "createdOn": "2024-11-12T15:46:19.03",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 3,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 127,
+                        "menu_Id": 50,
+                        "responses": "2.Personal Interview.",
+                        "url": null,
+                        "createdOn": "2024-11-12T15:46:35.347",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 4,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 128,
+                        "menu_Id": 50,
+                        "responses": "1. Quantitative ability",
+                        "url": null,
+                        "createdOn": "2024-11-12T15:47:18.73",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": "Syllabus : ",
+                        "isActive": true,
+                        "sortorder": 5,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 129,
+                        "menu_Id": 50,
+                        "responses": "2.Verbal ability",
+                        "url": null,
+                        "createdOn": "2024-11-12T15:48:01.38",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 6,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 130,
+                        "menu_Id": 50,
+                        "responses": "3.Logical reasoning ",
+                        "url": null,
+                        "createdOn": "2024-11-12T15:48:16.87",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 7,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 131,
+                        "menu_Id": 50,
+                        "responses": "The exam consists of both objective and subjective questions. Negative marking of 1 mark is applicable for every wrong answer in objective questions. ",
+                        "url": null,
+                        "createdOn": "2024-11-12T15:49:31.857",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 8,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    }
+                ],
+                "returnMessage": null
+            },
+            {
+                "menu_Id": 51,
+                "submenu_id": 44,
+                "menu": "CAT",
+                "menuUrl": "/cat",
+                "isActive": true,
+                "listMenuResponse": [
+                    {
+                        "menuResponsesId": 132,
+                        "menu_Id": 51,
+                        "responses": "The Common Admission Test (CAT) is India’s most prestigious national-level entrance examination, which is conducted by the IIMs for the admission into their MBA courses offered by its 21 campuses across India and over 1,200 B-schools in India.",
+                        "url": null,
+                        "createdOn": "2024-11-12T15:50:59.45",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 1,
+                        "content_Subheading": "ABOUT CAT:",
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 133,
+                        "menu_Id": 51,
+                        "responses": "The IIM’s (Indian Institute of Management) conduct this Common Admission Test annually on a rotational basis. CAT exam is conducted online over a period of 2 hours with 40 minutes allotted per section namely: ",
+                        "url": null,
+                        "createdOn": "2024-11-12T15:51:27.703",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 2,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 134,
+                        "menu_Id": 51,
+                        "responses": "1.\tVerbal Ability and Reading Comprehension (VARC)",
+                        "url": null,
+                        "createdOn": "2024-11-12T15:51:54.82",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 3,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 135,
+                        "menu_Id": 51,
+                        "responses": "2.\tData Interpretation and Logical Reasoning (DILR) ",
+                        "url": null,
+                        "createdOn": "2024-11-12T15:52:19.44",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 4,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 136,
+                        "menu_Id": 51,
+                        "responses": "3.Quantitative Ability (QA).",
+                        "url": null,
+                        "createdOn": "2024-11-12T15:52:56.93",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 5,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 137,
+                        "menu_Id": 51,
+                        "responses": "The exam consists of 198 questions each carrying 3 marks with a negative marking of -1 for every wrong answer ",
+                        "url": null,
+                        "createdOn": "2024-11-12T15:53:10.007",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 6,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    }
+                ],
+                "returnMessage": null
+            },
+            {
+                "menu_Id": 52,
+                "submenu_id": 44,
+                "menu": "TSICET",
+                "menuUrl": "/tsicet",
+                "isActive": true,
+                "listMenuResponse": [
+                    {
+                        "menuResponsesId": 138,
+                        "menu_Id": 52,
+                        "responses": "Telangana State Integrated Common Entrance Test (TS-ICET), is a state level entrance exam conducted for admission to MBA and MCA programmes.",
+                        "url": null,
+                        "createdOn": "2024-11-12T15:54:57.38",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 1,
+                        "content_Subheading": "ABOUT TS-ICET:",
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 139,
+                        "menu_Id": 52,
+                        "responses": "The test will be conducted for Post Graduation admissions into all the universities in Telangana State and their affiliated colleges. Kakatiya University, Warangal, on behalf of the Telangana State Council of Higher Education, conducts the TSICET exam every year.",
+                        "url": null,
+                        "createdOn": "2024-11-12T15:55:20.51",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 2,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 140,
+                        "menu_Id": 52,
+                        "responses": "TSICET is a computer-based exam, conducted for two and a half-hour. This test is valid for all the  colleges in the state of Telangana only.  ",
+                        "url": null,
+                        "createdOn": "2024-11-12T15:55:47.083",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 3,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 141,
+                        "menu_Id": 52,
+                        "responses": "•\tCandidates must have recognized Bachelor’s Degree of minimum 3 years’ duration with at least 50% marks (45% marks in case of reserved categories).",
+                        "url": null,
+                        "createdOn": "2024-11-12T15:56:16.37",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": "Eligibility Criteria: ",
+                        "isActive": true,
+                        "sortorder": 4,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    },
+                    {
+                        "menuResponsesId": 142,
+                        "menu_Id": 52,
+                        "responses": "•\tCandidates who are in their final year of the qualifying examination can also apply, ",
+                        "url": null,
+                        "createdOn": "2024-11-12T15:56:35.09",
+                        "createdBy": "Vamshi",
+                        "udpatedOn": null,
+                        "udpatedBy": null,
+                        "responses_Subheading": null,
+                        "isActive": true,
+                        "sortorder": 5,
+                        "content_Subheading": null,
+                        "returnMessage": null
+                    }
+                ],
+                "returnMessage": null
+            },
+            {
+                "menu_Id": 54,
+                "submenu_id": 2,
+                "menu": "/valuedPartners",
+                "menuUrl": "/Valuedpartners",
+                "isActive": true,
+                "listMenuResponse": [],
+                "returnMessage": null
+            },
+            {
+                "menu_Id": 55,
+                "submenu_id": 2,
+                "menu": "Courses Offered",
+                "menuUrl": "#",
+                "isActive": true,
+                "listMenuResponse": [],
+                "returnMessage": null
+            }
 
-  {
-    "menu_Id": 1,
-    "submenu_id": 0,
-    "menu": "Home",
-    "menuUrl": "/home",
-    "isActive": true,
-    "listMenuResponse": [
-      {
-        "menuResponsesId": 3,
-        "menu_Id": 1,
-        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
-        "url": null,
-        "createdOn": "2023-10-05T00:30:14.16",
-        "createdBy": "Vamshi",
-        "udpatedOn": null,
-        "udpatedBy": null,
-        "isActive": true
-      },
-      {
-        "menuResponsesId": 2,
-        "menu_Id": 1,
-        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
-        "url": null,
-        "createdOn": "2023-10-05T00:29:39.03",
-        "createdBy": "Vamshi",
-        "udpatedOn": null,
-        "udpatedBy": null,
-        "isActive": true
-      },
-      {
-        "menuResponsesId": 1,
-        "menu_Id": 1,
-        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
-        "url": null,
-        "createdOn": "2023-10-05T00:28:42.153",
-        "createdBy": "Vamshi",
-        "udpatedOn": null,
-        "udpatedBy": null,
-        "isActive": true
-      }
-    ]
-  },
-  {
-    "menu_Id": 2,
-    "submenu_id": 0,
-    "menu": "Courses",
-    "menuUrl": "/recordedvideos",
-    "isActive": true,
-    "listMenuResponse": [
-      {
-        "menuResponsesId": 4,
-        "menu_Id": 2,
-        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
-        "url": null,
-        "createdOn": "2023-10-05T00:30:30.527",
-        "createdBy": "Vamshi",
-        "udpatedOn": null,
-        "udpatedBy": null,
-        "isActive": true
-      },
-      {
-        "menuResponsesId": 5,
-        "menu_Id": 2,
-        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
-        "url": null,
-        "createdOn": "2023-10-05T00:30:30.527",
-        "createdBy": "Vamshi",
-        "udpatedOn": null,
-        "udpatedBy": null,
-        "isActive": true
-      }
-    ]
-  },
-  {
-    "menu_Id": 3,
-    "submenu_id": 0,
-    "menu": "Students",
-    "menuUrl": "/Students",
-    "isActive": true,
-    "listMenuResponse": [
-      {
-        "menuResponsesId": 8,
-        "menu_Id": 3,
-        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
-        "url": null,
-        "createdOn": "2023-10-05T00:30:47.86",
-        "createdBy": "Vamshi",
-        "udpatedOn": null,
-        "udpatedBy": null,
-        "isActive": true
-      },
-      {
-        "menuResponsesId": 6,
-        "menu_Id": 3,
-        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
-        "url": null,
-        "createdOn": "2023-10-05T00:30:45.273",
-        "createdBy": "Vamshi",
-        "udpatedOn": null,
-        "udpatedBy": null,
-        "isActive": true
-      },
-      {
-        "menuResponsesId": 7,
-        "menu_Id": 3,
-        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
-        "url": null,
-        "createdOn": "2023-10-05T00:30:45.273",
-        "createdBy": "Vamshi",
-        "udpatedOn": null,
-        "udpatedBy": null,
-        "isActive": true
-      }
-    ]
-  },
-  {
-    "menu_Id": 4,
-    "submenu_id": 0,
-    "menu": "News/Announcement",
-    "menuUrl": "/newsandevents",
-    "isActive": true,
-    "listMenuResponse": [
-      {
-        "menuResponsesId": 11,
-        "menu_Id": 4,
-        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
-        "url": null,
-        "createdOn": "2023-10-05T00:30:58.087",
-        "createdBy": "Vamshi",
-        "udpatedOn": null,
-        "udpatedBy": null,
-        "isActive": true
-      },
-      {
-        "menuResponsesId": 9,
-        "menu_Id": 4,
-        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
-        "url": null,
-        "createdOn": "2023-10-05T00:30:55.69",
-        "createdBy": "Vamshi",
-        "udpatedOn": null,
-        "udpatedBy": null,
-        "isActive": true
-      },
-      {
-        "menuResponsesId": 10,
-        "menu_Id": 4,
-        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
-        "url": null,
-        "createdOn": "2023-10-05T00:30:55.69",
-        "createdBy": "Vamshi",
-        "udpatedOn": null,
-        "udpatedBy": null,
-        "isActive": true
-      }
-    ]
-  },
-  {
-    "menu_Id": 5,
-    "submenu_id": 0,
-    "menu": "Contact Us",
-    "menuUrl": "/contactus",
-    "isActive": true,
-    "listMenuResponse": [
-      {
-        "menuResponsesId": 14,
-        "menu_Id": 5,
-        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
-        "url": null,
-        "createdOn": "2023-10-05T00:31:06.22",
-        "createdBy": "Vamshi",
-        "udpatedOn": null,
-        "udpatedBy": null,
-        "isActive": true
-      },
-      {
-        "menuResponsesId": 12,
-        "menu_Id": 5,
-        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
-        "url": null,
-        "createdOn": "2023-10-05T00:31:03.66",
-        "createdBy": "Vamshi",
-        "udpatedOn": null,
-        "udpatedBy": null,
-        "isActive": true
-      },
-      {
-        "menuResponsesId": 13,
-        "menu_Id": 5,
-        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
-        "url": null,
-        "createdOn": "2023-10-05T00:31:03.66",
-        "createdBy": "Vamshi",
-        "udpatedOn": null,
-        "udpatedBy": null,
-        "isActive": true
-      }
-    ]
-  },
-  {
-    "menu_Id": 6,
-    "submenu_id": 1,
-    "menu": "About Patashala",
-     "menuUrl": "/home",
-    "isActive": true,
-    "listMenuResponse": [
-      {
-        "menuResponsesId": 17,
-        "menu_Id": 6,
-        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.\r\nAccounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
-        "url": null,
-        "createdOn": "2023-10-05T00:33:53.43",
-        "createdBy": "Vamshi",
-        "udpatedOn": null,
-        "udpatedBy": null,
-        "isActive": true
-      },
-      {
-        "menuResponsesId": 16,
-        "menu_Id": 6,
-        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.\r\nAccounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
-        "url": null,
-        "createdOn": "2023-10-05T00:33:47.823",
-        "createdBy": "Vamshi",
-        "udpatedOn": null,
-        "udpatedBy": null,
-        "isActive": true
-      }
-    ]
-  },
-  {
-    "menu_Id": 7,
-    "submenu_id": 1,
-    "menu": "Our Team",
-     "menuUrl": "/home",
-    "isActive": true,
-    "listMenuResponse": [
-      {
-        "menuResponsesId": 18,
-        "menu_Id": 7,
-        "responses": "Ram Mohan Komanduri is a successful entrepreneur and holds various positions among multiple organizations as a Chairman, Chief Executive Officer, Chief Technology Officer, Project Delivery Executive, Board of Director and Angel Investor. \n\nHaving pursued his Masters in Science from UK and MBA from USA and certified director from the prestigious New York Film Academy, USA his leadership is committed to defining, following and practicing the highest level of corporate governance across all business functions.\n\nWith over 20 Years of experience in SAP implementations which includes Fortune 100 companies and vast experience in managing global projects in United States of America, United Kingdom, Europe, Israel , Saudi Arabia & India.  His compassion to amplify human potential and create the next opportunity for people, businesses, and communities is what inspires us.\n\nBuilding high technology Virtual Movie Studio in Dallas, TX with his rare combination of expertise in software industry and his passion in film making \n\nPatshala is his dream project aimed to create a new era in commerce education both in India & USA with his brother(Sai Sir) who is transforming himself from an successful academician to world class entrepreneur. As a part of our commitment to rise commerce education to global best practices, with a broad selection of key governance principles and regulations.",
-        "url": null,
-        "createdOn": "2023-10-05T00:34:28.423",
-        "createdBy": "Vamshi",
-        "udpatedOn": null,
-        "udpatedBy": null,
-        "isActive": true
-      }
-    ]
-  },
-  {
-    "menu_Id": 8,
-    "submenu_id": 1,
-    "menu": "Patashala Thought Process",
-     "menuUrl": "/home",
-    "isActive": true,
-    "listMenuResponse": [
-      {
-        "menuResponsesId": 44,
-        "menu_Id": 8,
-        "responses": "CS professionals have a promising future and hold prestigious job profiles in the field of Commerce and Accounting.\r\nThey can pursue careers in various sectors, including stock exchanges, company affairs departments, financial auditing firms, law boards, and government departments.\r\nThe CS course opens up diverse career avenues, and individuals can choose roles in corporate governance, legal compliance, and corporate management.\r\nTrained and certified Company Secretaries can work as independent advisors to firms, providing expertise in areas such as loans, taxes, partnerships, government licenses, registrations, and more. They can also join CS firms to offer services to clients.\r\nThe CS profession continues to be highly regarded and offers significant opportunities for those who complete the course and become certified Company Secretaries. The evolving regulatory landscape and increasing demand for corporate governance and compliance further enhance the importance of CS professionals in the business world.\r\n",
-        "url": null,
-        "createdOn": "2023-10-24T20:57:16.107",
-        "createdBy": "Vamshi",
-        "udpatedOn": null,
-        "udpatedBy": null,
-        "isActive": true
-      },
-      {
-        "menuResponsesId": 43,
-        "menu_Id": 8,
-        "responses": "The CS course focuses on training students to handle the legal aspects of a firm, which includes tasks like tax returns and record keeping.\r\nCompany Secretaries play a crucial role in a company's strategy, decision-making, and ensuring compliance with legal, ethical, and regulatory requirements.\r\nThe Institute of Company Secretaries of India (ICSI) is the regulatory body responsible for training and regulating Company Secretaries in India under the Company Secretaries Act of 1980.\r\nThe CS program consists of three levels: CSEET (replacing the Foundation Program), Executive Program, and Professional Program.\r\nThe CS Exam is now recognized as equivalent to a postgraduate degree, which provides opportunities for higher studies and research in the field.\r\n",
-        "url": null,
-        "createdOn": "2023-10-24T20:56:51.92",
-        "createdBy": "Vamshi",
-        "udpatedOn": null,
-        "udpatedBy": null,
-        "isActive": true
-      },
-      {
-        "menuResponsesId": 19,
-        "menu_Id": 8,
-        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.\r\nAccounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
-        "url": null,
-        "createdOn": "2023-10-05T00:34:32.743",
-        "createdBy": "Vamshi",
-        "udpatedOn": null,
-        "udpatedBy": null,
-        "isActive": true
-      }
-    ]
-  },
-  {
-    "menu_Id": 9,
-    "submenu_id": 2,
-    "menu": "CPC-Commerce Professioanal Courses",
-     "menuUrl": "/recordedvideos",
-    "isActive": true,
-    "listMenuResponse": [
-      {
-        "menuResponsesId": 36,
-        "menu_Id": 9,
-        "responses": "CPA, which stands for Certified Public Accountant, is a professional designation that signifies the highest level of competence in the field of accountancy. The CPA examination is administered by the American Institute of Certified Public Accountants (AICPA). In India, the Chartered Accountant (CA) designation is considered equivalent to the CPA credential.\r\nThe CPA program encompasses a comprehensive curriculum that includes subjects such as accounting, law, analytics, taxation, auditing, evaluation, regulatory frameworks and procedures, ethics, and financial planning and management.\r\nTo attain the title of Certified Public Accountant, a student must successfully pass all the required CPA exams. Typically, the CPA program can be completed within an 18-month timeframe.\r\nThe CPA Exam is composed of three types of assessments: multiple-choice questions (MCQs), task-based simulations (TBS), and written communication tasks. These examinations evaluate candidates on their knowledge, problem-solving skills, and communication abilities within the realm of accounting and finance.\r\n",
-        "url": null,
-        "createdOn": "2023-10-24T20:36:35.83",
-        "createdBy": "Vamshi",
-        "udpatedOn": null,
-        "udpatedBy": null,
-        "isActive": true
-      },
-      {
-        "menuResponsesId": 20,
-        "menu_Id": 9,
-        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.\r\nAccounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
-        "url": null,
-        "createdOn": "2023-10-05T00:34:45.597",
-        "createdBy": "Vamshi",
-        "udpatedOn": null,
-        "udpatedBy": null,
-        "isActive": true
-      }
-    ]
-  },
-  {
-    "menu_Id": 10,
-    "submenu_id": 2,
-    "menu": "Domestic Courses",
-     "menuUrl": "/recordedvideos",
-    "isActive": true,
-    "listMenuResponse": [
-      {
-        "menuResponsesId": 21,
-        "menu_Id": 10,
-        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.\r\nAccounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
-        "url": null,
-        "createdOn": "2023-10-05T00:34:50.31",
-        "createdBy": "Vamshi",
-        "udpatedOn": null,
-        "udpatedBy": null,
-        "isActive": true
-      }
-    ]
-  },
-  {
-    "menu_Id": 11,
-    "submenu_id": 3,
-    "menu": "Study Hub- Videos",
-     "menuUrl": "/recordedvideos",
-    "isActive": true,
-    "listMenuResponse": [
-      {
-        "menuResponsesId": 22,
-        "menu_Id": 11,
-        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.\r\nAccounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
-        "url": null,
-        "createdOn": "2023-10-05T00:34:57.92",
-        "createdBy": "Vamshi",
-        "udpatedOn": null,
-        "udpatedBy": null,
-        "isActive": true
-      }
-    ]
-  },
-  {
-    "menu_Id": 12,
-    "submenu_id": 3,
-    "menu": "Online-Live Classes",
-     "menuUrl": "/recordedvideos",
-    "isActive": true,
-    "listMenuResponse": [
-      {
-        "menuResponsesId": 24,
-        "menu_Id": 12,
-        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.\r\nAccounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
-        "url": null,
-        "createdOn": "2023-10-05T00:35:08.257",
-        "createdBy": "Vamshi",
-        "udpatedOn": null,
-        "udpatedBy": null,
-        "isActive": true
-      },
-      {
-        "menuResponsesId": 23,
-        "menu_Id": 12,
-        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.\r\nAccounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
-        "url": null,
-        "createdOn": "2023-10-05T00:35:04.96",
-        "createdBy": "Vamshi",
-        "udpatedOn": null,
-        "udpatedBy": null,
-        "isActive": true
-      }
-    ]
-  },
-  {
-    "menu_Id": 13,
-    "submenu_id": 3,
-    "menu": "Resource-Live Classes Recordings",
-     "menuUrl": "/recordedvideos",
-    "isActive": true,
-    "listMenuResponse": [
-      {
-        "menuResponsesId": 25,
-        "menu_Id": 13,
-        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.\r\nAccounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
-        "url": null,
-        "createdOn": "2023-10-05T00:35:23.1",
-        "createdBy": "Vamshi",
-        "udpatedOn": null,
-        "udpatedBy": null,
-        "isActive": true
-      }
-    ]
-  },
-  {
-    "menu_Id": 14,
-    "submenu_id": 4,
-    "menu": "New Batches Announcements",
-     "menuUrl": "/newsandevents",
-    "isActive": true,
-    "listMenuResponse": [
-      {
-        "menuResponsesId": 30,
-        "menu_Id": 14,
-        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.\r\nAccounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
-        "url": null,
-        "createdOn": "2023-10-05T00:35:41.877",
-        "createdBy": "Vamshi",
-        "udpatedOn": null,
-        "udpatedBy": null,
-        "isActive": true
-      },
-      {
-        "menuResponsesId": 29,
-        "menu_Id": 14,
-        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.\r\nAccounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
-        "url": null,
-        "createdOn": "2023-10-05T00:35:39.54",
-        "createdBy": "Vamshi",
-        "udpatedOn": null,
-        "udpatedBy": null,
-        "isActive": true
-      },
-      {
-        "menuResponsesId": 28,
-        "menu_Id": 14,
-        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.\r\nAccounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
-        "url": null,
-        "createdOn": "2023-10-05T00:35:36.653",
-        "createdBy": "Vamshi",
-        "udpatedOn": null,
-        "udpatedBy": null,
-        "isActive": true
-      },
-      {
-        "menuResponsesId": 27,
-        "menu_Id": 14,
-        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.\r\nAccounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
-        "url": null,
-        "createdOn": "2023-10-05T00:35:34.247",
-        "createdBy": "Vamshi",
-        "udpatedOn": null,
-        "udpatedBy": null,
-        "isActive": true
-      },
-      {
-        "menuResponsesId": 26,
-        "menu_Id": 14,
-        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.\r\nAccounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
-        "url": null,
-        "createdOn": "2023-10-05T00:35:27.407",
-        "createdBy": "Vamshi",
-        "udpatedOn": null,
-        "udpatedBy": null,
-        "isActive": true
-      }
-    ]
-  },
-  {
-    "menu_Id": 15,
-    "submenu_id": 4,
-    "menu": "Career Oppurtunities",
-     "menuUrl": "/newsandevents",
-    "isActive": true,
-    "listMenuResponse": [
-      {
-        "menuResponsesId": 31,
-        "menu_Id": 15,
-        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.\r\nAccounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
-        "url": null,
-        "createdOn": "2023-10-05T00:35:46.717",
-        "createdBy": "Vamshi",
-        "udpatedOn": null,
-        "udpatedBy": null,
-        "isActive": true
-      }
-    ]
-  },
-  {
-    "menu_Id": 16,
-    "submenu_id": 4,
-    "menu": "Exam Notifications",
-     "menuUrl": "/newsandevents",
-    "isActive": true,
-    "listMenuResponse": [
-      {
-        "menuResponsesId": 32,
-        "menu_Id": 16,
-        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.\r\nAccounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
-        "url": null,
-        "createdOn": "2023-10-05T00:35:55.22",
-        "createdBy": "Vamshi",
-        "udpatedOn": null,
-        "udpatedBy": null,
-        "isActive": true
-      }
-    ]
-  },
-  {
-    "menu_Id": 17,
-    "submenu_id": 4,
-    "menu": "Educational Videos BY Faculty",
-     "menuUrl": "/newsandevents",
-    "isActive": true,
-    "listMenuResponse": [
-      {
-        "menuResponsesId": 33,
-        "menu_Id": 17,
-        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.\r\nAccounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
-        "url": null,
-        "createdOn": "2023-10-05T00:35:59.953",
-        "createdBy": "Vamshi",
-        "udpatedOn": null,
-        "udpatedBy": null,
-        "isActive": true
-      }
-    ]
-  },
-  {
-    "menu_Id": 18,
-    "submenu_id": 5,
-    "menu": "Branch Addresses",
-     "menuUrl": "/contactus",
-    "isActive": true,
-    "listMenuResponse": [
-      {
-        "menuResponsesId": 34,
-        "menu_Id": 18,
-        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.\r\nAccounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
-        "url": null,
-        "createdOn": "2023-10-05T00:36:06.827",
-        "createdBy": "Vamshi",
-        "udpatedOn": null,
-        "udpatedBy": null,
-        "isActive": true
-      }
-    ]
-  },
-  {
-    "menu_Id": 19,
-    "submenu_id": 5,
-    "menu": "Whatsapp Chat",
-     "menuUrl": "/contactus",
-    "isActive": true,
-    "listMenuResponse": [
-      {
-        "menuResponsesId": 35,
-        "menu_Id": 19,
-        "responses": "Accounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.\r\nAccounting for a better world\r\nIn todays rapidly evolving business landscape, the accountancy profession finds itself at the crossroads of various transformative forces. By using ethical judgement, combined with financial and business expertise, it’s the professional accountant who will guide organisations to do the right thing and help create a better world.",
-        "url": null,
-        "createdOn": "2023-10-05T00:36:11.533",
-        "createdBy": "Vamshi",
-        "udpatedOn": null,
-        "udpatedBy": null,
-        "isActive": true
-      }
-    ]
-  },
-  {
-    "menu_Id": 20,
-    "submenu_id": 5,
-    "menu": "GPS Location",
-     "menuUrl": "/contactus",
-    "isActive": true,
-    "listMenuResponse": []
-  },
-  {
-    "menu_Id": 21,
-    "submenu_id": 5,
-    "menu": "Email ID",
-     "menuUrl": "/contactus",
-    "isActive": true,
-    "listMenuResponse": []
-  },
-  {
-    "menu_Id": 22,
-    "submenu_id": 5,
-    "menu": "Helpline Numbers",
-     "menuUrl": "/contactus",
-    "isActive": true,
-    "listMenuResponse": []
-  },
-  {
-    "menu_Id": 23,
-    "submenu_id": 10,
-    "menu": "CA",
-     "menuUrl": "/contactus",
-    "isActive": true,
-    "listMenuResponse": [
-      {
-        "menuResponsesId": 38,
-        "menu_Id": 23,
-        "responses": "Chartered Accountants, or CAs, are financial experts responsible for conducting essential accounting procedures. They are highly qualified professionals with comprehensive knowledge in areas like Accounting, Auditing, Taxation, Financial matters, and related services, catering to both individuals and organizations. Becoming a Chartered Accountant entails completing a demanding five-year professional certification program that focuses on taxation, accounting, auditing, financial analysis, and budgeting for individuals, businesses, or organizations.\r\nStudents should go through three levels to complete including the practical training part \r\nLevel 1 – ca foundation\r\nLevel 2 – ca inter\r\nLevel -3 - ca Final\r\nTo achieve the Chartered Accountant designation, individuals must successfully navigate a three-tiered training program established by the Institute of Chartered Accountants of India (ICAI), which serves as the governing body overseeing and maintaining the standards of the chartered accountancy profession in India. Aspiring Chartered Accountants can opt for one of two routes: the Foundation Course Route, beginning after completing Class 12, or the Direct Entry Route, designed for graduates.\r\n\r\nCareer prospects in chartered accountancy are driven by the profession's attractiveness due to its lucrative and secure nature. In a world where financial matters are central to everything, businesses depend on experts to manage their financial affairs. Upon completion of the CA course, graduates can explore diverse career opportunities, including roles as consultants, auditors, financial managers, business analysts, and more. Chartered Accountants engage in a wide range of activities, such as filing tax returns, auditing financial statements, facilitating business registration with government authorities, maintaining investment records, and preparing and reviewing financial reports.\r\n\r\nCAs are in high demand across various sectors, including banks, financial institutions, and corporations, which opens up a wealth of job opportunities. CA-certified individuals also have the option to establish their own auditing firms, offering auditing services to clients. Graduates can command competitive starting salaries, typically ranging from INR 5,00,000 to INR 25,00,000 per annum. With experience and advanced skills, this figure can potentially rise to as high as INR 75,00,000 per annum, depending on individual capabilities. Chartered Accountants are esteemed professionals and are often regarded as highly qualified individuals.\r\n\r\nIn summary, the field of chartered accountancy presents a promising and rewarding career path due to the strong demand for financial expertise and the substantial earning potential it offers.\r\n",
-        "url": null,
-        "createdOn": "2023-10-24T20:42:22.32",
-        "createdBy": "Vamshi",
-        "udpatedOn": null,
-        "udpatedBy": null,
-        "isActive": true
-      }
-    ]
-  },
-  {
-    "menu_Id": 24,
-    "submenu_id": 10,
-    "menu": "CMA",
-     "menuUrl": "/contactus",
-    "isActive": true,
-    "listMenuResponse": [
-      {
-        "menuResponsesId": 37,
-        "menu_Id": 24,
-        "responses": "The Certified Management Accountant (CMA) designation is a globally recognized certification in management accounting, providing expertise in financial planning, strategic management, corporate finance, decision-making, and professional ethics. CMAs specialize in cost management, cost reduction, and cost auditing, making them valuable in various business organizations.\r\n\r\nIn India, the CMA program is administered by the Institute of Cost Accountants of India (ICAI), formerly known as the Institute of Cost and Works Accountants of India (ICWAI). This institute operates under the Cost and Works Accountants Act, 1959, a special act of Parliament that regulates the profession of cost and management accountancy.\r\n\r\nThe CMA course in India consists of three stages: Foundation, Intermediate, and Final. To attain CMA certification, candidates must complete all three stages and fulfil specific requirements, including practical training and work experience.\r\n\r\nThe CMA designation offers diverse career opportunities, with CMAs working in various business functions such as Accounting and Finance, Sales and Marketing, Operations, Strategic Planning and Analysis, Information Technology, and Human Resources. Their skills in strategic management and accounting are transferable to a wide range of industries.\r\n\r\nIn India, CMA salaries can vary based on factors like experience and industry. On average, a CMA in India earns approximately INR 6 lakh per annum. However, the salary range for CMAs can extend from INR 3 LPA to INR 20 LPA. Those with 1-3 years of experience typically earn between INR 5 LPA to INR 10 LPA, while individuals with 5 to 7 years of experience can earn INR 10 lakh to INR 20 lakh per annum.\r\nCertified Management Accountant is a great career choice with its easy and quick course with high annual salary and Limitless career choice. It also gives a chance to work abroad. It also provides growth and value as an employee and business appeal\r\nOverall, the CMA course in India equips professionals with the knowledge and skills necessary to excel in the fields of management accounting and financial management, making them valuable assets to organizations across the country.\r\n",
-        "url": null,
-        "createdOn": "2023-10-24T20:40:22.453",
-        "createdBy": "Vamshi",
-        "udpatedOn": null,
-        "udpatedBy": null,
-        "isActive": true
-      }
-    ]
-  },
-  {
-    "menu_Id": 25,
-    "submenu_id": 2,
-    "menu": "International Courses",
-     "menuUrl": "/contactus",
-    "isActive": true,
-    "listMenuResponse": []
-  },
-  {
-    "menu_Id": 26,
-    "submenu_id": 25,
-    "menu": "ACCA",
-     "menuUrl": "/contactus",
-    "isActive": true,
-    "listMenuResponse": [
-      {
-        "menuResponsesId": 39,
-        "menu_Id": 26,
-        "responses": "ACCA, short for the Association of Chartered Certified Accountants, is a globally recognized professional accounting body that offers a comprehensive and internationally respected qualification in the fields of accounting and finance. This certification, awarded by ACCA based in the United Kingdom, is designed to equip individuals with the necessary skills and knowledge to thrive in today's rapidly evolving business landscape.\r\nACCA's reach extends to 180 countries, making it a highly regarded qualification with a global reputation. It is often referred to as the \"global CA\" because it offers enhanced career prospects worldwide. The ACCA program prepares professionals for various domains, including accounting, auditing, taxation, management, finance, investment banking, corporate finance, forensic audit, and consulting.\r\nThis high-level professional qualification is equivalent to completing a full university degree. ACCA is in compliance with the International Federation of Accountants (IFAC), a global accounting body, and is built upon international accounting and auditing standards.\r\nThe ACCA qualification comprises 13 subjects divided into three levels: applied Knowledge, applied Skills, strategic professional . It provides a pathway to a rewarding career in accounting, finance, and management.\r\nThe core values of ACCA emphasize providing opportunities, embracing diversity, fostering innovation, upholding integrity, and maintaining accountability within the accounting and finance field.\r\nACCA is indeed a prestigious qualification that can lead to a successful and rewarding career in the accounting and finance industry, both in your home country and internationally. It's known for its high standards and rigorous training, making it a respected choice for those pursuing a career in this field.\r\n",
-        "url": null,
-        "createdOn": "2023-10-24T20:47:58.783",
-        "createdBy": "Vamshi",
-        "udpatedOn": null,
-        "udpatedBy": null,
-        "isActive": true
-      }
-    ]
-  },
-  {
-    "menu_Id": 27,
-    "submenu_id": 25,
-    "menu": "CIMA",
-     "menuUrl": "/contactus",
-    "isActive": true,
-    "listMenuResponse": [
-      {
-        "menuResponsesId": 40,
-        "menu_Id": 27,
-        "responses": "CIMA, which stands for The Chartered Institute of Management Accountants, offers an esteemed qualification for individuals aspiring to excel as management accountants or pursue careers in the fields of finance and management. It enjoys a strong reputation within the business and finance sectors.\r\nAs a globally recognized professional management accounting body headquartered in the UK, CIMA tailors its internationally acclaimed qualification to cater to the distinct needs of professionals worldwide.\r\nThe CIMA program is structured into separate levels, each accompanied by its own set of examinations. These levels encompass the Certificate in Business Accounting, Operational level, Management level, and Strategic level.\r\nEncompassing a wide array of subjects, including management accounting, financial strategy, risk management, financial management, and business ethics, the CIMA curriculum equips individuals with the essential knowledge and competencies required for making strategic decisions within a business context.\r\nSuccessful completion of the CIMA qualification opens doors to diverse career opportunities in the fields of finance, management, and strategic decision-making. Graduates often secure roles such as management accountants, financial analysts, finance managers, or similar positions.\r\nFor individuals aspiring to build a career in management accounting, finance, or strategic management, the CIMA course provides an internationally recognized qualification and a pathway to a wide range of prospects in the business world.\r\n",
-        "url": null,
-        "createdOn": "2023-10-24T20:49:07.47",
-        "createdBy": "Vamshi",
-        "udpatedOn": null,
-        "udpatedBy": null,
-        "isActive": true
-      }
-    ]
-  },
-  {
-    "menu_Id": 28,
-    "submenu_id": 25,
-    "menu": "CMA(US)",
-     "menuUrl": "/contactus",
-    "isActive": true,
-    "listMenuResponse": [
-      {
-        "menuResponsesId": 41,
-        "menu_Id": 28,
-        "responses": "The Certified Management Accountant (CMA) designation is a globally recognized pinnacle achievement in management accounting, overseen by the Institute of Management Accountants (IMA) based in the USA. The CMA program has earned recognition in over 170 countries, making it the most highly sought-after certification in accounting and finance by businesses and recruiters worldwide.\r\n The CMA course is tailored for accountants and financial professionals seeking an advanced-level credential. It encompasses a wide range of topics, including accounting, business, finance, and analytics, enabling candidates to master 12 essential skills crucial for success in the accounting and finance realm. \r\nAspiring professionals can earn this prestigious American certification in just 12 to 18 months by completing the two-part program: Financial Planning, Performance, and Analytics (Part 1) and \r\nStrategic Financial Management (Part 2). \r\nThe CMA qualification offers global career prospects, with roles such as Senior Analyst, Finance Manager, Budget Analyst, Treasurer, Finance Controller, Internal Auditor, Financial Analyst, Cost Accountant, and Management Trainee.\r\n\r\nCMA USA Eligibility:\r\nTo be eligible for the CMA program, candidates should have a bachelor's degree from an accredited college or university, hold membership with the Institute of Management Accountants (IMA), and possess two years of professional work experience. For those beginning their CMA journey after completing high school (12th grade), they will only receive the CMA certificate upon completing their undergraduate degree.\r\n",
-        "url": null,
-        "createdOn": "2023-10-24T20:50:16.607",
-        "createdBy": "Vamshi",
-        "udpatedOn": null,
-        "udpatedBy": null,
-        "isActive": true
-      }
-    ]
-  }
-];
-}
+        ];
+    }
 }

@@ -1,0 +1,44 @@
+<!-- <section>
+    <div class="container shadow_one p-5">
+    <form [formGroup]="loginForm" (ngSubmit)="loginSubmit(loginForm.value)">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-2">
+                    <input type="username" class="form-control" id="username"
+                        formControlName="username" placeholder="User Name">
+                </div>
+                <div class="col-md-6 mb-2">
+                    <input type="password" class="form-control" id="password"
+                        formControlName="password" placeholder="Password">
+                </div>
+                <div class="col-md-12 text-end tpad bpad">
+                    <button [disabled]="!loginForm.valid" type="submit"
+                        class="btn btn-primary">Login</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+</section> -->
+<section>
+    <div class="bgc center p-4">
+        <div class="container">
+          <div class="header">
+            <h1><span class="l">L</span>OGIN</h1>
+          </div>
+          <form [formGroup]="loginForm" (ngSubmit)="loginSubmit(loginForm.value)">
+            <label for="uname">Username</label>
+            <input type="text" class="inp"  id="username"
+            formControlName="username" placeholder="User Name" required>
+            <label for="psw">Password</label>
+            <input type="password" class="inp" id="password"
+            formControlName="password" placeholder="Password" required>
+            <button type="submit" [disabled]="!loginForm.valid">Login</button>
+          </form>
+          <!-- <div class="signup">
+            <b>Don't have account?</b>
+            <a href="#">Sign up</a>
+          </div> -->
+        </div>
+      </div>
+</section>

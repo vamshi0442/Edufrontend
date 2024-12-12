@@ -1,33 +1,14 @@
-
 <!-- Carousel start here-->
+
+
 <section>
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="assets/img/banner_one.jpg" class="d-block w-100" alt="Patshala is one of the best Commerce and Management institutions in Hyderabad">
-          </div>
-          <div class="carousel-item">
-            <img src="assets/img/banner_two.jpg" class="d-block w-100" alt="Patshala is one of the best Commerce and Management institutions in Hyderabad">
-          </div>
-          <div class="carousel-item">
-            <img src="assets/img/banner_three.jpg" class="d-block w-100" alt="Patshala is one of the best Commerce and Management institutions in Hyderabad">
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-</section>
+    <swiper-container class="mySwiper" centered-slides="true" pagination-clickable="true" centered-slides="true"
+      space-between="50" grab-cursor="true" autoplay-delay="3500" pagination-type="progressbar" autoplay-disable-on-interaction="false" >
+      <swiper-slide><img [src]="imageData[0].imageUrl" alt="Random first slide" /></swiper-slide>
+      <swiper-slide><img [src]="imageData[1].imageUrl" alt="Ram Mohan Komanduri" style="width: 100%;height: 450px;"></swiper-slide>
+      <swiper-slide><img [src]="imageData[3].imageUrl" alt="Ram Mohan Komanduri" style="width: 100%;height: 450px;"></swiper-slide>
+    </swiper-container>
+  </section>
 <!-- <section class="masthead">
     <div class="container position-relative">
         <div class="row justify-content-end">
@@ -47,205 +28,291 @@
             <h1 class="text-center mb-5 heading_color">WHY PATSHALA?</h1>
             <div class="col-lg-3 col-md-6">
                 <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                    <div class="features-icons-icon d-flex"><i class="bi-youtube m-auto text-white"></i></div>
+                    <div class="features-icons-icon d-flex">
+                        <img src="assets/img/banner-img-1.png" alt="Ram Mohan Komanduri Institutions in Hyderabad">
+                    </div>
                     <h3>Live Classes</h3>
-                    <p class="mb-0">Providing personalized mentoring throughout their course journey.</p>
+                    <p class="mb-0">Real-Time, Interactive Online Learning.</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                    <div class="features-icons-icon d-flex"><i class="bi-youtube m-auto text-white"></i></div>
+                    <div class="features-icons-icon d-flex">
+                        <img src="assets/img/Sample-Recordings-Image.png" alt="Ram Mohan Komanduri Institutions in Hyderabad">
+                    </div>
                     <h3>Recordings</h3>
-                    <p class="mb-0">Interactive live stream classes and recorded Video lectures.</p>
+                    <p class="mb-0">Learn at Your Own Pace, Anytime.</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="features-icons-item mx-auto mb-5 mb-lg-3">
-                    <div class="features-icons-icon d-flex"><i class="bi-youtube m-auto text-white"></i></div>
+                    <div class="features-icons-icon d-flex">
+                        <img src="assets/img/select-video.png" alt="Ram Mohan Komanduri Institutions in Hyderabad">
+                    </div>
                     <h3>Selected Videos</h3>
-                    <p class="mb-0">Regular Doubt Sessions.</p>
+                    <p class="mb-0">Explore Key Topics Before You Enroll.</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="features-icons-item mx-auto mb-5 mb-lg-3">
-                    <div class="features-icons-icon d-flex"><i class="bi-youtube m-auto text-white"></i></div>
+                    <div class="features-icons-icon d-flex">
+                        <img src="assets/img/study-hub.jpeg" alt="Ram Mohan Komanduri Institutions in Hyderabad">
+                    </div>
                     <h3>Study Hub</h3>
-                    <p class="mb-0">Mock Tests, Approved study material.</p>
+                    <p class="mb-0">Your Centralized Learning Resource Center.</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
+<!-- start course -->
+
+
+<section class="special py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h6 class="text-center tpad bpad heading_color">POPULAR COURSES</h6>
+                <h1 class="text-center tpad bpad heading_color">Academic Programs At Patshala</h1>
+            </div>
+            <div class="container text-center">
+                <ul class="nav nav-tabs border-bottom border-primary mt-2" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
+                            type="button" role="tab" aria-controls="home" aria-selected="true">CPC-Commerce
+                            Professioanal Courses
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile"
+                            type="button" role="tab" aria-controls="profile" aria-selected="false"> CEEC- Competetive
+                            Entrance Exam Courses
+                        </button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="row special learncard text-center py-5 broadcost">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="global card shadow rounded border-0" (click)="course()">
+                                    <img src="assets/img/Gallery/Academic-img/ca.jpg"
+                                        alt="Ram Mohan Komanduri is one of the best Commerce and Management institutions in Hyderabad"
+                                        class="mb-3">
+                                    <h4 class="p-3">CA-(Chartered Accountant)</h4>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="global card shadow rounded border-0" (click)="course()">
+                                    <img src="assets/img/Gallery/Academic-img/cs.jpg"
+                                        alt="Ram Mohan Komanduri is one of the best Commerce and Management institutions in Hyderabad"
+                                        class="mb-3 border">
+                                    <h4 class="p-3">CS-(Company Secretary )</h4>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="global card shadow rounded border-0"(click)="course()">
+                                    <img src="assets/img/Gallery/Academic-img/cma.jpg"
+                                        alt="Ram Mohan Komanduri is one of the best Commerce and Management institutions in Hyderabad"
+                                        class="mb-3 border">
+                                    <h4 >CMA-(Cost Management Accountants)</h4>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="global card shadow rounded border-0"(click)="course()">
+                                    <img src="assets/img/Gallery/Academic-img/CMA-Full-Color_RGB.jpg"
+                                        alt="Ram Mohan Komanduri is one of the best Commerce and Management institutions in Hyderabad"
+                                        class="mb-3">
+                                    <h4 class="p-3">CMA(US)-(Cost and Management Accountant)</h4>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="global card shadow rounded border-0"(click)="course()">
+                                    <img src="assets/img/Gallery/Academic-img/ACCA_logo.svg.png"
+                                        alt="Ram Mohan Komanduri is one of the best Commerce and Management institutions in Hyderabad"
+                                        class="mb-3 border">
+                                    <h4 class="py-3">ACCA(UK)-(Association of Chartered Certified Accountants)</h4>
+                                </div>
+                            </div>
+                          
+                            <div class="col-md-6 col-lg-4">
+                                <div class="global card shadow rounded border-0"(click)="course()">
+                                    <img src="assets/img/Gallery/Academic-img/Cima_logo.png"
+                                        alt="Ram Mohan Komanduri is one of the best Commerce and Management institutions in Hyderabad"
+                                        class="mb-3 border">
+                                    <h4 class="p-3">CIMA(UK)-(Chartered Institute of Management Accountants)</h4>
+                                </div>
+                            </div>
+                           
+                            <div class="col-md-6 col-lg-4">
+                                <div class="global card shadow rounded border-0"(click)="course()">
+                                    <img src="assets/img/Gallery/Academic-img/aicpa.jpg"
+                                        alt="Ram Mohan Komanduri is one of the best Commerce and Management institutions in Hyderabad"
+                                        class="mb-3">
+                                    <h4>CPA(US)-(Certified Public Accountant)</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        <div class="row special learncard text-center py-5 broadcost">
+                        
+                            <div class="col-md-6 col-lg-4">
+                                <div class="global card shadow rounded border-0"(click)="course()">
+                                    <img src="assets/img/Gallery/Academic-img/CLAT-LOGO.webp"
+                                        alt="Ram Mohan Komanduri is one of the best Commerce and Management institutions in Hyderabad"
+                                        class="mb-3">
+                                    <h4>CLAT-(Common Law Admission Test)</h4>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="global card shadow rounded border-0"(click)="course()">
+                                    <img src="assets/img/Gallery/Academic-img/ipmat.webp"
+                                        alt="Ram Mohan Komanduri is one of the best Commerce and Management institutions in Hyderabad"
+                                        class="mb-3">
+                                    <h4>IPMAT-(Integrated Programme in Management Aptitude Test)</h4>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="global card shadow rounded border-0"(click)="course()">
+                                    <img src="assets/img/Gallery/Academic-img/cat.webp"
+                                        alt="Ram Mohan Komanduri is one of the best Commerce and Management institutions in Hyderabad"
+                                        class="mb-3">
+                                    <h4 class="p-3">CAT-(Common Admission Test)</h4>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="global card shadow rounded border-0"(click)="course()">
+                                    <img src="assets/img/Gallery/Academic-img/ICET.webp"
+                                        alt="Ram Mohan Komanduri is one of the best Commerce and Management institutions in Hyderabad"
+                                        class="mb-3">
+                                    <h4>ICET-(Integrated Common Entrance Test) </h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
 <!-- course -->
-<section class="course">
+<!-- <section class="course">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="stroke">Latest Gallery</h1>
                 <owl-carousel-o [options]="customOptions">
-                    <ng-template *ngFor="let image of Imgslst" carouselSlide>                        
-                      <div class="card rounded-0">
-                          <div class="card-body">
-                            <h3>{{image.ImageDescription}}</h3> 
-                          <img [src]="image.Image" alt="Patshala is one of the best Commerce and Management institutions in Hyderabad" />
+                    <ng-template *ngFor="let image of Imgslst" carouselSlide>
+                        <div class="card rounded-0">
+                            <div class="card-body">
+                                <h3>{{image.ImageDescription}}</h3>
+                                <img [src]="image.Image"
+                                    alt="Ram Mohan Komanduri is one of the best Commerce and Management institutions in Hyderabad" />
+                            </div>
                         </div>
-                      </div>
                     </ng-template>
-                  </owl-carousel-o>
-                <!-- <owl-carousel-o [options]="customOptions">
-                    <ng-template carouselSlide >
-                       <div class="card rounded-0">
-                           <div class="card-body">
-                                <img src="assets/img/patashala_1.jpeg" alt="Patashala"/>
-                           </div>
-                       </div>
-                   </ng-template>
-                 
-                <ng-template carouselSlide >
-                    <div class="card rounded-0">
-                        <div class="card-body">
-                             <img src="assets/img/patashala_5.jpeg" alt="Patashala"/>
-                        </div>
-                    </div>
-                </ng-template>
-                <ng-template carouselSlide >
-                    <div class="card rounded-0">
-                        <div class="card-body">
-                             <img src="assets/img/patashala_6.jpeg" alt="Patashala"/>
-                        </div>
-                    </div>
-                </ng-template>
-                <ng-template carouselSlide >
-                    <div class="card rounded-0">
-                        <div class="card-body">
-                             <img src="assets/img/patashala_7.jpeg" alt="Patashala"/>
-                        </div>
-                    </div>
-                </ng-template>
-                <ng-template carouselSlide >
-                    <div class="card rounded-0">
-                        <div class="card-body">
-                             <img src="assets/img/patashala_8.jpeg" alt="Patashala"/>
-                        </div>
-                    </div>
-                </ng-template>
-                <ng-template carouselSlide >
-                 <div class="card rounded-0">
-                     <div class="card-body">
-                          <img src="assets/img/patashala_9.jpeg" alt="Patashala"/>
-                     </div>
-                 </div>
-             </ng-template>
-             <ng-template carouselSlide >
-                 <div class="card rounded-0">
-                     <div class="card-body">
-                          <img src="assets/img/patashala_10.jpeg" alt="Patashala"/>
-                     </div>
-                 </div>
-             </ng-template>
-             <ng-template carouselSlide >
-                 <div class="card rounded-0">
-                     <div class="card-body">
-                          <img src="assets/img/patashala_11.jpeg" alt="Patashala"/>
-                     </div>
-                 </div>
-             </ng-template>
-             <ng-template carouselSlide >
-                 <div class="card rounded-0">
-                     <div class="card-body">
-                          <img src="assets/img/patashala_12.jpeg" alt="Patashala"/>
-                     </div>
-                 </div>
-             </ng-template>
-             <ng-template carouselSlide >
-                 <div class="card rounded-0">
-                     <div class="card-body">
-                          <img src="assets/img/patashala_13.jpeg" alt="Patashala"/>
-                     </div>
-                 </div>
-             </ng-template>
-             <ng-template carouselSlide >
-                 <div class="card rounded-0">
-                     <div class="card-body">
-                          <img src="assets/img/patashala_14.jpeg" alt="Patashala"/>
-                     </div>
-                 </div>
-             </ng-template>
-                </owl-carousel-o> -->
-                <!-- <div *ngFor="let menuItem of courselist">
-                    {{menuItem.menu}}
-                </div> -->
-                <!--<owl-carousel-o [options]="customOptions">
-                     <ng-template carouselSlide>
-                        <div class="card rounded-0">
-                            <div class="card-body">
-                                <h2 class="card-title mb-4">CLAT</h2>
-                                <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                                <a href="#" class="btn btn-link text-decoration-none text-end mt-3 d-block">View More <i class="bi bi-arrow-right"></i> </a>
-                            </div>
-                        </div>
-                    </ng-template>  
-                    <ng-template carouselSlide>
-                        <div class="card rounded-0">
-                            <div class="card-body">
-                                <h2 class="card-title mb-4">CLAT</h2>
-                                <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                                <a href="#" class="btn btn-link text-decoration-none text-end mt-3 d-block">View More <i class="bi bi-arrow-right"></i> </a>
-                            </div>
-                        </div>
-                    </ng-template>  
-                    <ng-template carouselSlide>
-                        <div class="card rounded-0">
-                            <div class="card-body">
-                                <h2 class="card-title mb-4">IMPAT</h2>
-                                <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                                <a href="#" class="btn btn-link text-decoration-none text-end mt-3 d-block">View More <i class="bi bi-arrow-right"></i> </a>
-                            </div>
-                        </div>
-                    </ng-template>  
-                  </owl-carousel-o> -->
+                </owl-carousel-o>
             </div>
         </div>
     </div>
-</section>        
+</section> -->
 <!-- end course -->
 <!-- values -->
-<section class="values py-5">
+<!-- <section class="values">
     <div class="container">
         <div class="row">
-            <div class="col-md-12 py-4">
-                <div class="circle text-center d-flex flex-column flex-lg-row justify-content-center align-items-center">
+            <div class="col-md-12 text-center py-4">
+                <div
+                    class="circle text-center d-flex flex-column flex-lg-row justify-content-center align-items-center">
                     <div class="circle_body circleOne">
                         <a [routerLink]="['/vision-mission']">
-                            <img src="assets/img/mission.png" alt="Patshala is one of the best Commerce and Management institutions in Hyderabad">
+                            <img src="assets/img/mission.png"
+                                alt="Ram Mohan Komanduri is one of the best Commerce and Management institutions in Hyderabad">
                             <h3 class="my-2">Mission</h3>
                             <p>To produce skilled professionals and provide...</p>
                         </a>
                     </div>
                     <div class="circle_body circleTwo">
                         <a [routerLink]="['/vision-mission']">
-                            <img src="assets/img/vission.png" alt="Patshala is one of the best Commerce and Management institutions in Hyderabad">
+                            <img src="assets/img/vission.png"
+                                alt="Ram Mohan Komanduri is one of the best Commerce and Management institutions in Hyderabad">
                             <h3 class="my-2">Vision</h3>
                             <p>Our mission is to provide high-quality education...</p>
                         </a>
                     </div>
-                    <div class="circle_body circleThree">
-                        <a [routerLink]="['/vision-mission']">
-                            <img src="assets/img/values.png" alt="Patshala is one of the best Commerce and Management institutions in Hyderabad">
-                            <h3 class="my-2">Values</h3>
-                            <p>Coming Soon..</p>
-                        </a>
-                    </div>
+
                 </div>
             </div>
-            
+
+        </div>
+    </div>
+</section> -->
+<section class="values p-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-center tpad bpad heading_color">Our Achievements</h1>
+            </div>
+        </div>
+        <div class="row">
+            <!-- <div class="col-lg-3 ">
+                <div class="card">
+                    <img class="card-img-top" src="assets/img/Gallery/achievement/achievement-0.jpeg"
+                        alt="Ram Mohan Komanduri Academy" >
+                </div>
+            </div> -->
+            <div class="col-lg-3 ">
+                <div class="card">
+                    <img class="card-img-top" src="assets/img/Gallery/achievement/achievement-1.jpeg"
+                        alt="Ram Mohan Komanduri Academy">
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="card">
+                    <img class="card-img-top" src="assets/img/Gallery/achievement/achievement-2.jpeg"
+                        alt="Ram Mohan Komanduri Academy">
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div>
+                    <img src="assets/img/Gallery/achievement/achievement-3.jpeg" alt="Ram Mohan Komanduri Academy" height="60">
+                </div>
+            </div>
         </div>
     </div>
 </section>
+<section class="values p-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-center tpad bpad heading_color">Our Partner</h1>
+            </div>
+        </div>
+        <swiper-container class="mySwiper"  slides-per-view="4"
+        centered-slides="true" space-between="30" grab-cursor="true" autoplay-delay="3500">
+        <swiper-slide><img src="assets/img/partners/1.jpeg" alt=""></swiper-slide>
+        <swiper-slide><img src="assets/img/partners/2.jpeg" alt=""></swiper-slide>
+        <swiper-slide><img src="assets/img/partners/3.jpeg" alt=""></swiper-slide>
+        <swiper-slide><img src="assets/img/partners/4.jpeg" alt=""></swiper-slide>
+        <swiper-slide><img src="assets/img/partners/5.jpeg" alt=""></swiper-slide>
+        <swiper-slide><img src="assets/img/partners/6.jpeg" alt=""></swiper-slide>
+        <swiper-slide><img src="assets/img/partners/7.jpeg" alt=""></swiper-slide>
+        <swiper-slide><img src="assets/img/partners/8.jpeg" alt=""></swiper-slide>
+        <swiper-slide><img src="assets/img/partners/9.jpeg" alt=""></swiper-slide>
+        <swiper-slide><img src="assets/img/partners/10.jpeg"alt=""></swiper-slide>
+      </swiper-container>
+    </div>
+    </section>
+
 <!-- Quick Cotact Form-->
-<section >
+<section class="values p-2">
     <form [formGroup]="quickContactForm" (ngSubmit)="onSubmit()">
-        
+
         <div class="container shadow_one p-5">
             <div class="row">
                 <div class="col-md-12">
@@ -255,60 +322,62 @@
             <div class="row">
                 <div *ngIf="successMessage" class="success-message success-res-message">
                     {{ successMessage }}
-                  </div>
+                </div>
                 <div *ngIf="fullName && fullName.invalid && (fullName.dirty || fullName.touched)">
                     <div *ngIf="fullName.hasError('required')" class="error-res-message">
                         Name is mandatory.
                     </div>
-                  </div>
-                  <div *ngIf="mobile && mobile.invalid && (mobile.dirty || mobile.touched)">
+                </div>
+                <div *ngIf="mobile && mobile.invalid && (mobile.dirty || mobile.touched)">
                     <div *ngIf="mobile.hasError('required')" class="error-res-message">
-                      Mobile number is mandatory.
+                        Mobile number is mandatory.
                     </div>
                     <div *ngIf="mobile.hasError('pattern')" class="error-res-message">
-                      Please enter a valid 10-digit mobile number.
+                        Please enter a valid 10-digit mobile number.
                     </div>
-                  </div>
-                  <div *ngIf="email && email.invalid && (email.dirty || email.touched)">
+                </div>
+                <div *ngIf="email && email.invalid && (email.dirty || email.touched)">
                     <div *ngIf="email.hasError('required')" class="error-res-message">
-                      Email is mandatory.
+                        Email is mandatory.
                     </div>
                     <div *ngIf="email.hasError('email')" class="error-res-message">
-                      Please enter a valid email address.
+                        Please enter a valid email address.
                     </div>
-                  </div>
+                </div>
                 <div class="col-md-6 col-sm-12">
                     <label for="exampleInputEmail1" class="form-label">Name</label>
-                    <input type="text" class="form-control" id="username" formControlName = "fullName">
+                    <input type="text" class="form-control" id="username" formControlName="fullName">
                     <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                 </div>
                 <div class="col-md-6 col-sm-12">
-                        <label for="exampleInputEmail1" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1"  formControlName="email">
-                        <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+                    <label for="exampleInputEmail1" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" formControlName="email">
+                    <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6 col-sm-12">
-                        <label for="exampleInputEmail1" class="form-label">Mobile  </label>
-                        <input type="text" class="form-control"  type="tel" id="mobile"  name="mobile"
-                        pattern="[0-9]{10}"   formControlName="mobile">
-                        <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+                    <label for="exampleInputEmail1" class="form-label">Mobile </label>
+                    <input type="text" class="form-control" type="tel" id="mobile" name="mobile" pattern="[0-9]{10}"
+                        formControlName="mobile">
+                    <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                 </div>
                 <div class="col-md-6 col-sm-12">
                     <label for="exampleInputEmail1" class="form-label">State </label>
-                    <p-dropdown appendTo="body" [options]="states" formControlName="state"  [showClear]="true" class="form-control" placeholder="Select State"></p-dropdown>
+                    <p-dropdown appendTo="body" [options]="states" formControlName="state" [showClear]="true"
+                        class="form-control" placeholder="Select State"></p-dropdown>
 
-                    
+
                     <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
-            </div>
+                </div>
             </div>
             <div class="row">
                 <div class="col-md-12 col-sm-12">
-                        <label for="exampleInputEmail1" class="form-label">Course/ PROGRAM</label>
-                        <p-dropdown appendTo="body" [options]="courses" formControlName="course"  [showClear]="true" class="form-control" placeholder="Select Course"></p-dropdown>
-                        
-                        <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+                    <label for="exampleInputEmail1" class="form-label">Course/ PROGRAM</label>
+                    <p-dropdown appendTo="body" [options]="courses" formControlName="course" [showClear]="true"
+                        class="form-control" placeholder="Select Course"></p-dropdown>
+
+                    <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                 </div>
             </div>
             <div class="row tpad bpad">
@@ -335,7 +404,7 @@
                                 {{test.testimonialresponses}}
                             </p>
                             <div class="testimonial-content">
-                                <div class="pic"><img src="assets/img/testimonials-1.jpg" alt=""></div>
+                                <div class="pic"><img src="assets/img/testimonials-1.jpg"  alt="Ram Mohan Komanduri Institutions in Hyderabad"></div>
                                 <h3 class="title">{{test.createdBy}}</h3>
                                 <span class="post">{{test.testimonialId}}</span>
                             </div>
@@ -350,7 +419,7 @@
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam justo neque, aliquet sit amet elementum vel, vehicula eget eros. Vivamus arcu metus, mattis sed sagittis at, sagittis quis neque. Praesent.
                         </p>
                         <div class="testimonial-content">
-                            <div class="pic"><img src="assets/img/testimonials-1.jpg" alt=""></div>
+                            <div class="pic"><img src="assets/img/testimonials-1.jpg"  alt="Ram Mohan Komanduri Institutions in Hyderabad"></div>
                             <h3 class="title">williamson</h3>
                             <span class="post">Web Developer</span>
                         </div>
@@ -361,7 +430,7 @@
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam justo neque, aliquet sit amet elementum vel, vehicula eget eros. Vivamus arcu metus, mattis sed sagittis at, sagittis quis neque. Praesent.
                         </p>
                         <div class="testimonial-content">
-                            <div class="pic"><img src="assets/img/testimonials-2.jpg" alt=""></div>
+                            <div class="pic"><img src="assets/img/testimonials-2.jpg"  alt="Ram Mohan Komanduri Institutions in Hyderabad"></div>
                             <h3 class="title">Kristina</h3>
                             <span class="post">Web Designer</span>
                         </div>
@@ -372,7 +441,7 @@
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam justo neque, aliquet sit amet elementum vel, vehicula eget eros. Vivamus arcu metus, mattis sed sagittis at, sagittis quis neque. Praesent.
                         </p>
                         <div class="testimonial-content">
-                            <div class="pic"><img src="assets/img/testimonials-3.jpg" alt=""></div>
+                            <div class="pic"><img src="assets/img/testimonials-3.jpg"  alt="Ram Mohan Komanduri Institutions in Hyderabad"></div>
                             <h3 class="title">Steve Thomas</h3>
                             <span class="post">Web Developer</span>
                         </div>
@@ -383,7 +452,7 @@
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam justo neque, aliquet sit amet elementum vel, vehicula eget eros. Vivamus arcu metus, mattis sed sagittis at, sagittis quis neque. Praesent.
                         </p>
                         <div class="testimonial-content">
-                            <div class="pic"><img src="assets/img/testimonials-2.jpg" alt=""></div>
+                            <div class="pic"><img src="assets/img/testimonials-2.jpg"  alt="Ram Mohan Komanduri Institutions in Hyderabad"></div>
                             <h3 class="title">Kristina</h3>
                             <span class="post">Web Designer</span>
                         </div>

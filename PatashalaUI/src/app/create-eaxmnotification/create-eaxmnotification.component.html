@@ -1,0 +1,49 @@
+<div class="sticky-top top120">
+    <section class="aboutus">
+        <div class="container position-relative">
+            <div class="row justify-content-end">
+                <div class="col-xl-12 text-center">
+                    <div class="text-white ms-auto">
+                        <!-- Page heading-->
+                        <h1 class="mb-2">Exam Notifications </h1>
+                        <a href="javascript:void(0)" class="text-decoration-none textprimary">Admin <i
+                                class="bi bi-chevron-right"></i></a> <span class="textprimary">Exam Notifications</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Add New Exam Notifications</h3>
+                <form [formGroup]="examnotice" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label for="title">Name</label>
+                        <input type="text" id="name" class="form-control" formControlName="name" name="name"
+                            required />
+                    </div>
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" id="title" class="form-control" formControlName="title" name="title"
+                            required />
+                    </div>
+                    <div class="form-group">
+                        <label for="link">Link</label>
+                        <input type="url" id="link" class="form-control" formControlName="link" name="link" />
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Date</label>
+                        <input type="date" id="time" class="form-control" formControlName="time" name="time"
+                            required />
+                    </div>
+                    <div class="form-group p-4">
+                    <button type="submit" class="btn btn-primary ">Add Notice</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

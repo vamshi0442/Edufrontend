@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import {FormGroup,FormControl,Validators,FormArray} from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 import { EnquiryForm } from '../home/enquiry-form.model';
 import { HttpClient } from '@angular/common/http';
 import { ApiService } from '../api.service';
 import { MessageService } from 'primeng/api';
+import { DowloadFileService } from '../dowload-file.service'
 interface dropdownOptions {
   label: string;
   value: string;
@@ -14,36 +15,37 @@ interface dropdownOptions {
   styleUrls: ['./news-and-events.component.css']
 })
 
-export class NewsAndEventsComponent  {  
-  listMenuResponse:any = [];
-  aboutPatashala:any =[];
-  courselist:any =[];
-  tempList:any=[];
-  subheading:any=[];
-  studentTestimonials:any=[];
-  visible: boolean =true;
+export class NewsAndEventsComponent {
+  listMenuResponse: any = [];
+  aboutPatashala: any = [];
+  courselist: any = [];
+  tempList: any = [];
+  subheading: any = [];
+  studentTestimonials: any = [];
+  visible: boolean = true;
   quickContactForm!: FormGroup;
-  dialogquickContactForm!:FormGroup;
+  dialogquickContactForm!: FormGroup;
   states!: dropdownOptions[];
   courses!: dropdownOptions[];
   successMessage: any;
-  successMessageindialog :any;
+  successMessageindialog: any;
   firsttime: string = "true";
   showDialog: boolean = false; // Flag to control visibility of p-dialog
+  batchAnnouncementData: any;
   constructor(private httpClient: HttpClient,
     private apiService: ApiService,
-  private messageService:MessageService) {
+    private messageService: MessageService, private DowloadFileService: DowloadFileService) {
   }
-  
+
   ngOnInit(): void {
-    
-      // this.httpClient.get<any>("assets/response_1699881964735.json").subscribe((data)=>{
-      this.apiService.getData().subscribe((data:any)=>{
+    this.loadBatchAnnouncementImage();
+    // this.httpClient.get<any>("assets/response_1699881964735.json").subscribe((data)=>{
+    this.apiService.getData().subscribe((data: any) => {
       this.listMenuResponse = data.listMenuSubMenu;
-      this.courselist =[];
-      this.tempList =[];
-      this.studentTestimonials=[];
-      this.aboutPatashala =[];
+      this.courselist = [];
+      this.tempList = [];
+      this.studentTestimonials = [];
+      this.aboutPatashala = [];
       const storedFirstTime = localStorage.getItem("firsttime");
       if (storedFirstTime === null || storedFirstTime === undefined) {
         this.firsttime = 'true';
@@ -54,67 +56,67 @@ export class NewsAndEventsComponent  {
         localStorage.setItem("firsttime", "false");
         this.showDialog = false;
       }
-       // Check if 8 hours have passed, then reset local storage flag
-  //   const storedTime = parseInt(localStorage.getItem('storedTime') || '0', 10);
-  //   const currentTime = new Date().getTime();
-  //   const timeDifference = currentTime - storedTime;
+      // Check if 8 hours have passed, then reset local storage flag
+      //   const storedTime = parseInt(localStorage.getItem('storedTime') || '0', 10);
+      //   const currentTime = new Date().getTime();
+      //   const timeDifference = currentTime - storedTime;
 
-  //   if (timeDifference >= 8 * 60 * 60 * 1000) {
-  //     localStorage.setItem("firsttime", "false");
-  //     localStorage.setItem('storedTime', currentTime.toString()); // Reset the stored time
+      //   if (timeDifference >= 8 * 60 * 60 * 1000) {
+      //     localStorage.setItem("firsttime", "false");
+      //     localStorage.setItem('storedTime', currentTime.toString()); // Reset the stored time
 
-        
-        }
+
+    }
     );
 
     this.quickContactForm = new FormGroup({
       fullName: new FormControl(null, Validators.compose([Validators.required])),
       email: new FormControl(null, [Validators.required, Validators.email]),
-      mobile: new FormControl(null,  [Validators.required,
-        Validators.pattern(/^\d{10,14}$/), // Assuming 10-digit mobile number, adjust pattern accordingly
+      mobile: new FormControl(null, [Validators.required,
+      Validators.pattern(/^\d{10,14}$/), // Assuming 10-digit mobile number, adjust pattern accordingly
       ]),
-      state: new FormControl(null, ),
-       course: new FormControl(null,)
+      state: new FormControl(null,),
+      course: new FormControl(null,)
       // IPAddress:  new FormControl(null,),
       // CreatedOn:  new FormControl(null,),      
       // ReturnMessage: new FormControl(null,)
-  });
-  this.dialogquickContactForm = new FormGroup({
-    fulName: new FormControl(null, Validators.compose([Validators.required])),
-    demail: new FormControl(null, [Validators.required, Validators.email]),
-    dmobile: new FormControl(null,  [Validators.required,
+    });
+    this.dialogquickContactForm = new FormGroup({
+      fulName: new FormControl(null, Validators.compose([Validators.required])),
+      demail: new FormControl(null, [Validators.required, Validators.email]),
+      dmobile: new FormControl(null, [Validators.required,
       Validators.pattern(/^\d{10,14}$/), // Assuming 10-digit mobile number, adjust pattern accordingly
-    ]),
-    dstate: new FormControl(null, ),
-     dcourse: new FormControl(null,)
-    // IPAddress:  new FormControl(null,),
-    // CreatedOn:  new FormControl(null,),      
-    // ReturnMessage: new FormControl(null,)
-});
-  
-  this.states = [
-    {label: 'Andhra Pradesh', value: 'AndhraPradesh'},
-    {label: 'Arunachal Pradesh', value: 'ArunachalPradesh'},
-    {label: 'Assam', value: 'Assam'},
-    {label: 'Bihar', value: 'Bihar'},
-    {label: 'Chennai', value: 'Chennai'},    
-    {label: 'Karnataka', value: 'Karnataka'},
-    {label: 'Kerela', value: 'Kerela'},
-    {label: 'Mumbai', value: 'Mumbai'},
-    {label: 'Orrisa', value: 'Orrisa'},
-    {label: 'Telangana', value: 'Telangana'},
-  ]
+      ]),
+      dstate: new FormControl(null,),
+      dcourse: new FormControl(null,)
+      // IPAddress:  new FormControl(null,),
+      // CreatedOn:  new FormControl(null,),      
+      // ReturnMessage: new FormControl(null,)
+    });
 
-  this.courses  =[
-    {label: 'CS', value:'CS'},
-    {label: ' CA', value:' CA'},
-    {label: 'CMA', value:'CMA'},
-    {label: ' ACCA', value:' ACCA'},
-    {label: 'CIMA', value:'CIMA'},
-    {label: 'CMA(US)', value:'CMA(US)'}
-  ]
+    this.states = [
+      { label: 'Andhra Pradesh', value: 'AndhraPradesh' },
+      { label: 'Arunachal Pradesh', value: 'ArunachalPradesh' },
+      { label: 'Assam', value: 'Assam' },
+      { label: 'Bihar', value: 'Bihar' },
+      { label: 'Chennai', value: 'Chennai' },
+      { label: 'Karnataka', value: 'Karnataka' },
+      { label: 'Kerela', value: 'Kerela' },
+      { label: 'Mumbai', value: 'Mumbai' },
+      { label: 'Orrisa', value: 'Orrisa' },
+      { label: 'Telangana', value: 'Telangana' },
+    ]
+
+    this.courses = [
+      { label: 'CS', value: 'CS' },
+      { label: ' CA', value: ' CA' },
+      { label: 'CMA', value: 'CMA' },
+      { label: ' ACCA', value: ' ACCA' },
+      { label: 'CIMA', value: 'CIMA' },
+      { label: 'CMA(US)', value: 'CMA(US)' }
+    ]
   }
- 
+
   get fulName() {
     return this.dialogquickContactForm.get('fulName');
   }
@@ -126,10 +128,10 @@ export class NewsAndEventsComponent  {
   get dmobile() {
     return this.dialogquickContactForm.get('dmobile');
   }
- 
+
   donSubmit() {
-   // console.log(this.dialogquickContactForm.value);
-  
+    // console.log(this.dialogquickContactForm.value);
+
     if (this.dialogquickContactForm.valid) {
       const dformData: EnquiryForm = new EnquiryForm(
         0, // You may set appropriate default values or handle this differently
@@ -147,14 +149,14 @@ export class NewsAndEventsComponent  {
         .subscribe({
           next: (response) => {
             // Handle success response
-           // console.log('Form submitted successfully', response);
-            this.successMessageindialog = response.returnMessage+'....'; 
+            // console.log('Form submitted successfully', response);
+            this.successMessageindialog = response.returnMessage + '....';
             // Reset the form values
             this.dialogquickContactForm.reset();
           },
           error: (error) => {
             // Handle error response
-           // console.error('Error submitting form', error);
+            // console.error('Error submitting form', error);
           }
         });
     }
@@ -172,14 +174,49 @@ export class NewsAndEventsComponent  {
       }
     });
   }
-// Add a method to display success messages
-private showSuccessMessage(message: string): void {
-  // Display the success message to the user (e.g., using a toast notification, alert, etc.)
-  // console.log('Success Message:', message);
-  this.messageService.add({ 
-    severity: "success", 
-    summary: message, 
-    detail: message, 
-  });
-}
+  // Add a method to display success messages
+  private showSuccessMessage(message: string): void {
+    // Display the success message to the user (e.g., using a toast notification, alert, etc.)
+    // console.log('Success Message:', message);
+    this.messageService.add({
+      severity: "success",
+      summary: message,
+      detail: message,
+    });
   }
+  public downloadImage(): void {
+    this.DowloadFileService.downloadImage().subscribe(response => {
+      let file = response.headers.get('content-dispositon')?.split(';')[1].split('=')[1];
+      let blob: Blob = response.body as Blob;
+      let a = document.createElement('a');
+      // a.download = file;
+      a.href = window.URL.createObjectURL(blob);
+      a.click();
+    })
+  }
+
+  // loadBatchAnnouncementImage(): void {
+  //   this.apiService.NewBatchannImage().subscribe(
+  //     data => {
+  //       this.batchAnnouncementData = data;
+  //       if (!this.batchAnnouncementData.imagePath) {
+  //         this.batchAnnouncementData.imagePath = 'https://patshalastorage.blob.core.windows.net/patshalagallery/Batch_announcement/'; 
+  //       }
+  //     },
+  //     error => {
+  //       console.error('Error loading batch announcement image:', error);
+  //     }
+  //   );
+  // }
+  loadBatchAnnouncementImage(): void {
+    this.apiService.NewBatchannImage().subscribe(
+      data => {
+        this.batchAnnouncementData = data; 
+        console.log("Data received:", this.batchAnnouncementData);
+      },
+      error => {
+        console.error('Error loading batch announcement images:', error);
+      }
+    );
+  }
+}

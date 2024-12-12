@@ -1,0 +1,57 @@
+<div class="sticky-top top120">
+    <section class="aboutus">
+        <div class="container position-relative">
+            <div class="row justify-content-end">
+                <div class="col-xl-12 text-center">
+                    <div class="text-white ms-auto">
+                        <!-- Page heading-->
+                        <h1 class="mb-2"> Educational Videos By Faculty </h1>
+                        <a href="javascript:void(0)" class="text-decoration-none textprimary">Students <i
+                                class="bi bi-chevron-right"></i></a> <span class="textprimary"> Educational Videos By
+                            Faculty </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<section class="container-fluid">
+    <div class="container">
+        <div class="row" >
+            <div class="col-lg-4" *ngIf="videos.length > 0">
+                <div class="card pt-4" *ngFor="let video of videos">
+                <h3>{{ video.title || video.name }}</h3>
+                <p>{{ video.description || video.summary }}</p>
+                <video controls [src]="video.url || video.videoUrl" width="600" autoplay muted>
+                    Your browser does not support the video tag.
+                </video>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- <div class="row" *ngIf="imagesByFolder.length > 0; else noImagesTemplate">
+    <h3 class="text-center">{{ getSelectedFolderDescription() }}</h3>
+    <div class="col-lg-4" *ngFor="let img of imagesByFolder">
+      <div class="card pt-4">
+        <div class="image-container">
+          <img [src]="img.imageUrl" [alt]="img.imageDescription"
+            (error)="img.imageUrl = 'assets/img/fallback-image.jpg'" />
+        </div>
+      </div>
+    </div>
+  </div> -->
+<!-- <div class="features-image-2 text-center">
+    <div *ngIf="videos.length > 0">
+        <div *ngFor="let video of videos">
+            <h3>{{ video.title || video.name }}</h3>
+            <p>{{ video.description || video.summary }}</p>
+            <video controls [src]="video.url || video.videoUrl" width="600" autoplay></video>
+        </div>
+    </div>
+    <div *ngIf="videos.length === 0">
+        <p>No videos available</p>
+    </div>
+</div> -->
